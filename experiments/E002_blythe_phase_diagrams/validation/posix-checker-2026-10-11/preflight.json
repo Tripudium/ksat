@@ -1,0 +1,55 @@
+{
+  "checker": "/Users/u1774790/Projects/ksat/.venv/bin/drat-trim",
+  "checker_sha256": "728c186e735d901c42addf210ada31859b58cba4453db5be1460c161e02d938a",
+  "dependencies": {
+    "contourpy": "1.4.0",
+    "cycler": "0.12.1",
+    "fonttools": "4.66.1",
+    "kiwisolver": "1.5.1",
+    "matplotlib": "3.10.8",
+    "numpy": "2.5.4",
+    "packaging": "26.3",
+    "pillow": "12.3.0",
+    "pyparsing": "3.3.3",
+    "python-dateutil": "2.9.0.post0",
+    "python-sat": "1.9.dev15",
+    "six": "1.17.0"
+  },
+  "executable": "/Users/u1774790/Projects/ksat/.venv/bin/python",
+  "false_unsat_rejected": true,
+  "hostname": "40-G3-038393-24",
+  "invalid_checker_log": "\nc parsing input formula with 2 variables and 1 clauses\n\nc finished parsing\n\nc conflict claimed, but not detected\n\ns NOT VERIFIED\n\nc verification time: 0.021 seconds\n",
+  "invalid_proof": {
+    "interrupted": false,
+    "rejected": true,
+    "returncode": 1,
+    "timeout": false,
+    "verified": false,
+    "wall_seconds": 0.19502808386459947
+  },
+  "machine": "arm64",
+  "memory_limit": "not enforced on this platform",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "python": "3.12.8 (main, Jan 14 2025, 23:36:58) [Clang 19.1.6 ]",
+  "python_sat": "1.9.dev15",
+  "recorded_utc": "2026-10-11T18:25:12.012191+00:00",
+  "sat_witness_checked": true,
+  "script_sha256": "197799ce3762883f03c64f06593bbe439823d3574c492391694bfdbdd7d5b1d0",
+  "slurm": {},
+  "solver": "Glucose 4.2 via Glucose42, default options, single-thread process",
+  "solver_extension_sha256": "a5ac7654bd606d84ec5f5128df0daa011e062182b925848ee169481cd44c8e67",
+  "threads": {
+    "MKL_NUM_THREADS": null,
+    "OMP_NUM_THREADS": null,
+    "OPENBLAS_NUM_THREADS": null
+  },
+  "valid_checker_log": "\nc parsing input formula with 2 variables and 4 clauses\n\nc finished parsing\n\nc detected empty clause; start verification via backward checking\n\nc 4 of 4 clauses in core                            \n\nc 2 of 3 lemmas in core using 5 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.052 seconds\n",
+  "valid_proof": {
+    "interrupted": false,
+    "rejected": false,
+    "returncode": 0,
+    "timeout": false,
+    "verified": true,
+    "wall_seconds": 0.4092177920974791
+  }
+}

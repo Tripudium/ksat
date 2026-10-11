@@ -1,0 +1,156 @@
+% P006 v1, 2026-10-11. Author: root/coordinator.
+% Exact identities; the positive-tail concentration implication is conditional.
+\begin{proposition}[The exact tilted continuation kernel]
+\label{prop:tilted-continuation}
+Fix $n\ge k\ge2$, let $\mathcal C$ be the $N=2^k\binom nk$ proper
+$k$-clauses, and put $q=1-2^{-k}$, $a_k=-\log q$.
+For $S\subseteq Q_n=\{0,1\}^n$ and $C\in\mathcal C$, set
+$S_C=\{x\in S:x\text{ satisfies }C\}$.
+Starting from $S$, apply independent uniform clauses and let $\tau_S$ be
+the first time the surviving set is empty; $\tau_\varnothing=0$.
+For every real $\theta<a_k$ define
+\[
+ H_\theta(S)=\mathbb E e^{\theta\tau_S},\qquad
+ r_\theta(S)=\partial_\theta\log H_\theta(S),\qquad
+ v_\theta(S)=\partial_\theta^2\log H_\theta(S).
+\]
+These quantities are finite, $H_\theta(S)>0$, and
+$H_\theta(\varnothing)=1$, $r_\theta(\varnothing)=v_\theta(\varnothing)=0$.
+For $S\ne\varnothing$,
+\begin{align}
+ H_\theta(S)&=\frac{e^\theta}{N}\sum_{C\in\mathcal C}H_\theta(S_C),
+ \label{eq:tilted-bellman}\\
+ \pi_\theta(C\mid S)&=\frac{e^\theta H_\theta(S_C)}{N H_\theta(S)}.
+ \label{eq:tilted-kernel}
+\end{align}
+The second line is a probability distribution on the next clause.
+Use it until absorption at the empty set. Its stopped-path law is the
+original stopped-path law multiplied by $e^{\theta\tau_S}/H_\theta(S)$.
+In particular,
+\[
+ r_\theta(S)=\mathbb E_{\theta,S}\tau_S,\qquad
+ v_\theta(S)=\operatorname{Var}_{\theta,S}(\tau_S).
+\]
+The tilted clauses use the current-state-dependent kernel
+\eqref{eq:tilted-kernel}; independence is not assumed.
+\end{proposition}
+\begin{proof}
+For nonempty $S$, a union bound gives
+$\mathbb P(\tau_S>m)\le |S|q^m$.
+Thus $\tau_S$ is finite almost surely and has exponential moments for
+$\theta<a_k$, by the geometric-series argument in P004.
+Locally in this domain, each polynomial in $\tau_S$ times
+$e^{\theta\tau_S}$ is dominated by a constant times
+$e^{(\theta+\varepsilon)\tau_S}$ with $\theta+\varepsilon<a_k$.
+This justifies repeated differentiation and the mean/variance identities.
+
+Conditioning on the first clause and its independent unweighted continuation
+gives \eqref{eq:tilted-bellman}, hence normalization of the kernel.
+A clause path first absorbed at time $t$ has kernel probability
+\[
+ \prod_{j=0}^{t-1}\frac{e^\theta H_\theta(S_{j+1})}{N H_\theta(S_j)}
+ =\frac{e^{\theta t}}{N^t H_\theta(S_0)}.
+\]
+The factors telescope since $H_\theta(\varnothing)=1$.
+Summing over all finite absorbed paths gives one by the definition of
+$H_\theta(S_0)$. Absorption is therefore almost sure under this kernel,
+and the claimed density follows. Conditional on a current nonempty state,
+the future is its own tilted continuation with the same $\theta$.
+\end{proof}
+
+\begin{proposition}[Variance along a tilted path]
+\label{prop:tilted-occupation}
+In Proposition~\ref{prop:tilted-continuation} put
+\[
+ B_\theta(S)=\operatorname{Var}_{C\sim\pi_\theta(\cdot\mid S)}
+                  \bigl(r_\theta(S_C)\bigr)
+ \quad(S\ne\varnothing),\qquad B_\theta(\varnothing)=0.
+\]
+For each nonempty $S$,
+\begin{align}
+ r_\theta(S)&=1+\mathbb E_{\pi_\theta(\cdot\mid S)}r_\theta(S_C),
+ \label{eq:tilted-drift}\\
+ v_\theta(S)&=B_\theta(S)+
+                 \mathbb E_{\pi_\theta(\cdot\mid S)}v_\theta(S_C).
+ \label{eq:tilted-local-variance}
+\end{align}
+For a path $(S_j)$ started at any $S$, with the empty set absorbing,
+\begin{equation}
+ v_\theta(S)=
+ \mathbb E_{\theta,S}\sum_{j=0}^{\tau_S-1}B_\theta(S_j).
+ \label{eq:tilted-variance-occupation}
+\end{equation}
+At $\theta=0$ the kernel is uniform and \eqref{eq:tilted-drift} is
+S001's fresh-continuation drift, equation (2.4), p.~5.
+\end{proposition}
+\begin{proof}
+Given the first clause under the tilted law, the remaining time has mean
+$r_\theta(S_C)$ and variance $v_\theta(S_C)$. The total time is one plus
+this time. Total expectation and total variance prove the first two
+identities, including transitions directly to the empty set.
+Iterating the variance identity for a deterministic $\ell$ gives
+\[
+ v_\theta(S)=
+ \mathbb E_{\theta,S}\sum_{j=0}^{\ell-1}B_\theta(S_j)
+ +\mathbb E_{\theta,S}v_\theta(S_\ell).
+\]
+At fixed $n,k,\theta$, finitely many subsets have finite variances.
+The final term is at most
+$\max_{U\subseteq Q_n}v_\theta(U)\,
+\mathbb P_{\theta,S}(\tau_S>\ell)$ and tends to zero.
+Monotone convergence of the nonnegative sum proves
+\eqref{eq:tilted-variance-occupation}. No independence under the tilt
+or optional-stopping assumption is used.
+\end{proof}
+
+\begin{corollary}[A conditional right-tail criterion]
+\label{cor:positive-tilt-criterion}
+Fix $k\ge3$. Suppose $C_k,b_k>0$, $1/b_k<a_k$, and for every
+$n\ge k$ and $0\le\theta<1/b_k$ the additional estimate
+\begin{equation}
+ \mathbb E_{\theta,Q_n}\sum_{j=0}^{T_n-1}B_\theta(S_j)
+       \le\frac{C_k n}{(1-b_k\theta)^3}
+ \tag{H+}\label{eq:positive-occupation-hypothesis}
+\end{equation}
+holds. Then, with $\mu_n=\mathbb ET_n$, on that positive tilt interval,
+\[
+ \log\mathbb E e^{\theta(T_n-\mu_n)}
+       \le\frac{C_k n\theta^2}{2(1-b_k\theta)}.
+\]
+For every $x>0$,
+\[
+ \mathbb P\{T_n-\mu_n\ge\sqrt{2C_k n x}+b_kx\}\le e^{-x}.
+\]
+For $0<\delta<1$, the integer
+$\lceil\mu_n+\sqrt{2C_k n\log(1/\delta)}
+ +b_k\log(1/\delta)\rceil$
+bounds the $(1-\delta)$ quantile from above.
+Hypothesis \eqref{eq:positive-occupation-hypothesis} is not proved here.
+No lower-tail estimate or location of $\mu_n$ is concluded.
+\end{corollary}
+\begin{proof}
+Write $K_n(\theta)=\log\mathbb E e^{\theta T_n}-\theta\mu_n$.
+Then $K_n(0)=K_n'(0)=0$ and $K_n''(\theta)=v_\theta(Q_n)$.
+The occupation identity and (H+) bound this second derivative.
+The second derivative of $C_k n\theta^2/[2(1-b_k\theta)]$ equals
+$C_k n/(1-b_k\theta)^3$, so twice integrating proves the cgf bound.
+Put $V=C_k n$, $s=\sqrt{2x/V}$, and $\theta=s/(1+b_ks)$.
+This tilt belongs to $(0,1/b_k)$. At $t=Vs+b_kVs^2/2$,
+Markov's inequality gives
+\[
+ \mathbb P(T_n-\mu_n\ge t)
+ \le\exp\!\left(-\theta t+\frac{V\theta^2}{2(1-b_k\theta)}\right)
+ =e^{-x}.
+\]
+Now $t=\sqrt{2Vx}+b_kx$. Rounding upwards gives the quantile statement.
+This is a conditional implication, not evidence for (H+).
+\end{proof}
+
+\begin{remark}[Scope]
+The identities replace unjustified tensorization under a tilt by an exact
+state-dependent kernel. They neither bound the occupation term nor make
+it efficient to compute. P005 rules out a uniform $O_k(n)$ tilted-variance
+bound on any fixed negative neighbourhood of zero. The positive-tilt
+condition is a separate, explicitly restricted research direction; it
+does not establish the refuted two-sided target.
+\end{remark}

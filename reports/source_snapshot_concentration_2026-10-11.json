@@ -1,0 +1,116 @@
+{
+  "created_utc": "2026-10-11T18:37:51.229841+00:00",
+  "scope": "Dated concentration investigation; document build is not mathematical verification. P005/P006 internal review scopes are recorded separately.",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 6850,
+      "sha256": "0a50f69efa32ded720c07a924147dcc82b9dd09c250ccbdb71edf23be5c195a6"
+    },
+    {
+      "path": "PROBLEM.md",
+      "bytes": 7062,
+      "sha256": "9784437261f05f4f6f1c5f4f6aadd3c27e4e46507d29741c564a6f7c2df86d18"
+    },
+    {
+      "path": "STATUS.md",
+      "bytes": 12099,
+      "sha256": "72af0a906be595e21bc41b36a6dd7ff326c0657ccd305797003daa4407620690"
+    },
+    {
+      "path": "reports/concentration-2026-10-11.tex",
+      "bytes": 12383,
+      "sha256": "86d441debac2d3115f4c9ad304d9ee1ed146a562472ee7eb8864df44c483751d"
+    },
+    {
+      "path": "reports/output/pdf/concentration-2026-10-11.pdf",
+      "bytes": 219653,
+      "sha256": "db57e46b4fcb1959db2d4c8222200e4410f59bc4088c48cf24b9ae38dabd0ba2"
+    },
+    {
+      "path": "reports/preamble.tex",
+      "bytes": 2462,
+      "sha256": "d580cbfb425e78ce8617aba7ba351989814d7731ebca030e73ef66ba78a7da6c"
+    },
+    {
+      "path": "reports/macros.tex",
+      "bytes": 457,
+      "sha256": "ee06043b05aba2626d7d5efd759afb400f1fe435f90bd1afe48cb9ac45b567e7"
+    },
+    {
+      "path": "reports/references.bib",
+      "bytes": 13934,
+      "sha256": "8ba972b0dfc6694cf64474d1bcf73592aa4501a18709100472ff3dddb75ec261"
+    },
+    {
+      "path": "proofs/P005_rare_core_obstruction.tex",
+      "bytes": 9343,
+      "sha256": "77d70d65ea2b2330ee3ab786731ecfbda4842dfe49de24e1eff638b6951f386a"
+    },
+    {
+      "path": "proofs/P005_rare_core_obstruction.md",
+      "bytes": 4514,
+      "sha256": "321d7417eb9b0b5caa45f6daf16fba987e24fdf38dd0194294a36a96848077dd"
+    },
+    {
+      "path": "proofs/P005_review_2026-10-11.md",
+      "bytes": 7354,
+      "sha256": "c7b2714072d80fa24f1df78f15afa7a46528ab041adc580eaeb9e9055b6547d7"
+    },
+    {
+      "path": "proofs/P006_tilted_continuation.tex",
+      "bytes": 6553,
+      "sha256": "333a6efa6397d068fe1f93768fc6b9a68f015d08958acf30228275c062b04a79"
+    },
+    {
+      "path": "proofs/P006_tilted_continuation.md",
+      "bytes": 2139,
+      "sha256": "89b2604a3c03cb963bdbe9909f39194f3f23a742399010e158ae170e84f2cc4b"
+    },
+    {
+      "path": "proofs/P006_review_2026-10-11.md",
+      "bytes": 5874,
+      "sha256": "1ea0bc299c6cffe67ee962463d30981381e1246c2f634227ea6ecd0be3f21783"
+    },
+    {
+      "path": "reports/concentration_scope_review_2026-10-11.md",
+      "bytes": 4528,
+      "sha256": "72dd853f1a165184a96697cccd63c6afc0d4b65436ab8ae6280ff05d8008254a"
+    },
+    {
+      "path": "reports/QA_concentration_2026-10-11.md",
+      "bytes": 2658,
+      "sha256": "1e903fbc5dcb57b5f8778f16a166f3a60d646f03e0f8866260c9b56da85a236c"
+    },
+    {
+      "path": "references/concentration_source_audit_2026-10-11.md",
+      "bytes": 15109,
+      "sha256": "091fb47795f444c5808fbb7920e05a3ef40de1cd036590d0debdd349813930f5"
+    },
+    {
+      "path": "papers/TR26-229.pdf",
+      "bytes": 947021,
+      "sha256": "38243eedfd7a4b89abb2c862d3476924ed238ecb8efd9f67577bc75707fdcd40"
+    },
+    {
+      "path": "papers/OpenAI_2026_LinearVariance3SAT.pdf",
+      "bytes": 312878,
+      "sha256": "01f912a6aaba76c36cb38913ae3d902329696e1e5502feed9b71903d42b8bc08"
+    },
+    {
+      "path": "papers/OpenAI_2026_VarianceKSAT.pdf",
+      "bytes": 474205,
+      "sha256": "9e47a7c16a835f9111435037d4103a0dd974111512c62c0f0e9c96ea14bc2d56"
+    },
+    {
+      "path": "papers/iau005.pdf",
+      "bytes": 1501740,
+      "sha256": "9d112b651d33986cb6257b374efb836041eb3e08387d5b669570c91e1b0593a5"
+    },
+    {
+      "path": "papers/sharp-phase.pdf",
+      "bytes": 4661059,
+      "sha256": "a8807cb8ecab367a5b5b8947ae9666519616297f95a6afbb142ad3c4d94c39b1"
+    }
+  ]
+}

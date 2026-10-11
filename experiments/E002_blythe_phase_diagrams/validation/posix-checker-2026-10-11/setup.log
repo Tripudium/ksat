@@ -1,0 +1,7 @@
+Resolved 13 packages in 1ms
+Audited 12 packages in 0.05ms
+Environment provenance: /Users/u1774790/Projects/ksat/.venv/ksat-setup-20261011T182509.376961Z-31473.json
+Prepared environment matches project lock, Python, packages, modules and checker.
+Environment ready: /Users/u1774790/Projects/ksat/.venv
+Checker ready: /Users/u1774790/Projects/ksat/.venv/bin/drat-trim
+Use the same optional KSAT_MODULES selection when submitting. Rerun setup after changing the uv project lock.

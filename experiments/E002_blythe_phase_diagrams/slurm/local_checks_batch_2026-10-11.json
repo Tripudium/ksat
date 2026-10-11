@@ -1,0 +1,33 @@
+{
+  "shell_syntax": "passed",
+  "mock_submission": "passed",
+  "default_dry_run": "passed",
+  "paths_with_spaces": "passed",
+  "mock_interpreter_and_command_paths_with_spaces": "passed",
+  "resource_validation": "passed",
+  "optional_module_selection": "passed",
+  "spooled_worker_preflight_and_chunk": "passed",
+  "spooled_plot_worker_and_partial_flag": "passed",
+  "plot_rejected_outside_slurm": "passed",
+  "plot_existing_output_and_bad_option_rejected": "passed",
+  "plot_failure_propagated": "passed",
+  "plot_stale_environment_rejected": "passed",
+  "stale_lock_rejected_before_submit_and_run": "passed",
+  "missing_record_and_changed_packages_rejected": "passed",
+  "changed_checker_rejected": "passed",
+  "recorded_utc": "2026-10-11T18:59:49.008160+00:00",
+  "command": ".venv/bin/python experiments/E002_blythe_phase_diagrams/slurm/check_scripts.py",
+  "exit_code": 0,
+  "real_slurm_calls": 0,
+  "solver_calls": 0,
+  "uv_calls": 0,
+  "limitations": "No setup sync/download, module-stack execution, or Blythe job was run.",
+  "sha256": {
+    "check_scripts.py": "8001290cbf1f6704744d630cb2991e9dc1558960b9132b8815b50580626a1790",
+    "common.sh": "9f42ecef25f85c5b07ee07550834246d790c5cad3e20d2c3dfe5ff1e5db41be5",
+    "environment_guard.py": "a7707d75ede3b4e7c629db1cb70d65b3591360587fdcaf242df37a6e027935fd",
+    "submit_array.sh": "0086ab23b1f9df38d2eeff237d516a29f0ff7d371b3de00dab2256cc7c943db1",
+    "run_array.sbatch": "61ea849555c3dd7c2e7094e4df5350577564b36ab9c59b2a88819518cce4106e",
+    "plot_results.sbatch": "86b6499ccddf9e95bcb1bda658f0fad12200647827b79ccc0fcace5480f80d5a"
+  }
+}

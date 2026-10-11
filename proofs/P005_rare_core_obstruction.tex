@@ -1,0 +1,240 @@
+% P005, version 1, 2026-10-11. Author: analytic_transfer agent.
+% Self-contained elementary obstruction; no novelty claim.
+% Independent review pending at initial writing.
+\subsection{Rare early cores obstruct the proposed two-sided bound}
+\label{sec:P005}
+
+Fix integers $n\ge k\ge2$. Clauses independently choose a uniform
+$k$-element variable set and independent unbiased signs; repeated clauses
+and unused variables are allowed. Let $F_m$ be the conjunction of the
+first $m$ clauses of one infinite sequence, with $F_0=\mathrm{True}$, and
+let $T_n=\min\{m\ge0:F_m\text{ is UNSAT}\}$. Throughout, logarithms are
+natural. Write
+\[
+ B=2^k,\quad N_{n,k}=B\binom nk,\quad
+ \mu_n=\mathbb E T_n,\quad
+ L_n(\theta)=\log\mathbb E e^{\theta T_n},\quad
+ K_n(\theta)=L_n(\theta)-\theta\mu_n.
+\]
+The fixed-assignment and union-bound argument in P004 gives
+$\Pr(T_n>m)\le2^n(1-B^{-1})^m$. In particular, $T_n$ is almost surely
+finite and has every finite moment. Its mgf is finite for
+$\theta< a_k=-\log(1-B^{-1})$; negative tilts pose no integrability
+restriction. No external threshold or variance theorem is used below.
+
+\begin{proposition}[An elementary linear lower bound for the mean]
+\label{prop:P005-linear-mean}
+Define the absolute constants
+\[
+ c=\frac1{4e^2},\qquad
+ D=\frac4{9(1-c)}<1,\qquad d=\frac c2=\frac1{8e^2}.
+\]
+For every $n\ge k\ge2$, with $m=\lfloor cn\rfloor$,
+\begin{equation}
+ \Pr(T_n>m)\ge1-\frac Dn,
+ \qquad \mu_n\ge dn.
+ \label{eq:P005-mean}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Make the bipartite incidence graph with one left vertex for each clause
+and one right vertex for each variable. A matching covering the clauses
+assigns a distinct contained variable to each clause. Set each matched
+variable to satisfy its assigned clause; these assignments are consistent
+because the matched variables are distinct. Assign all other variables
+arbitrarily. Thus existence of this matching implies SAT, for every
+choice of signs.
+
+If such a matching does not exist, some set of $t$ clauses has at most
+$t-1$ neighboring variables. Here is the needed matching criterion:
+start from an unmatched clause in a maximum matching and explore
+alternating paths. No reached variable can be unmatched, since that
+would give an augmenting path. The reached variables are matched
+bijectively to the reached clauses other than the initial clause;
+every neighbor of a reached clause is reached. The reached clauses
+therefore constitute the required deficient set.
+
+For $1\le t\le m<n$, pad any deficient variable set to size $t-1$.
+For fixed clause indices and a fixed variable set of this size,
+independence makes the probability that all $t$ clauses use only this
+set equal to
+$[\binom{t-1}{k}/\binom nk]^t$, interpreted as zero when $t-1<k$.
+A union bound consequently gives
+\begin{equation}
+ \Pr(\text{no covering matching})
+ \le\sum_{t=1}^m\binom mt\binom n{t-1}
+             \left(\frac{\binom{t-1}{k}}{\binom nk}\right)^t.
+ \label{eq:P005-Hall-union}
+\end{equation}
+For $t-1\ge k$, each factor in the binomial ratio is at most
+$(t-1)/n$, so the ratio is at most $(t/n)^k$; the latter bound is
+also valid when the ratio is zero. Using
+$\binom rt\le(er/t)^t$ and
+$\binom n{t-1}=\binom nt\,t/(n-t+1)$, each summand in
+\eqref{eq:P005-Hall-union} is at most
+\[
+ \frac{t}{n-t+1}
+ \left[e^2\frac mn\left(\frac tn\right)^{k-2}\right]^t
+ \le \frac{t}{(1-c)n}\,4^{-t}.
+\]
+Here $k\ge2$, $t/n\le1$, and $m/n\le c$. Since
+$\sum_{t\ge1}t4^{-t}=4/9$, the matching failure probability is at most
+$D/n$. The empty sum for $m=0$ gives the same conclusion. Since
+$c<1/4$, we have $D<16/27<1$. Finally, $n\ge2$,
+$m+1>cn$, and $T_n\ge m+1$ on $\{T_n>m\}$ give
+\[
+ \mu_n\ge(m+1)\Pr(T_n>m)
+ \ge(m+1)(1-D/n)\ge cn/2=dn.
+\]
+\end{proof}
+
+\begin{proposition}[A polynomial-probability early UNSAT core]
+\label{prop:P005-early-core}
+For every $n\ge k\ge2$, set
+\[
+ p_{n,k}=\frac{B!}{N_{n,k}^{B}}.
+\]
+Then
+\begin{equation}
+ T_n\ge B\quad\text{almost surely},\qquad
+ \Pr(T_n=B)\ge p_{n,k}.
+ \label{eq:P005-early-core}
+\end{equation}
+For fixed $k$,
+\begin{equation}
+ \log p_{n,k}\ge-kB\log n-h_k,
+ \qquad h_k=B\log B-\log(B!)\ge0.
+ \label{eq:P005-polynomial}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Each proper $k$-clause excludes exactly $2^{n-k}$ assignments. Fewer
+than $B$ clauses exclude at most $(B-1)2^{n-k}<2^n$ assignments,
+so the formula is SAT. This repeats the elementary guarantee P002
+and proves the first assertion without relying on its review status.
+
+Fix the variable set $\{1,\ldots,k\}$. Consider the event that the
+first $B$ clauses are precisely all $B$ sign patterns on that set,
+each appearing once, in any order. There are $B!$ disjoint orders;
+each has probability $N_{n,k}^{-B}$. Every assignment falsifies
+one of these clauses, so the conjunction is UNSAT and $T_n=B$
+on this event. This proves the probability lower bound; it does not
+claim that these are all ways to have $T_n=B$.
+Finally, $\binom nk\le n^k$ gives
+$p_{n,k}\ge (B!/B^B)n^{-kB}$, proving
+\eqref{eq:P005-polynomial}. The inequality $B!\le B^B$ gives $h_k\ge0$.
+\end{proof}
+
+\begin{theorem}[Failure of the uniform two-sided sub-gamma target]
+\label{thm:P005-target-refuted}
+For each fixed integer $k\ge2$, there are no finite constants $C,b>0$
+such that, for every sufficiently large $n\ge k$ and every real
+$|\theta|<1/b$,
+\begin{equation}
+ K_n(\theta)\le\frac{Cn\theta^2}{2(1-b|\theta|)}.
+ \label{eq:P005-false-target}
+\end{equation}
+In particular, this refutes the stated A001 target for every $k\ge3$,
+even with its additional positive-domain requirement $1/b<a_k$.
+The contradiction uses negative tilts only.
+\end{theorem}
+\begin{proof}
+For every real $s>0$, Proposition~\ref{prop:P005-early-core} gives
+\begin{align}
+ -sB+\log p_{n,k}
+ &\le L_n(-s)\le -sB,\label{eq:P005-negative-uncentered}\\
+ s\mu_n-sB+\log p_{n,k}
+ &\le K_n(-s)\le s\mu_n-sB.
+ \label{eq:P005-negative-centered}
+\end{align}
+The lower bounds retain only the event $T_n=B$; the upper bounds
+use $T_n\ge B$. Thus, for fixed $k,s$,
+\[
+ \frac{L_n(-s)}n\longrightarrow0,\qquad
+ \liminf_{n\to\infty}\frac{K_n(-s)}n\ge sd,
+\]
+where the second assertion uses Proposition~\ref{prop:P005-linear-mean}
+and $\log p_{n,k}=O_k(\log n)$.
+
+If \eqref{eq:P005-false-target} held, take
+$s=\min\{1/(2b),d/(2C)\}>0$. This lies strictly below $1/b$ and gives
+\[
+ \frac{K_n(-s)}n
+ \le\frac{Cs^2}{2(1-bs)}\le Cs^2\le\frac{ds}{2},
+\]
+contradicting the preceding lower limit $ds$. No limiting threshold
+density or convergence of $\mu_n/n$ is needed.
+\end{proof}
+
+\begin{corollary}[Failure already at shrinking tilts and large tilted variance]
+\label{cor:P005-shrinking-tilt}
+Fix $k\ge2$ and any constant $A>kB/d$. Put
+\[
+ s_n=\frac{A\log n}{n},\qquad
+ \delta=\frac{dA-kB}{2}>0.
+\]
+For all sufficiently large $n$,
+\begin{equation}
+ K_n(-s_n)\ge\delta\log n.
+ \label{eq:P005-shrinking}
+\end{equation}
+For any fixed $C,b>0$, the right-hand side of
+\eqref{eq:P005-false-target} at $\theta=-s_n$ tends to zero, so
+the proposed bound fails even on these shrinking negative tilts.
+Moreover, for each sufficiently large $n$, some $u_n\in[0,s_n]$
+satisfies
+\begin{equation}
+ \operatorname{Var}_{-u_n}(T_n)
+ \ge\frac{2\delta}{A^2}\frac{n^2}{\log n},
+ \label{eq:P005-tilted-variance}
+\end{equation}
+where $d\Pr_\theta/d\Pr=\exp(\theta T_n-L_n(\theta))$.
+\end{corollary}
+\begin{proof}
+The lower bound in \eqref{eq:P005-negative-centered} and
+\eqref{eq:P005-polynomial} yield
+\[
+ K_n(-s_n)\ge(dA-kB)\log n
+                -\frac{AB\log n}{n}-h_k.
+\]
+This implies \eqref{eq:P005-shrinking}. Since $s_n\to0$, eventually
+$s_n<1/b$, and the proposed upper bound equals
+\[
+ \frac{CA^2(\log n)^2}{2n(1-bA\log n/n)}\longrightarrow0.
+\]
+
+For fixed $n$, finite second moments and domination by $1+T_n^2$
+justify differentiating the negative-tilt mgf twice up to zero.
+The tilted second moments are continuous on $[-s_n,0]$, since their
+normalizing mgf is positive there. Hence
+$K_n''(\theta)=\operatorname{Var}_\theta(T_n)$ on this interval,
+with $K_n(0)=K_n'(0)=0$. Twice integrating gives
+\[
+ K_n(-s_n)=\int_0^{s_n}(s_n-u)
+                         \operatorname{Var}_{-u}(T_n)\,du
+ \le\frac{s_n^2}{2}
+              \max_{0\le u\le s_n}\operatorname{Var}_{-u}(T_n).
+\]
+Continuity gives a maximizing $u_n$; inserting
+\eqref{eq:P005-shrinking} proves \eqref{eq:P005-tilted-variance}.
+\end{proof}
+
+\begin{remark}[Exact scope of the obstruction]
+For $n\ge2B/d$, the early-core event also gives the explicit lower-tail
+bound
+\[
+ \Pr\{T_n-\mu_n\le-dn/2\}\ge p_{n,k}.
+\]
+Thus a linear downward deviation has at least polynomial probability.
+This is compatible with linear untilted variance and fixed-confidence
+windows of order $\sqrt n$; it refutes the specified uniform two-sided
+exponential-moment bound and corresponding exponential control of this
+far lower tail. It does not refute positive-tilt-only bounds, a bound
+with an explicitly quantified exceptional contribution, or a genuinely
+different conditioned model. Conditioning away these histories would
+change the project ensemble and requires a separate statement and transfer.
+The large tilted variance in \eqref{eq:P005-tilted-variance} explains why
+an untilted variance estimate cannot furnish the uniform tilted estimate
+suggested by the geometric proof architecture. No numerical evidence,
+external variance claim, or novelty assertion is used in this argument.
+\end{remark}

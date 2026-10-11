@@ -1,0 +1,257 @@
+\documentclass[11pt,a4paper]{article}
+\newcommand{\ReportTitle}{Concentration of the random k-SAT hitting time}
+\newcommand{\ReportSubtitle}{A rare-core obstruction and an exact tilted-process reduction}
+\newcommand{\ReportAuthor}{Research investigation prepared with Codex}
+\newcommand{\ReportShortTitle}{Random k-SAT: concentration}
+\input{preamble}
+\input{macros}
+\begin{document}
+\begin{center}
+ {\Large\bfseries\color{ink}\ReportTitle\par}
+ \vspace{3mm}
+ {\large\ReportSubtitle\par}
+ \vspace{2mm}
+ {\small 11 October 2026\quad|\quad A001 follow-up, version 1}
+\end{center}
+\reportnote{Main finding}{The two-sided finite-tilt bound proposed in the
+research prompt is false in the stated independent proper-clause model,
+for every fixed $k\ge3$. Polynomially rare early UNSAT cores defeat
+exponential lower-tail control. P005 gives an elementary proof and a
+quantitative obstruction even at negative tilts tending to zero.
+P006 gives an exact tilted continuation kernel and a conditional
+right-tail criterion; its required estimate remains unproved.
+Both canonical fragments have independent internal reviews.
+No simulation is used as proof, and no general concentration programme
+is declared solved.}
+
+\section{The unchanged model and the exact failed target}
+For integers $n\ge k\ge2$, each clause independently chooses a uniform
+$k$-element subset of the variables and fair independent literal signs.
+Whole clauses may repeat and variables may remain unused. On one infinite
+sequence put
+\[
+ F_m=\bigwedge_{i=1}^m C_i,\qquad F_0=\mathrm{True},\qquad
+ T_n=\min\{m\ge0:F_m\text{ is UNSAT}\},\qquad \mu_n=\mathbb ET_n.
+\]
+Then $\Pr(F_m\text{ is SAT})=\Pr(T_n>m)$ exactly. The prompt asked whether,
+for each fixed $k\ge3$, finite constants $C_k,b_k>0$ could satisfy
+\begin{equation}
+ \log\mathbb E e^{\theta(T_n-\mu_n)}
+ \le \frac{C_k n\theta^2}{2(1-b_k|\theta|)}
+ \quad\text{for every }n\ge k,\quad
+ |\theta|<1/b_k<-\log(1-2^{-k}).
+ \label{eq:original-target}
+\end{equation}
+This precise target is refuted; it has not been silently replaced by
+a conditioned ensemble or a one-sided claim.
+
+\paragraph{The obstruction in two steps.}
+Write $B=2^k$. An elementary clause-to-variable matching argument gives
+\[
+ \mu_n\ge dn,\qquad d=\frac1{8e^2},
+\]
+uniformly for $n\ge k\ge2$. Meanwhile, the first $B$ clauses may comprise
+every sign pattern on one fixed set of $k$ variables. This event has
+probability
+\[
+ p_{n,k}=\frac{B!}{[B\binom nk]^B}
+ \ge \frac{B!}{B^B}\,n^{-kB}
+\]
+and forces $T_n=B$. Therefore for every $s>0$,
+\begin{equation}
+ \log\mathbb E e^{-s(T_n-\mu_n)}
+ \ge s\mu_n-sB+\log p_{n,k}
+ \ge sdn-O_k(\log n)-sB.
+ \label{eq:summary-obstruction}
+\end{equation}
+For arbitrarily small fixed $s$, this grows linearly in $sn$, whereas
+\eqref{eq:original-target} demands a bound quadratic in $s$ with constants
+uniform in $n$. Section~\ref{sec:canonical-obstruction} gives all constants,
+boundary cases, and the contradiction.
+
+\paragraph{Even a very small negative tilt is enough.}
+For a sufficiently large fixed $A=A_k$, at
+$s_n=A\log n/n$ the centered log-mgf is at least a positive multiple of
+$\log n$, while the proposed right-hand side tends to zero.
+Moreover, some $u_n\in[0,s_n]$ satisfies
+\[
+ \operatorname{Var}_{-u_n}(T_n)
+ \ge c_{k,A}\frac{n^2}{\log n},\qquad c_{k,A}>0.
+\]
+This is an analytic existence result about the tilted variance, not a
+numerically located tilt or an estimate of $\operatorname{Var}(T_n)$.
+
+\paragraph{What this does not refute.}
+For $k\ge3$, polynomially rare far-left events can coexist with an
+$O_k(n)$ ordinary variance and $O_{k,\eta}(\sqrt n)$ fixed-confidence
+windows. The proof refutes neither those claims nor a positive-tilt-only
+bound. It also does not identify $\mu_n$ to within $\sqrt n$ of
+$\alpha_k n$. The $k=2$ control has its separately known
+$n^{2/3}$ clause-window scale \citep{bbckw2001}; the obstruction's validity
+at $k=2$ is not a square-root-window assertion.
+
+\section{What the actual sources establish}
+\label{sec:source-audit}
+The dated source audit reads the actual S001, S032 and S033 PDFs, compares
+their models and proof mechanisms, and checks the current primary
+versions. Fresh PDFs matched the retained hashes; no relevant correction
+notice appeared in the checked locations. This is a targeted audit,
+not exhaustive literature coverage or formal verification.
+
+\begin{itemize}
+ \item S001, \citet[Theorem 1.3, p.~2]{carenini2026}, states
+ $\operatorname{Var}(T_n)=O_k(n^{1+2/k})$ for fixed $k\ge3$,
+ with Chebyshev concentration. Equations (2.4)--(2.5), p.~5, give
+ the fresh remaining-time drift and the globally forced-coordinate
+ killing probability.
+ \item S033, \citet[Theorem 1.1, pp.~1--2; Corollary 5.2,
+ pp.~16--17]{oaVariance}, states an $O_k(n)$ upper variance bound
+ for $k\ge4$ and an $O(n\log n)$ one for $k=3$.
+ Its Lemma 6.1, pp.~17--18, gives a sparse-prefix SAT estimate by
+ Hall matching. That argument was independently checked; our P005
+ includes a self-contained, deliberately weaker uniform mean bound.
+ \item S032, \citet[Theorem 1.1, p.~1; Corollary 5.2,
+ pp.~9--10]{oaVariance3}, states linear variance also for $k=3$.
+ The scoped audit checked the main upper-bound chain in Sections
+ 2--5.1, including its collision accounting, without identifying a gap.
+ Its Wilson-dependent lower bound and formal artifacts were not
+ independently verified here.
+\end{itemize}
+None of these sources states \eqref{eq:original-target}. Their exponential
+estimates concern either the far-right first-moment tail beyond a large
+linear cap, or auxiliary root-incidence counts. S032 and S033 average rare
+collision environments in second-moment estimates, rather than deleting them by
+conditioning. That suffices for the claimed variance calculations but
+does not control their contribution under a negative hitting-time tilt.
+The S001 external covering/threshold dependencies and the S033 block
+comparison and appendices were not fully audited.
+
+To see the confidence-level distinction explicitly, an upper bound
+$\operatorname{Var}(T_n)\le V_k n$, if established, gives only
+\[
+ \Pr\{|T_n-\mu_n|\ge\sqrt{V_k n/\delta}\}\le\delta,
+ \qquad 0<\delta<1,
+\]
+by applying Markov's inequality to $(T_n-\mu_n)^2$.
+This yields a square-root scale at fixed $\delta$ but not
+the exponential-confidence dependence requested in
+\eqref{eq:original-target}. This displayed conclusion is conditional
+on the variance bound, not a new proof of the source theorem.
+
+\paragraph{Comparison with the supplied geometry papers.}
+In S003, \citet[Sections 8.2--8.6, pp.~223--227]{lotz2026}, the Steiner
+mixture identifies a family of tilted log-concave measures. Lemma 8.3's
+thermal-variance identity and Fact 8.4's variance-of-information bound
+give control throughout the tilt family. In S002,
+\citet[Appendix E.3, pp.~290--293]{almt2014}, Gaussian logarithmic
+Sobolev control combines with the squared-projection gradient identity.
+The missing SAT analogue is quantitative control under the appropriate
+tilted law. P005 now proves that a uniform two-sided linear-variance
+analogue cannot hold. This is more precise than merely lacking a
+discrete convexity theorem.
+
+\section{Methods compared and the remaining research choices}
+The following comparisons keep the exact SAT observable visible.
+They record proof requirements rather than treating a convenient
+auxiliary statement as established.
+
+\paragraph{Covering and matching.}
+The observable is the first covering of all assignments by clause
+falsification sets. A clause-to-variable matching ensures sparse
+prefixes are SAT; an explicit small covering gives early UNSAT mass.
+These two elementary inputs already decide the proposed target
+negatively. They give no sharp typical transition location.
+
+\paragraph{Martingales, stopping times and change of measure.}
+The observable is the remaining absorption time from a solution set.
+Section~\ref{sec:canonical-tilt} gives its exact tilted kernel and
+variance-occupation identity. This isolates a possible positive-tilt
+estimate (H+). The first unproved step is to bound its occupation
+term uniformly in $n$ for fixed $k$, not to assert clause independence.
+The state space is finite but enormous; the identity is not an efficient
+algorithm for computing these quantities.
+
+\paragraph{Clause omission, Efron--Stein and entropy methods.}
+The source omission arguments use independent ordinary clauses and
+root tests, together with polynomial bounds on collision events.
+Their stated control is untilted and second-order. A tilted version
+requires a new law and exponentially weighted exceptional-event
+estimates. P005 rules out completing this programme with the same
+two-sided target. Deterministic unit bounded differences for $T_n$
+are unavailable because a single replacement can postpone absorption
+arbitrarily far along an individual sequence.
+
+\paragraph{Discrete integral geometry, overlaps and spectral methods.}
+P003 gives exact cube-intersection and projection identities.
+Nonemptiness cannot be replaced by Euler characteristic or recovered
+from a face vector alone; the documented examples also defeat
+universal face-profile log-concavity. Richer overlap or projection
+profiles remain candidates, but require a concentration/correlation
+estimate tied to exact nonemptiness. No such estimate is proved here.
+
+\paragraph{Soft energies and partition functions.}
+For a fixed $m$-clause formula, let $U$ be the minimum violation count and
+$Z_\beta=\sum_x e^{-\beta H_F(x)}$.
+Replacing one clause changes $U$ by at most one and $\log Z_\beta$ by
+at most $\beta$, but
+$-\beta U\le\log Z_\beta\le n\log2-\beta U$.
+The missing bridge is resolution of the atom $U=0$. Concentration at
+the available proxy scales does not distinguish $U=0$ from $U=1$.
+
+\paragraph{Next discriminating step.}
+Investigate (H+) as an explicitly one-sided candidate, while testing
+which parts of the clause-omission exposure remain valid under the
+kernel in P006. For lower tails, any proposed all-confidence bound
+must include exceptional mass compatible with P005. Removing only
+the exhibited smallest cores is not known to suffice: larger
+obstructions remain. Conditioning or trimming would be a separately
+specified problem and require a transfer back to the original law.
+No such transfer, exceptional-tail upper bound, or positive-tilt
+bound is claimed here.
+
+\bigskip
+\section{Canonical obstruction proof: P005}
+\label{sec:canonical-obstruction}
+\claimstatus{Version 1, authored by analytic\_transfer and independently
+reviewed by discrete\_kinematics. The exact source hash and scoped
+review are recorded in the P005 claim record. No external or formal
+verification is claimed.}
+\input{../proofs/P005_rare_core_obstruction}
+
+\bigskip
+\section{Canonical tilted-process reduction: P006}
+\label{sec:canonical-tilt}
+\claimstatus{Version 1, authored by the coordinator and independently
+reviewed by analytic\_transfer. Exact identities and the conditional
+implication are reviewed; (H+) remains unproved. The P006 record
+contains the source hash and detailed review.}
+\input{../proofs/P006_tilted_continuation}
+
+\section{Handoff and interpretation limits}
+P005 settles the stated two-sided target negatively, using an exact
+event family and elementary inequalities. P006 supplies a correct
+tilted-law reduction rather than a proof of concentration. The first
+remaining concentration gap is (H+), or a precisely stated alternative
+that accounts for exceptional lower-tail mass. The clause model and
+the original failed target remain recorded unchanged.
+
+The source audit is separate from the internal reviews of P005/P006.
+No external theorem is labelled formally verified, no novelty is
+asserted, and no numerical fit or unsuccessful search is used as proof.
+No new scientific experiment was needed or performed. The E002 batch
+workflow samples independent fixed-density formulas. Its SAT probabilities
+estimate the survival function $\Pr(T_n>m)$, but it does not record coupled
+clause paths or individual hitting-time samples.
+
+This dated report supplements the preserved feasibility report; it does
+not rewrite that report's earlier proposed target as if it had never
+been considered. A successful build and visual inspection validate
+presentation only.
+
+\clearpage
+\phantomsection\addcontentsline{toc}{section}{References}
+\begingroup\small\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

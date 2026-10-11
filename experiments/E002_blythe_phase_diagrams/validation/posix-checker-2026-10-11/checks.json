@@ -1,0 +1,54 @@
+{
+  "scope": "Local macOS verification of POSIX feature-selection compiler fix; Linux/Blythe rebuild not performed here. User reports original Blythe setup succeeded with getc_unlocked declaration warning.",
+  "state": "completed",
+  "commands": [
+    {
+      "label": "compile-with-implicit-declarations-as-errors",
+      "argv": [
+        "cc",
+        "-std=c99",
+        "-D_POSIX_C_SOURCE=200809L",
+        "-Werror=implicit-function-declaration",
+        "-O2",
+        "code/vendor/drat-trim/drat-trim.c",
+        "-o",
+        "/Users/u1774790/Projects/ksat/experiments/E002_blythe_phase_diagrams/validation/posix-checker-2026-10-11/drat-trim-local"
+      ],
+      "returncode": 0
+    },
+    {
+      "label": "setup",
+      "argv": [
+        "bash",
+        "experiments/E002_blythe_phase_diagrams/slurm/setup_environment.sh"
+      ],
+      "returncode": 0
+    },
+    {
+      "label": "shell-mocks",
+      "argv": [
+        "/Users/u1774790/Projects/ksat/.venv/bin/python",
+        "experiments/E002_blythe_phase_diagrams/slurm/check_scripts.py"
+      ],
+      "returncode": 0
+    },
+    {
+      "label": "preflight",
+      "argv": [
+        "/Users/u1774790/Projects/ksat/.venv/bin/python",
+        "code/ksat_experiments.py",
+        "preflight",
+        "--drat-trim",
+        "/Users/u1774790/Projects/ksat/.venv/bin/drat-trim",
+        "--output",
+        "/Users/u1774790/Projects/ksat/experiments/E002_blythe_phase_diagrams/validation/posix-checker-2026-10-11/preflight.json"
+      ],
+      "returncode": 0
+    }
+  ],
+  "sha256": {
+    "code/vendor/drat-trim/drat-trim.c": "d834b649f437e091597f5347f259b9f681087f89ca0844d0cee250a1a1a0c2ee",
+    "experiments/E002_blythe_phase_diagrams/slurm/setup_environment.sh": "a448f3ae01e5f64595c926dea19c982f566270e5363ead5134d4b580e7cef0a6",
+    "experiments/E002_blythe_phase_diagrams/slurm/environment_guard.py": "a7707d75ede3b4e7c629db1cb70d65b3591360587fdcaf242df37a6e027935fd"
+  }
+}
