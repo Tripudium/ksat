@@ -1,0 +1,65 @@
+\Needspace{8\baselineskip}
+\section{Comparison with the supplied geometry papers}
+\label{sec:geometry}
+
+\subsection{What the analogy explains}
+The supplied paper \emph{Living on the edge} studies phase transitions for
+randomly oriented convex cones and convex recovery problems \citep{almt2014}.
+For a closed convex cone $C\subset\R^d$, its statistical dimension is
+\[
+ \delta(C)=\mathbb E\norm{\Pi_C(g)}^2,
+ \qquad g\sim N(0,I_d),
+\]
+which extends linear dimension. If $C,K$ are closed convex cones and $Q$ is
+a Haar-uniform orthogonal transformation, Theorem I gives, for
+$0<\eta<1$ and $a_\eta=\sqrt{8\log(4/\eta)}$,
+\begin{align*}
+ \delta(C)+\delta(K)\le d-a_\eta\sqrt d
+ &\ \Longrightarrow\ \mathbb P(C\cap QK\ne\{0\})\le\eta,\\
+ \delta(C)+\delta(K)\ge d+a_\eta\sqrt d
+ &\ \Longrightarrow\ \mathbb P(C\cap QK\ne\{0\})\ge1-\eta.
+\end{align*}
+This identifies both a transition location and a quantitative window through
+an intrinsic geometric parameter. The theorem is not merely an empirical
+fit to a transition curve.
+
+The supplied \emph{Sharp Phase Transitions in Euclidean Integral Geometry}
+develops concentration for weighted intrinsic-volume distributions of convex
+bodies and applies it to integral-geometric questions
+\citep[Theorems I--II and Section 4]{lotz2026}. Its central rotation and
+rigid-motion volumes play the role of location parameters. This suggests
+a productive conceptual comparison: identify a meaningful random variable,
+prove concentration, and then link its typical value to feasibility.
+
+Random $k$-SAT has a discrete version of a random covering problem. A clause
+forbids precisely $2^{n-k}$ vertices of the Boolean cube; UNSAT means the
+union of the forbidden subcubes covers every vertex. This perspective appears
+directly in Carenini's proof. But its subcubes are sparse, coordinate-aligned
+and strongly overlap. There is no Haar-random rotation, no given convex cone,
+and no established statistical-dimension formula for $\alpha_k$ in this
+comparison.
+
+\subsection{Why the obvious convex relaxation loses the transition}
+A clause with positive-variable set $P$ and negative-variable set $N$ can
+be written exactly on Boolean points as
+\[
+ \sum_{i\in P}x_i+\sum_{j\in N}(1-x_j)\ge1.
+\]
+It is tempting to replace the Boolean cube by its convex hull and apply a
+convex feasibility theorem. The following elementary observation shows why
+that first step cannot work.
+
+\input{../proofs/P001_clause_relaxation}
+
+The obstruction is specific to this relaxation. It does not rule out stronger
+lifts, semidefinite or moment constraints, or a geometric description that
+retains integrality. Such a program would first need a precise object, a
+proved link between its geometric event and Boolean satisfiability, and the
+correct distribution of orientations or constraints. Concentration of the
+wrong feasible set would not resolve the random-$k$-SAT problem.
+
+\noindent\textbf{Provenance.} Proposition~\ref{prop:lp} is an elementary
+expository observation, recorded as P001 with state \texttt{proof-written};
+it is not presented as novel or independently reviewed. The geometric
+comparison supplies a direction for further study, not a proved transfer
+of either supplied geometric theorem.

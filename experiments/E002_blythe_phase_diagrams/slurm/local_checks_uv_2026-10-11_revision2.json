@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-11",
+  "revision": 2,
+  "python": "3.12.8",
+  "command": "Temporary symlink to the existing .venv with spaces in its directory name; execute bin/python slurm/check_scripts.py through that path.",
+  "observed_sys_executable": "/var/folders/m0/lt8lthdj53v7lryp_p277_wh0000gp/T/ksat-interpreter-quote-q1qhzb6a/active Python environment with spaces/bin/python",
+  "interpreter_path_contains_spaces": true,
+  "environment_dependencies_modified": false,
+  "checks": {
+    "shell_syntax": "passed",
+    "mock_submission": "passed",
+    "default_dry_run": "passed",
+    "paths_with_spaces": "passed",
+    "mock_interpreter_and_command_paths_with_spaces": "passed",
+    "resource_validation": "passed",
+    "optional_module_selection": "passed",
+    "spooled_worker_preflight_and_chunk": "passed",
+    "stale_lock_rejected_before_submit_and_run": "passed",
+    "missing_record_and_changed_packages_rejected": "passed",
+    "changed_checker_rejected": "passed",
+    "real_slurm_calls": 0,
+    "solver_calls": 0,
+    "uv_calls": 0,
+    "limitations": "No setup sync/download, module-stack execution, or Blythe job was run."
+  },
+  "files_sha256": {
+    "common.sh": "9f42ecef25f85c5b07ee07550834246d790c5cad3e20d2c3dfe5ff1e5db41be5",
+    "check_scripts.py": "2658c658f107d7714e51c793e435f829e720e3a61f8d35376ca4ed6e63e840ba",
+    "run_array.sbatch": "61ea849555c3dd7c2e7094e4df5350577564b36ab9c59b2a88819518cce4106e",
+    "environment_guard.py": "7245ad6fb6a1a16c42a3b09bb3e91b16506c0192678afa6f3e6b51187ada57bf",
+    "submit_array.sh": "0086ab23b1f9df38d2eeff237d516a29f0ff7d371b3de00dab2256cc7c943db1",
+    "setup_environment.sh": "c9348f4126471b586cc83a8675c900cae7f7bcc107f9ad87cda45532b059fc61"
+  },
+  "preserved_records": [
+    "local_checks_uv_2026-10-11.json",
+    "local_checks.json",
+    "local_checks_initial.json"
+  ],
+  "review_change": "Replace unquotable Python shebangs in sbatch/srun test mocks with /bin/sh launchers using shlex-quoted interpreter and script paths."
+}

@@ -1,0 +1,15 @@
+[project]
+name = "ksat-research"
+version = "0.1.0"
+description = "Reproducible random k-SAT experiments and phase-transition research"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "python-sat==1.9.dev15",
+    "six==1.17.0",
+    "matplotlib==3.10.8",
+]
+
+[tool.uv]
+# This repository runs scripts directly; it is not a distributable Python package.
+package = false

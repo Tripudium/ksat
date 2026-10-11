@@ -1,0 +1,29 @@
+\section{Claims, arguments, and review}\label{sec:results}
+
+No project result is asserted in this starter report. The fragment below
+demonstrates how a canonical source in \texttt{proofs/} can be included without
+duplicating its argument. Replace it with real claim records as work develops.
+
+\input{../proofs/TEMPLATE}
+
+\subsection{Dependencies and proof audit}
+For each actual claim, record the precise statement, source version, dependencies,
+and review scope. Check that intermediate lemmas have sufficient hypotheses and
+that any extra assumptions remain visible in the final conclusion.
+
+\noindent\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+\textbf{State} & \textbf{Meaning} \\
+\midrule
+\texttt{draft} & The argument is being developed. \\
+\texttt{proof-written} & A complete argument is recorded; independent review is pending. \\
+\texttt{internally-reviewed} & A named independent reviewer has checked the recorded version and scope. \\
+\texttt{gap-found} & A specific unresolved step prevents the asserted proof. \\
+\texttt{superseded} & A later record replaces this version; preserve its history. \\
+\bottomrule
+\end{tabularx}
+
+\reportnote{Keep verification claims precise}{%
+  Internal mathematical review, verification of a cited source, software tests,
+  formal verification, and external refereeing are separate activities.
+  Record only the checks that were actually completed.}

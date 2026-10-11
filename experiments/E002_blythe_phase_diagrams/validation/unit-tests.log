@@ -1,0 +1,29 @@
+test_atomic_record_preserves_existing_bytes (test_ksat_experiments.EnsembleTests.test_atomic_record_preserves_existing_bytes) ... ok
+test_decimal_clause_count_is_exact (test_ksat_experiments.EnsembleTests.test_decimal_clause_count_is_exact) ... ok
+test_exact_rounding_unique_seeds_and_proper_clauses (test_ksat_experiments.EnsembleTests.test_exact_rounding_unique_seeds_and_proper_clauses) ... ok
+test_interruption_stops_supervised_process (test_ksat_experiments.EnsembleTests.test_interruption_stops_supervised_process) ... ok
+test_invalid_configs_and_integer_aliases_rejected (test_ksat_experiments.EnsembleTests.test_invalid_configs_and_integer_aliases_rejected) ... ok
+test_plan_refuses_overwrite_and_detects_tampering (test_ksat_experiments.EnsembleTests.test_plan_refuses_overwrite_and_detects_tampering) ... ok
+test_process_timeout_preserved (test_ksat_experiments.EnsembleTests.test_process_timeout_preserved) ... ok
+test_witness_checker_against_truth_tables (test_ksat_experiments.EnsembleTests.test_witness_checker_against_truth_tables) ... ok
+test_all_resolved_has_an_estimate (test_plot_ksat_phase.CollectorTests.test_all_resolved_has_an_estimate) ... ok
+test_censored_denominator_includes_unknown_and_unchecked (test_plot_ksat_phase.CollectorTests.test_censored_denominator_includes_unknown_and_unchecked) ... ok
+test_changed_witness_invalidates_verified_status (test_plot_ksat_phase.CollectorTests.test_changed_witness_invalidates_verified_status) ... ok
+test_conflicting_verified_certificates_become_unresolved_error (test_plot_ksat_phase.CollectorTests.test_conflicting_verified_certificates_become_unresolved_error) ... ok
+test_duplicate_attempts_are_one_sample_and_first_verified_wins (test_plot_ksat_phase.CollectorTests.test_duplicate_attempts_are_one_sample_and_first_verified_wins) ... ok
+test_duplicate_planned_ids_rejected (test_plot_ksat_phase.CollectorTests.test_duplicate_planned_ids_rejected) ... ok
+test_existing_output_is_never_modified (test_plot_ksat_phase.CollectorTests.test_existing_output_is_never_modified) ... ok
+test_inconsistent_input_hashes_are_errors (test_plot_ksat_phase.CollectorTests.test_inconsistent_input_hashes_are_errors) ... ok
+test_latest_completed_selected_if_no_verified_result (test_plot_ksat_phase.CollectorTests.test_latest_completed_selected_if_no_verified_result) ... ok
+test_malformed_attempt_is_an_error_not_an_extra_missing_sample (test_plot_ksat_phase.CollectorTests.test_malformed_attempt_is_an_error_not_an_extra_missing_sample) ... ok
+test_missing_requires_explicit_partial_and_remains_in_denominator (test_plot_ksat_phase.CollectorTests.test_missing_requires_explicit_partial_and_remains_in_denominator) ... ok
+test_removed_proof_invalidates_verified_status (test_plot_ksat_phase.CollectorTests.test_removed_proof_invalidates_verified_status) ... ok
+test_verified_status_requires_artifact_fields (test_plot_ksat_phase.CollectorTests.test_verified_status_requires_artifact_fields) ... ok
+test_wrong_identity_invalidates_an_attempt (test_plot_ksat_phase.CollectorTests.test_wrong_identity_invalidates_an_attempt) ... ok
+test_wrong_manifest_hash_invalidates_even_a_verified_outcome (test_plot_ksat_phase.CollectorTests.test_wrong_manifest_hash_invalidates_even_a_verified_outcome) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.321s
+
+OK
+{"run_dir": "/private/var/folders/m0/lt8lthdj53v7lryp_p277_wh0000gp/T/tmpppk_bedk/run", "instances": 12, "num_chunks": 3}

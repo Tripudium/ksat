@@ -1,0 +1,68 @@
+\documentclass[11pt,a4paper]{article}
+\input{metadata}
+\input{preamble}
+\input{macros}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+  \setlength{\parindent}{0pt}
+  \vspace*{16mm}
+  {\small\sffamily\color{teal}\ReportSeries\par}
+  \vspace{11mm}
+  {\Huge\bfseries\color{ink}\ReportTitle\par}
+  \vspace{7mm}
+  {\LARGE\color{ink}\ReportSubtitle\par}
+  \vspace{10mm}
+  {\color{teal}\noindent\rule{\textwidth}{0.7pt}\par}
+  \vspace{5mm}
+  {\large\ReportSummary\par}
+  \vfill
+  \reportnote{\ReportStatus}{\ReportScope}
+  \vspace{7mm}
+  \noindent\ReportAuthor\par
+  \noindent{\color{muted}\ReportDate}\par
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\tableofcontents
+\vspace{10mm}
+\reportnote{How to use this report}{%
+  Begin with the exact problem and source checks. Present only complete,
+  properly scoped arguments as proved results. Preserve unresolved steps and
+  experiment limitations. The project specification and registries remain the
+  working record; this report provides a coherent reading copy.}
+\noindent\textbf{Template convention.} Teal text in square brackets marks
+material to replace. The unfilled proposition is not a mathematical claim.
+No source has been cited or verified in this starter document.
+
+\clearpage
+\pagenumbering{arabic}
+\input{sections/01-problem}
+\input{sections/02-sources}
+\clearpage
+\input{sections/03-results}
+\clearpage
+\input{sections/04-attempts}
+\input{sections/05-experiments}
+\input{sections/06-next-steps}
+
+\ifreportbibliography
+  \clearpage
+  \phantomsection
+  \addcontentsline{toc}{section}{References}
+  \begingroup
+    \small\raggedright
+    \bibliographystyle{plainnat}
+    \bibliography{references}
+  \endgroup
+\else
+  \section*{References}
+  \phantomsection
+  \addcontentsline{toc}{section}{References}
+  No sources are cited in this template. Add verified entries to
+  \texttt{references.bib} and enable the bibliography in
+  \texttt{metadata.tex} when initializing the project.
+\fi
+\end{document}

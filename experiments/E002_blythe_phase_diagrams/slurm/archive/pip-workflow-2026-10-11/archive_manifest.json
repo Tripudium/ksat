@@ -1,0 +1,37 @@
+{
+  "reason": "Preserve original pip/venv delivery before uv migration.",
+  "files": [
+    {
+      "file": "README.md",
+      "sha256": "1eb3a76233b96319fb34cb96a6c3625e204450804274dacb952ce7d1e20f5735"
+    },
+    {
+      "file": "check_scripts.py",
+      "sha256": "1e8dc8f25734baa5c8a8c904b4fc3af23c5764d2dac5df02b864763d87ce703a"
+    },
+    {
+      "file": "common.sh",
+      "sha256": "cc26eae8a30e3e188c16bfbd48cd173716e2274be9a2c0dc540dda8239cc9b23"
+    },
+    {
+      "file": "local_checks.json",
+      "sha256": "b927b128a5054b59806fc1b9edfe31892ffe769f6ae2a80fc351e942250a4b7e"
+    },
+    {
+      "file": "local_checks_initial.json",
+      "sha256": "82b8c11d92bc49459b394a1c40ab49e7c2d341742b42ba7b144bdeaf51d7b987"
+    },
+    {
+      "file": "run_array.sbatch",
+      "sha256": "efd1af19963162d86831a34000b6c63311191360f287a8d5e8d8b30d56582d5c"
+    },
+    {
+      "file": "setup_environment.sh",
+      "sha256": "0827023160ceaf423664ba8bd7775b7e2b6dc3a04b158fe88aa019669b661926"
+    },
+    {
+      "file": "submit_array.sh",
+      "sha256": "0e975e92aa222bcf69477a6e817965d6bc394573a452e0f6ae9ee9b81db5ba78"
+    }
+  ]
+}

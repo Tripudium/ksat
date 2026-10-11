@@ -1,0 +1,336 @@
+\documentclass[11pt,a4paper]{article}
+\newcommand{\ReportTitle}{Discrete geometry and random k-SAT}
+\newcommand{\ReportSubtitle}{Proof ideas and computational feasibility}
+\newcommand{\ReportAuthor}{Research assessment prepared with Codex}
+\newcommand{\ReportShortTitle}{Discrete geometry and random k-SAT}
+\input{preamble}
+\input{macros}
+\begin{document}
+\begin{center}
+ {\Large\bfseries\color{ink}\ReportTitle\par}
+ \vspace{3mm}
+ {\large\ReportSubtitle\par}
+ \vspace{2mm}
+ {\small 11 October 2026\quad |\quad Initial feasibility assessment}
+\end{center}
+\reportnote{Assessment}{%
+  Useful finite-size SAT-probability diagrams are feasible on CPUs, starting
+  with modest random 3-SAT instances. A bounded local pilot supports
+  $n=50$--$200$ as a sensible initial range. On the mathematical side, exact
+  discrete intersection identities are available, but they do not yet yield
+  a transferred phase-transition theorem. The most promising analytic route
+  is a finite-tilt variance argument for the clause hitting time. This note
+  separates exact elementary results, proposed proof steps, measured costs,
+  and conditional budget estimates.}
+
+\section{Which parts of the geometric proofs can transfer?}
+We retain the project model: $n\ge k\ge2$, $m$ independent clauses, exactly
+$k$ distinct variables per clause, uniform variable sets and fair independent
+signs; whole clauses may repeat. Write $S_m\subseteq\{0,1\}^n$ for the
+solution set, and $T_n=\min\{m:S_m=\varnothing\}$ in the common clause
+sequence. The objective here is to find a useful discrete proof architecture
+and assess experiments, not to replace this ensemble by a convex, planted,
+or conditioned model.
+
+\paragraph{The Euclidean integral-geometry paper.}
+The proof in \citet[Sections 6--9]{lotz2026} has three separate ingredients:
+an exact Steiner mixture identity, concentration of a positive
+intrinsic-volume index, and a geometric identity that turns concentration
+into a transition. If $L(\theta)=\log\mathbb E e^{\theta I}$ for the
+rotation-volume index, Lemma 8.3 and Fact 8.4, pp.~225--227, give
+\[
+ L''(\theta)=\operatorname{Var}_{\mu_\theta}(J_\theta)
+              -(n-L'(\theta))\le L'(\theta).
+\]
+Here $\mu_\theta$ has a log-concave density proportional to
+$e^{-J_\theta}$, with a convex distance potential. Integrating this
+\emph{tilted} variance bound gives Theorem 6.1's Poisson-type concentration.
+The rigid-motion version uses a different potential and Nguyen's
+inverse-Hessian variance inequality, Fact 9.5, p.~231. The generating-function
+argument is reusable for discrete random variables; the convexity and
+mixture identities furnishing its hypothesis require a new justification.
+
+\paragraph{The conic paper.}
+In \citet[Fact 5.7, Theorems 6.1 and 7.1]{almt2014}, a spherical Steiner
+identity and exact conic kinematics connect a positive coefficient
+distribution to intersection probabilities. Appendix E.3, pp.~290--293,
+uses Gaussian logarithmic Sobolev concentration and the self-bounding identity
+\[
+ F(g)=\|\Pi_C(g)\|^2-\delta(C),\qquad
+ \|\nabla F(g)\|^2=4\|\Pi_C(g)\|^2.
+\]
+A Boolean product-space entropy inequality could replace the analytic tool,
+but it needs a corresponding difference/influence bound for a SAT-relevant
+observable. The elementary clause LP is unsuitable: its all-one-half point
+is feasible even for UNSAT formulas (P001 in the survey).
+
+\section{Discrete integral geometry: exact formulas and their limits}
+Use signed coordinate permutations as the finite analogue of random
+orientations. For $S\subseteq Q_n=\{0,1\}^n$, let $f_j(S)$ count coordinate
+$j$-faces all of whose vertices lie in $S$. With
+$N_j=2^{n-j}\binom nj$ and uniform signed permutation $g$, an exact identity is
+\begin{equation}
+ \mathbb E_g f_j(S\cap gU)=\frac{f_j(S)f_j(U)}{N_j}.
+ \label{eq:memo-kinematic}
+\end{equation}
+It follows from transitivity on $j$-faces. Appendix~\ref{app:cubical}
+contains the complete proof, an Euler-characteristic version, and exact
+expected face counts under successive random clauses (record P003).
+
+This gives a genuine discrete averaging formula, but two obstructions
+prevent a direct substitution into the convex proof:
+\begin{itemize}
+ \item The proper 3-CNF $(x\lor y\lor z)\land(\neg x\lor\neg y\lor\neg z)$
+ has six solutions forming a six-cycle. Its cubical Euler characteristic is
+ zero, although the formula is SAT.
+ \item $S=\{000,110\}$ and $U=\{000,111\}$ have identical face vectors,
+ yet $\mathbb P(S\cap gS\ne\varnothing)=5/12$ and
+ $\mathbb P(S\cap gU\ne\varnothing)=1/2$. Face vectors alone do not determine
+ intersection probability. They also need not be log-concave: a proper
+ 6-CNF example in the appendix has face vector $(26,4,1,0,\ldots)$.
+\end{itemize}
+These are counterexamples to particular transfer steps, not to the existence
+of a useful alternative invariant or a typical-instance result for fixed $k$.
+
+Two richer descriptions retain a direct link to nonemptiness. First, a
+uniform codimension-$r$ coordinate face $H$ satisfies the discrete
+Crofton-type identity
+\begin{equation}
+ \mathbb P(S\cap H\ne\varnothing)
+ =\frac{\sum_{|I|=r}|\pi_I S|}{2^r\binom nr},
+ \label{eq:memo-crofton}
+\end{equation}
+where $\pi_I S$ is the set of extendable partial assignments on coordinates
+$I$. Second, if $A_d(S)$ counts ordered pairs of solutions at Hamming
+distance $d$ and $Z=|S\cap gU|$, then
+\begin{equation}
+ \mathbb E Z^2=\sum_{d=0}^n
+       \frac{A_d(S)A_d(U)}{2^n\binom nd},\qquad
+ \mathbb P(Z>0)\ge\frac{(\mathbb E Z)^2}{\mathbb E Z^2}
+ \label{eq:memo-overlap}
+\end{equation}
+when $\mathbb E Z>0$. Both are proved in P003. The first gap is now explicit:
+no corresponding simple intersection product rule has been established here
+for projection counts, while the second moment needs control of overlap
+correlations. Fourier levels provide a
+positive representation of the overlap data, familiar from coding theory
+\citep[Section 2.1]{navon2007}, but positivity alone gives no sharp SAT bound.
+
+\section{The analytic route to prioritize}
+The clause process already supplies the exact probability bridge
+$p_{n,k}(m)=\mathbb P(T_n>m)$. It also has a useful geometric state statistic.
+If a nonempty solution set has $b$ globally forced coordinates, a fresh
+proper random $k$-clause eliminates every solution with probability
+\begin{equation}
+ h(S)=\frac{\binom bk}{2^k\binom nk}.
+ \label{eq:memo-hazard}
+\end{equation}
+Indeed, all selected coordinates must be constant on $S$, with their signs
+opposed to those constants. This is already equation (2.5), p.~5, of
+\citet{carenini2026}; it is not a new discovery. That paper's expected
+remaining lifetime $r(F)$, defined using a fresh independent continuation
+and set to zero for UNSAT $F$, also obeys
+$\mathbb E_C r(F\land C)=r(F)-1$ for SAT $F$ (equation (2.4)). These identities
+make clause deletion, remaining lifetime and forced coordinates natural
+candidates for a discrete replacement of the geometric differential identity.
+
+\paragraph{A precise research target, not a theorem of this note.}
+For fixed $k\ge3$, investigate whether the source methods can establish
+constants $C_k,b_k>0$, independent of $n$, such that
+\begin{equation}
+ \log\mathbb E e^{\theta(T_n-\mathbb E T_n)}
+ \le \frac{C_k n\theta^2}{2(1-b_k|\theta|)},\qquad
+ |\theta|<1/b_k< -\log(1-2^{-k}).
+ \label{eq:target-cgf}
+\end{equation}
+Such a finite-tilt estimate would imply exponential tails and an
+$O_k(\sqrt n)$ central clause window. The first unproved step is a suitable
+conditional-variance or deletion/influence inequality under the tilted law.
+Independent-clause tensorization alone does not establish it: tilting by
+$T_n$, or conditioning on SAT, introduces dependence. Clause replacement
+can delay the hitting time arbitrarily far along an individual sequence,
+so a deterministic unit-Lipschitz argument is unavailable.
+
+The restriction on tilts is essential. P004, proved in
+Appendix~\ref{app:analytic}, shows that the mgf of $T_n$ is finite precisely
+for $\theta< -\log(1-2^{-k})$. At $n=k=2$, the four-coupon example even gives
+$\operatorname{Var}(T_n)=130/9>25/3=\mathbb E T_n$.
+Thus the rotation-volume Poisson inequality cannot be copied verbatim.
+Moreover, 2-SAT has an $n^{2/3}$ clause window \citep[Theorem 1.1]{bbckw2001},
+so it is a useful control rather than evidence for an all-$k$ square-root law.
+Recent retained manuscripts already claim linear variance for $k\ge3$
+\citep{oaVariance,oaVariance3}. The proposal is to seek a structural geometric
+argument or stronger tails, not to claim that the variance order is new.
+Those manuscripts' full proofs have not been audited here.
+
+\paragraph{A secondary route and its limitation.}
+Let $H_F(x)$ count violated clauses and set
+$Z_\beta(F)=\sum_x e^{-\beta H_F(x)}$, for $\beta>0$. Replacing one clause
+changes $\log Z_\beta$ by at most $\beta$ and $\min_xH_F(x)$ by at most one,
+so product-space concentration applies to these observables. However,
+\[
+ -\beta\min_xH_F(x)\le\log Z_\beta(F)
+ \le n\log2-\beta\min_xH_F(x).
+\]
+The crude entropy error requires $\beta$ of order $n$ to resolve a unit
+ground-state gap, while the elementary concentration scale grows with
+$\beta$. Concentration of the energy therefore does not by itself control
+its atom at zero. A useful discrete Poincare or entropy inequality for the
+assignment measure needs additional structure, especially near the transition.
+
+\section{What phase diagrams should measure}
+The ALMT experiments use repeated trials to estimate success probabilities;
+Figures 1 and 5 and Appendix A.1--A.3 describe both the images and their
+sampling \citep{almt2014}. The $d=100$ compressed-sensing design has
+$100\times100\times50=500{,}000$ convex solves. A separate low-rank panel
+required nearly a month on a desktop. These are methodological examples,
+not SAT runtime estimates.
+
+For fixed $k$, put $n$ on the horizontal axis and $m/n$ on the vertical axis.
+Colour indicates the SAT probability $p_{n,k}(m)$. Overlay estimated 5\%,
+50\% and 95\% contours, and provide a separate unknown/timeout panel.
+Plot the clause-count window and its density-normalized version. Solver
+success within a time limit is a different observable. A fitted curve is
+not a geometric theorem predicting the k-SAT boundary.
+
+\paragraph{Direct grid.}
+A proposed first 3-SAT study uses about eight sizes, 31 densities and
+100 independent formulas per cell: $24{,}800$ runs. Start in the
+$50$--$200$ range, and admit $250$ only after a longer calibration. A broad
+coarse density range such as $3.5$--$5.0$ can locate the transition before
+refinement. Use fresh samples for the final refined grid, and retain the
+actual integer $m$. At probability one half, 100 trials give an approximate
+95\% pointwise uncertainty of $\pm0.10$; 400 give about $\pm0.05$.
+These are not simultaneous confidence bands over the image. Add a scalable
+2-SAT control; pilot 4-SAT separately at smaller sizes.
+
+\paragraph{Independent coupled paths.}
+An alternative samples independent clause sequences for each $n$ and
+estimates their $T_n$. Every completed path supplies the entire survival
+curve, so prefixes should not be counted as independent repetitions. A
+certified SAT prefix at $L$ and UNSAT prefix at $U$ give $T_n\in(L,U]$;
+bisection needs at most $\lceil\log_2(U-L)\rceil$ additional decisive queries.
+Unknown queries do not determine a side of the bracket. Incremental solving
+can reuse work; bisection requires fresh solvers or correct activation
+assumptions, whose overhead must be measured \citep{pysatAPI}.
+
+For $R$ fully classified independent paths at one $n$, the one-sample
+DKW bound gives a uniform-in-$m$ 95\% absolute error
+$\sqrt{\log(40)/(2R)}$; $R=738$ suffices for $0.05$
+\citep[Section 1, equation (1)]{wei2011}. More rows require a simultaneous
+adjustment. With $S$ verified SAT and $U$ verified UNSAT outcomes among $R$
+fixed-cell instances, censoring alone gives $[S/R,1-U/R]$ for the sample's
+SAT fraction; population sampling uncertainty is additional. Preserve
+timeouts, verify assignments, and include UNSAT proof-checking cost in a
+final certified study.
+
+\section{Computational complexity and the measured pilot}
+Generating a formula and checking a witness cost $O(km)$; packed 32-bit
+literal indices alone need about $4km$ bytes. Complete 2-SAT decision is
+$O(n+m)$. For $k\ge3$, exhaustive decision costs $O(km2^n)$ and practical
+complete solvers have no applicable polynomial worst-case guarantee.
+The cost near the threshold depends strongly on $k$, $n$, density and whether
+the answer is SAT or UNSAT. Large-$k$ near-threshold inputs already have
+$m$ of order $2^k n$. Enumerating full solution/face profiles is substantially
+more expensive than deciding SAT; reserve it for a separate small-$n$
+exploration, initially around $n=12$--$18$, subject to a separate pilot.
+
+\paragraph{E001: a bounded runtime calibration.}
+The delegated agent ran 60 proper random 3-CNF instances on an Apple M3,
+using CaDiCaL 1.9.5 through PySAT 1.9.dev15. Each size had five instances
+at each of densities $4.2$ and $4.3$. The per-process cutoff was 0.75 seconds,
+including Python startup, input parsing and initialization. The total was
+30.89 seconds elapsed and 29.35 child CPU seconds. Inputs, seeds, versions,
+script hashes, outputs and witnesses are retained in E001.
+\begin{center}\small
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+$n$ & Checked SAT & UNSAT reports & Unknown & Mean process seconds\\
+\midrule
+100 & 6 & 4 & 0 & 0.074\\
+200 & 5 & 5 & 0 & 0.257\\
+300 & 4 & 0 & 6 & 0.620\\
+400 & 5 & 0 & 5 & 0.612\\
+600 & 1 & 0 & 9 & 0.747\\
+800 & 0 & 0 & 10 & 0.754\\
+\bottomrule
+\end{tabular}
+\end{center}
+All 21 SAT witnesses were checked; the nine UNSAT reports have no checked
+proofs. All 30 timeouts remain unknown. Means include capped runs, so they
+are not estimates of uncensored completion times. This pilot supports a
+modest initial range; it does not identify a largest feasible $n$, estimate
+a transition curve, or measure proof-checking overhead. Five instances per
+cell are inadequate for those purposes.
+
+\paragraph{Conditional budgets.}
+For about 25,000 runs with mean total processing time $t$ seconds, the work
+is $25{,}000t/3600$ core-hours. Include generation, solving, cutoff handling
+and certification in $t$ when measuring the target system.
+\begin{center}\small
+\begin{tabular}{@{}rrr@{}}
+\toprule
+Mean $t$ & Core-hours & Ideal elapsed time, 64 CPU workers\\
+\midrule
+0.1 s & 0.69 & 39 s\\
+1 s & 6.94 & 6.5 min\\
+10 s & 69.4 & 1.09 h\\
+60 s & 416.7 & 6.51 h\\
+\bottomrule
+\end{tabular}
+\end{center}
+These are arithmetic scenarios, not forecasts extrapolated from the short
+pilot. Parallel overhead, stragglers and queue time increase elapsed time.
+Batch small instances and distribute independent single-core solves before
+trying to accelerate each individual hard formula with many cores.
+
+\paragraph{CPU cluster first; GPU experiments later.}
+The saved SCRTP hardware documentation lists 168-core AMD Genoa Blythe
+nodes with 768 GB RAM and GPU nodes with three L40 48 GB devices
+\citep{scrtpHardware}. This makes independent CPU batches a natural design.
+These are snapshot facts, not a live resource allocation or benchmark;
+site limits and current availability must be checked when preparing jobs.
+GPU inprocessing and batched local search have published evidence
+\citep{osama2024,cen2025}, but do not establish an end-to-end advantage for
+complete near-threshold random-CNF classification. A failed GPU search
+does not prove UNSAT. The first diagram should use CPU solving and the
+chosen certificate policy; GPU witness-search success can be studied in a
+separate panel. No SLURM scripts or cluster jobs were created in this assessment.
+
+\section{Next discriminating steps and status}
+For mathematics, prioritize the finite-tilt clause-process route, with
+\eqref{eq:memo-hazard} as its exact geometric bridge. In parallel, compare
+projection and overlap statistics at exhaustively accessible sizes. The
+critical task is an invariant with both a valid nonemptiness relation and
+a strong, model-specific concentration inequality. P003 excludes several
+naive face-vector substitutions; P004 fixes the possible tilt domain.
+Neither rules out a more suitable discrete geometry.
+
+For computation, the feasibility answer is yes for modest CPU diagrams.
+The next practical step is a longer pilot on the intended SCRTP node,
+including proof generation/checking, before choosing the upper $n$ range,
+repetition count and batch sizes. The supplied documentation can then guide
+SLURM scripts. No GPU purchase or large allocation is needed to establish
+the first useful diagram.
+
+P003 and P004 are elementary results with separate internal reviews by
+agents other than their authors, at the hashes recorded in their review
+files. This is not external refereeing or formal verification. The transfer
+programme is A001 and remains proposed; E001 is a completed, limited runtime
+calibration. No new threshold theorem or validated scaling law is claimed.
+
+\clearpage
+\appendix
+\section{Exact discrete identities and counterexamples (P003)}
+\label{app:cubical}
+\input{../proofs/P003_discrete_kinematics}
+\section{Hitting-time concentration obstructions (P004)}
+\label{app:analytic}
+\input{../proofs/P004_hitting_time_tails}
+\clearpage
+\phantomsection\addcontentsline{toc}{section}{References}
+\begingroup\small\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

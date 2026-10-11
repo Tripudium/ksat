@@ -1,0 +1,1 @@
+{"shell_syntax": "passed", "mock_submission": "passed", "default_dry_run": "passed", "paths_with_spaces": "passed", "resource_validation": "passed", "module_selection_guard": "passed", "spooled_worker_preflight_and_chunk": "passed", "real_slurm_calls": 0, "solver_calls": 0, "limitations": "No setup installation, module-stack execution, or Blythe job was run."}

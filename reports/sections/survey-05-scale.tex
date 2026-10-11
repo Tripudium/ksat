@@ -1,0 +1,110 @@
+\section{How large is practically feasible?}
+\label{sec:scale}
+
+A useful specification is $(k,n,\alpha,\text{ensemble},\text{task},
+\text{time and hardware budget},\text{success target})$.
+``A million variables'' alone says little. A sparse satisfiable formula
+with a readily discoverable assignment and a near-critical UNSAT formula
+can have radically different costs. General industrial SAT results also
+cannot be read as uniform-random-$3$-SAT capacity estimates.
+
+\subsection{Concrete evidence, including failures}
+The historical Configurable SAT Solver Challenge used mixed random $3$-CNF
+instances with 350 variables and 1493 clauses, and a satisfiable family with
+1000 variables and 4260 clauses \citep[Appendix A.3]{hutter2017}. These
+sizes indicate how small challenging complete-decision benchmarks can be;
+they are not present-day hardware ceilings.
+
+An especially informative comparison is the deliberately difficult
+\texttt{Large\_Threshold} benchmark in \citet[Table 2]{luo2014}.
+Table~\ref{tab:hardinstances} preserves the low success rates rather than
+reporting only the largest instance size attempted.
+\begin{table}[htbp]
+\centering\small
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+$k$ & $n$ & Density & probSAT solved & DCCASat solved \\
+\midrule
+3 & 15\,000 & 4.267 & 2/100 & 6/100 \\
+4 & 2\,500 & 9.931 & 5/100 & 5/100 \\
+5 & 600 & 21.117 & 2/100 & 9/100 \\
+6 & 300 & 43.37 & 0/100 & 11/100 \\
+7 & 150 & 87.79 & 28/100 & 43/100 \\
+\bottomrule
+\end{tabular}
+\caption{Published 2014 local-search measurements: one run per instance,
+5000-second cutoff, GNU/Linux on an Intel Core i7 at 2.4 GHz
+(two cores reported in the setup). These are counts of witnesses found,
+not proofs that the remaining formulas are UNSAT. The original benchmark
+does not establish that every generated instance is satisfiable.}
+\label{tab:hardinstances}
+\end{table}
+
+In contrast, \citet[Figures 3--5]{marino2016} report BSP solutions for
+random $3$-SAT with $n=10^6$ at densities close to, but below, the predicted
+transition, including analysis at $\alpha=4.262$. This is evidence that
+million-variable \emph{search} can be feasible with a specialized method.
+It is not a certificate of efficient complete decision at the transition.
+The extrapolated value near $4.268$ in that paper is obtained by fitting
+residual complexity; it must not be quoted as successful solving of
+million-variable instances at that density. The cited figures also do not
+provide a matched wall-clock and hardware comparison with Table~\ref{tab:hardinstances}.
+
+The useful planning conclusion is therefore conditional: expect useful
+near-critical complete-solver studies to begin at hundreds of variables;
+thousands may already demand substantial budgets. For witness search below
+the transition, thousands to hundreds of thousands are natural scales to
+test, and a million is demonstrated in specialized published experiments.
+These are starting expectations, not a machine-independent boundary or a
+promise that every density in those ranges is tractable. Larger $k$ can be
+hard at much smaller $n$, as the table illustrates.
+
+\subsection{Input size and memory also constrain experiments}
+There are $km=k\alpha n$ literal occurrences. Storing only one 32-bit signed
+index per occurrence costs about $4k\alpha n$ bytes. At representative
+densities this gives:
+\begin{center}\small
+\begin{tabular}{@{}rrrr@{}}
+\toprule
+$k$ & $n$ & $\alpha$ & Literal indices alone \\
+\midrule
+3 & $10^6$ & 4.267 & 51.2 MB \\
+5 & $10^5$ & 21.117 & 42.2 MB \\
+10 & $10^5$ & 708.936 & 2.84 GB \\
+\bottomrule
+\end{tabular}
+\end{center}
+These are arithmetic estimates in decimal units, not memory measurements.
+Clause offsets, watches, occurrence lists, learned clauses, proof logs and
+batched GPU states add overhead, sometimes substantial. Near the threshold,
+$m$ grows exponentially with $k$; memory and input generation can become
+limiting before the number of variables looks large.
+
+\subsection{A reproducible first feasibility study}
+The following is a \emph{proposed} pilot, not an experiment performed here.
+For uniform random $3$-SAT, use densities $3.5,4.0,4.2,4.25,4.267,4.30,4.50$.
+The values around $4.267$ are empirical landmarks, not a known exact
+finite-$n$ threshold. For complete solving, begin with
+$n=100,200,400,800$ and extend to $1600$ and beyond only after checking the
+timeout rate. For witness search at the less critical densities, try
+$n=10^3,10^4,10^5$ before committing to $10^6$.
+
+Use at least 100 independently generated instances per cell if resources
+permit, initially with a 60-second cutoff; repeat selected cells at 300 or
+3600 seconds. These are budget choices, not asserted requirements for
+success. Record generation seeds, solver versions, parameters, CPU cores,
+RAM, GPU model and precision. Retain each raw result as SAT with a checked
+witness, UNSAT with the stated checking status, or unknown. Report success
+fractions and runtime distributions, including censored runs, rather than
+only the median runtime among successes.
+
+For $N$ sampled formulas, $S$ verified SAT and $U$ verified UNSAT outputs give
+an empirical SAT-fraction interval
+\begin{equation}
+ [S/N,\;1-U/N].
+ \label{eq:censor}
+\end{equation}
+This accounts for unknown answers in that sample; estimating the ensemble
+probability additionally needs sampling uncertainty. Treating all timeouts
+as UNSAT biases a threshold estimate downward. Successful-only datasets or
+planted instances answer a different question.

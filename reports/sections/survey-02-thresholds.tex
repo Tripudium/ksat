@@ -1,0 +1,216 @@
+\section{What is known about satisfiability}
+\label{sec:thresholds}
+
+\subsection{Elementary satisfiability and first-moment bounds}
+There is a sharp guarantee that applies to every proper $k$-CNF, whether
+random or deterministic; see \citet[Theorem A, p.~4]{bangjensen2023}.
+\input{../proofs/P002_few_clauses}
+
+For example, when $k=2$, every formula with $m\le3$ is SAT, including
+$n=m=k=2$. The first possible UNSAT example has four clauses:
+\[
+ (x\lor y)\land(x\lor\neg y)\land(\neg x\lor y)
+ \land(\neg x\lor\neg y).
+\]
+The requirement of exactly $k$ distinct variables per clause matters.
+If ``$k$-SAT'' permits clauses of \emph{at most} $k$ literals, then
+$(x)\land(\neg x)$ is already an UNSAT instance with two clauses.
+
+For fixed $k$ and positive density $m/n\to\alpha$, the condition $m<2^k$
+eventually ceases to apply. To study this regime, return to the random model
+and let $Z$ be its number of satisfying assignments. Every fixed assignment
+satisfies a random clause with probability $1-2^{-k}$, so independence gives
+\begin{equation}
+ \mathbb E Z=2^n(1-2^{-k})^m,
+ \qquad \mathbb P(F_k(n,m)\text{ is SAT})\le \mathbb E Z.
+ \label{eq:firstmoment}
+\end{equation}
+Consequently a fixed density
+\begin{equation}
+ \alpha>\alpha_{\mathrm{FM}}(k):=
+ \frac{-\log2}{\log(1-2^{-k})}
+ =2^k\log2-\frac{\log2}{2}+O(2^{-k})
+ \label{eq:fmthreshold}
+\end{equation}
+is UNSAT whp. The finite-$n$ probability bound in
+\eqref{eq:firstmoment} is explicit; it is still a distributional statement,
+not a refutation of a sampled formula. A large expectation does not prove
+satisfiability: correlations between assignments can make the second moment
+large and concentrate solutions in an atypical minority of formulas.
+
+\subsection{Four different threshold questions}
+Write $p_{n,k}(m)=\mathbb P(F_k(n,m)\text{ is SAT})$, a decreasing function
+of $m$. A \emph{sharp threshold} means that its change from near one to near
+zero occurs over $o(n)$ clauses. A \emph{limiting threshold} additionally
+identifies a constant $\alpha_k$ such that
+\begin{equation}
+ \lim_{n\to\infty}p_{n,k}(\lfloor\alpha n\rfloor)=
+ \begin{cases}1,&\alpha<\alpha_k,\\0,&\alpha>\alpha_k.\end{cases}
+ \label{eq:threshold}
+\end{equation}
+Knowing that this constant exists, calculating its value, and bounding the
+finite-size transition window are three further, distinct achievements.
+Equation~\eqref{eq:threshold} makes no assertion at $\alpha=\alpha_k$.
+
+For $k=2$, the threshold is exactly $1$. The critical scale is
+$m=n+\lambda n^{2/3}$, so the clause window has order $n^{2/3}$ and the
+density window order $n^{-1/3}$; see
+\citet[Theorem 1.1]{bbckw2001}. Implication graphs also give a linear-time
+algorithm, including construction of a witness or detection of a contradiction.
+Thus a sharp probabilistic transition need not imply computational hardness.
+
+For fixed $k\ge3$, the main milestones are as follows.
+\begin{itemize}
+\item \citet[Theorem 1.3]{friedgut1999} proved sharpness about a
+size-dependent location. That theorem did not prove convergence of the location.
+\item \citet[Theorem 1]{dss2022} identified the limiting threshold by the
+cavity prediction for all sufficiently large fixed $k$. The unspecified
+large-$k$ condition cannot be replaced by $k\ge3$.
+\item \citet[Theorem 1.1]{cop2016} proved the large-$k$ asymptotic formula
+\begin{equation}
+ \alpha_k=2^k\log2-\frac{1+\log2}{2}+o_k(1).
+ \label{eq:largek}
+\end{equation}
+Here the asymptotics concern $k\to\infty$, after the fixed-$k$ threshold
+problem. Substituting $k=3$ into the leading terms is not a theorem about
+$\alpha_3$.
+\item The supplied October 2026 preprint by
+\citet[Theorem 1.1 and Corollary 1.2]{carenini2026} states
+\eqref{eq:threshold} for \emph{every} fixed $k\ge3$, via a polynomially
+sublinear transition window. This resolves the existence question in the
+satisfiability conjecture as stated in that paper; it neither evaluates all
+$\alpha_k$ nor gives an efficient search algorithm.
+\end{itemize}
+
+\subsection{The supplied recent result: precise scope}
+In Carenini's proper-clause model, which is our model, the formulas for
+different clause counts are constructed from one shared random sequence.
+Fix $n\ge k$ and sample independent clauses $C_1,C_2,\ldots$, each uniformly
+distributed over the $2^k\binom nk$ proper $k$-clauses. Define
+\begin{equation}
+ F_k(n,0)=\mathrm{True},\qquad
+ F_k(n,m)=C_1\land\cdots\land C_m\quad(m\ge1).
+ \label{eq:clauseprocess}
+\end{equation}
+Thus $F_k(n,m+1)=F_k(n,m)\land C_{m+1}$: all existing clauses are kept
+and one new clause is added. For every fixed $m$, the formula has the usual
+random $k$-SAT distribution. The term \emph{coupling} specifies their joint
+construction on a common probability space. The clauses $C_i$ are independent;
+the formulas at different clause counts are dependent because they share
+their earlier clauses. Both $n$ and $k$ stay fixed during this process.
+
+Adding clauses can only remove satisfying assignments. Consequently, once
+the formula becomes UNSAT, it remains UNSAT. Define the first such clause
+count by
+\begin{equation}
+ T_n=\min\{m\ge0:F_k(n,m)\text{ is UNSAT}\}.
+ \label{eq:hittingtime}
+\end{equation}
+This is a random switching time: different clause sequences can give
+different values. Monotonicity gives, for every integer $m\ge0$,
+\begin{equation}
+ \{T_n>m\}=\{F_k(n,m)\text{ is SAT}\},\qquad
+ p_{n,k}(m)=\mathbb P(T_n>m).
+ \label{eq:hittingprobability}
+\end{equation}
+It is finite almost surely, since \eqref{eq:firstmoment} implies
+$\mathbb P(T_n>m)\le2^n(1-2^{-k})^m\to0$ as $m\to\infty$ with $n,k$ fixed.
+This is the coupling used immediately before Theorem~1.3 of
+\citet[p.~2]{carenini2026}; it connects fluctuations of $T_n$ with the
+satisfiability transition.
+
+For fixed $k\ge3$ and $0<\eta<1/2$, set
+$q_a(n)=\min\{m:p_{n,k}(m)\le a\}$ and
+$W_\eta(n)=q_\eta(n)-q_{1-\eta}(n)$.
+The preprint gives
+\begin{equation}
+ \operatorname{Var}(T_n)=O_k(n^{1+2/k}),\qquad
+ W_\eta(n)=O_{k,\eta}(n^{1/2+1/k}).
+ \label{eq:carenini}
+\end{equation}
+Thus the density window is $O_{k,\eta}(n^{-1/2+1/k})$; for $k=3$ these
+exponents are $5/6$ in clause count and $-1/6$ in density. The hidden
+constants depend on $k$ and $\eta$. This does not give a usable sample-size
+prescription for a simulation at, say, $n=10^4$.
+
+The geometric object in this proof is a random covering of the Boolean cube:
+each clause excludes a codimension-$k$ subcube. The proof relates a cover-time
+variance bound to the remaining lifetime of the last nonempty solution set,
+then controls that lifetime using forced variables and shorter-clause
+comparisons. A convergence criterion for the threshold location completes
+the argument; sharpness alone would not suffice. The statement and this proof
+structure were checked against the supplied text, but the full argument has
+not received an independent review within this project. The source is ECCC
+TR26-229, posted 5 October 2026, and is treated here as a recent preprint.
+
+Its predecessor \citep{careniniWindow} gives an $O(n/\log n)$ window.
+The stronger polynomial saving in \eqref{eq:carenini} is material to the
+limiting-location conclusion, not merely a change in presentation.
+
+Wilson's published lower bound gives $W_\eta(n)=\Omega_{k,\eta}(\sqrt n)$
+for fixed $k\ge3$ \citep[Corollary 4]{wilson2002}. Stronger, very recent
+manuscripts in the OpenAI mathematics collection claim
+$\operatorname{Var}(T_n)=\Theta_k(n)$, for $k\ge4$ and separately $k=3$,
+and hence a central clause window of order $\sqrt n$
+\citep[Theorem 1.1 in each]{oaVariance,oaVariance3}.
+These are separately identified manuscript claims, not a claim of completed
+refereeing or formal verification by this survey. They concern fluctuations
+about a finite-size center; a width bound alone does not bound the displacement
+of that center from $\alpha_k n$ at the same scale.
+
+\subsection{Numerical locations and their evidence}
+\begin{table}[htbp]
+\centering\small
+\begin{tabularx}{\linewidth}{@{}r r Y@{}}
+\toprule
+$k$ & Location & Interpretation \\
+\midrule
+2 & $1$ & Exact threshold; published theorem. \\
+3 & $\approx4.26675$ & Cavity/population-dynamics prediction, not an exact theorem. \\
+4 & $\approx9.931$ & Cavity prediction. \\
+5 & $\approx21.117$ & Cavity prediction. \\
+6 & $\approx43.37$ & Cavity prediction. \\
+7 & $\approx87.79$ & Cavity prediction. \\
+10 & $\approx708.936$ & Cavity prediction. \\
+\bottomrule
+\end{tabularx}
+\caption{Useful density landmarks from \citet[Table 1 and Eq.~(43)]{mmz2006},
+except for the exact $2$-SAT value. The displayed digits are numerical
+predictions, not rigorous error intervals for small fixed $k$.}
+\label{tab:locations}
+\end{table}
+
+For $3$-SAT, the longstanding published bounds are
+$3.52\le\alpha_3\le4.4898$
+\citep[Section 5]{kkl2006}\citep[Theorem 1]{diaz2008}.
+The constructive lower-bound analysis first supplies a success probability
+bounded away from zero; threshold sharpness yields whp existence below the
+bound. It should not be paraphrased as a whp guarantee for that algorithm on
+every typical formula. The numerical differential-equation checks underlying
+the lower bound were not reproduced for this survey.
+
+A preprint by \citet[Theorem 1.1]{vorobyev2026}, posted 6 October 2026,
+states that density $4.268$ is UNSAT whp, improving the upper bound if the
+argument is accepted. The author supplies a claimed Lean formalization; we
+have not built it or checked its correspondence with the probabilistic model.
+Even $\alpha_3\le4.268$ would not prove the cavity prediction, nor provide
+an UNSAT certificate for a particular formula near that density.
+
+A further September-dated manuscript claims computability of $\alpha_3$:
+a finite machine produces a rational approximation with error $2^{-r}$ for
+any requested integer $r\ge1$ \citep[Theorem 1.1]{oaComputing}. It supplies
+no efficiency bound and does not solve an input SAT instance. It is recorded
+as a recent manuscript claim alongside the sharper-window claims.
+
+\subsection{Translating clause models}
+Some cited papers sample literal positions independently, allowing repeated
+variables within a clause, or use a Poisson clause count. For fixed $k$ and
+$m=\Theta(n)$, the probability that \emph{all} clauses have distinct underlying
+variables stays bounded away from zero: a clause is proper with probability
+$(n)_k/n^k=1-\binom{k}{2}/n+O_k(n^{-2})$. Conditioning on this event
+therefore transfers a whp result to our model, though it is not a total-variation
+error tending to zero. Poisson and fixed counts can be sandwiched with a fixed
+density margin for monotone satisfiability statements. Sampling proper clauses
+with or without replacement differs with probability $O_k(n^{2-k})=o(1)$
+when $k\ge3$. Finer window statements require their own transfer argument;
+Carenini provides one in Proposition 4.2.

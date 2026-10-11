@@ -1,0 +1,4 @@
+/Users/u1774790/.matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /var/folders/m0/lt8lthdj53v7lryp_p277_wh0000gp/T/matplotlib-aczbjbz3 because there was an issue with the default path (/Users/u1774790/.matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib is building the font cache; this may take a moment.
+Wrote 8 cells from 24 planned instances to /Users/u1774790/Projects/ksat/experiments/E002_blythe_phase_diagrams/validation/uv-smoke001/analysis-v1

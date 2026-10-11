@@ -1,0 +1,26 @@
+\begin{proposition}[A sharp universal clause-count guarantee]
+\label{prop:fewclauses}
+Let $n\ge k\ge2$ and $m\ge0$ be integers. If $F$ has $m$ clauses, each
+containing exactly $k$ distinct variables chosen from $n$ available variables,
+then its number $Z(F)$ of satisfying assignments obeys
+\begin{equation}
+ Z(F)\ge 2^n-m2^{n-k}=2^{n-k}(2^k-m).
+ \label{eq:fewclauses}
+\end{equation}
+In particular, every such formula is SAT if $m<2^k$. With unused variables
+and repeated clauses allowed, this condition is sharp: for every $m\ge2^k$
+there is an UNSAT formula with these parameters.
+\end{proposition}
+\begin{proof}
+A clause is false precisely when its $k$ literals are all false. This fixes
+the values of its $k$ variables and leaves $n-k$ variables free, so it
+excludes exactly $2^{n-k}$ assignments. The union of the sets excluded by
+the $m$ clauses has size at most $m2^{n-k}$. Subtracting from $2^n$ proves
+\eqref{eq:fewclauses}, whose right-hand side is positive when $m<2^k$.
+No randomness or independence of the clauses is required.
+
+For sharpness, take all $2^k$ sign patterns on the same $k$ variables.
+Every assignment falsifies one of these clauses, so their conjunction is
+UNSAT. The other $n-k$ variables may remain unused. If $m>2^k$, repeat
+clauses to reach the required count; the formula remains UNSAT.
+\end{proof}

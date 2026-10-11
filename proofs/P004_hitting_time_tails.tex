@@ -1,0 +1,74 @@
+% Draft prepared 2026-10-11; elementary exact observations, no novelty claim.
+% Author: analytic_transfer agent. Independent review is requested separately.
+\begin{proposition}[The moment-generating-function boundary of the clause hitting time]
+\label{prop:hitting-mgf-boundary}
+Fix integers $n\ge k\ge2$, and let $C_1,C_2,\ldots$ be independent
+uniform proper $k$-clauses on $n$ variables. Write
+$F_m=\bigwedge_{i=1}^m C_i$, with $F_0=\mathrm{True}$, and let
+\[
+ T=\min\{m\ge0:F_m\text{ is UNSAT}\},\qquad q=1-2^{-k}.
+\]
+Then, for every integer $m\ge0$,
+\begin{equation}
+ q^m\le \mathbb P(T>m)\le 2^nq^m.
+ \label{eq:hitting-tail-sandwich}
+\end{equation}
+In particular, $T$ is finite almost surely, and its moment generating
+function is finite precisely for real
+\[
+ \theta< -\log(1-2^{-k}).
+\]
+For $0<\theta< -\log q$, the explicit bounds are
+\[
+ 1+\frac{e^\theta-1}{1-qe^\theta}
+ \;\le\;\mathbb E e^{\theta T}
+ \;\le\;1+\frac{2^n(e^\theta-1)}{1-qe^\theta}.
+\]
+\end{proposition}
+\begin{proof}
+Fix one assignment. Each clause is satisfied by that assignment with
+probability $q$, independently, so the probability that it satisfies
+$F_m$ is $q^m$. This event implies $T>m$. Conversely, if $T>m$, some
+one of the $2^n$ assignments satisfies $F_m$. A union bound establishes
+\eqref{eq:hitting-tail-sandwich}. Its upper bound tends to zero as
+$m\to\infty$, proving almost-sure finiteness.
+
+For $\theta>0$, the pointwise geometric-sum identity and Tonelli's
+theorem for nonnegative summands give, allowing infinite expectations,
+\[
+ \mathbb E e^{\theta T}
+ =1+(e^\theta-1)\sum_{m=0}^{\infty}
+                  e^{\theta m}\mathbb P(T>m).
+\]
+The two bounds in \eqref{eq:hitting-tail-sandwich} show that this series
+converges if and only if $qe^\theta<1$, and give the displayed estimates
+when it converges. At equality it diverges by the lower bound. For
+$\theta\le0$, finiteness follows from $0<e^{\theta T}\le1$.
+\end{proof}
+
+\begin{example}[The unmodified Poisson variance bound fails]
+\label{ex:coupon-hitting-time}
+When $n=k=2$, each of the four possible clauses excludes exactly one
+of the four assignments. Thus $T$ is the time until all four clause
+types have appeared. Successive waiting times for a new type are
+independent geometric random variables, supported on
+$\{1,2,\ldots\}$, with success probabilities
+$1,3/4,1/2,1/4$. Their means and variances yield
+\[
+ \mathbb E T=1+\frac43+2+4=\frac{25}{3},\qquad
+ \operatorname{Var}(T)=0+\frac49+2+12=\frac{130}{9}
+ >\mathbb E T.
+\]
+Independence follows from independence of the future draws at each
+collection time and from the fact that the probability of a new type
+depends only on the number already collected.
+
+Consequently, the rotation-volume inequality
+$\operatorname{Var}(I)\le\mathbb E I$ does not transfer verbatim to
+$T$. More generally, Proposition~\ref{prop:hitting-mgf-boundary}
+rules out any finite all-real Poisson cgf bound for $T-\mathbb E T$,
+such as $\log\mathbb E e^{\theta(T-\mathbb E T)}
+\le a(e^\theta-\theta-1)$ with finite $a$ for every real $\theta$.
+These obstructions leave open estimates on a restricted tilt interval
+with suitable $k$-dependent constants.
+\end{example}

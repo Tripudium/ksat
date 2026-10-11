@@ -1,0 +1,42 @@
+{
+  "compiler": "cc",
+  "compiler_flags": [
+    "-std=c99",
+    "-O2"
+  ],
+  "compiler_version": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin\n",
+  "created_utc": "2026-10-11T09:47:27.566632+00:00",
+  "drat_trim_binary_sha256": "f28fde1439dc4c2ad4fc34664d1815855a52e2cae9dd0a2736aec1e4be5d492c",
+  "drat_trim_source_sha256": "d834b649f437e091597f5347f259b9f681087f89ca0844d0cee250a1a1a0c2ee",
+  "drat_trim_upstream_commit": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985",
+  "environment_directory": "/Users/u1774790/Projects/ksat/.venv",
+  "loaded_modules": "",
+  "module_selection": "",
+  "packages": {
+    "contourpy": "1.4.0",
+    "cycler": "0.12.1",
+    "fonttools": "4.66.1",
+    "kiwisolver": "1.5.1",
+    "matplotlib": "3.10.8",
+    "numpy": "2.5.4",
+    "packaging": "26.3",
+    "pillow": "12.3.0",
+    "pyparsing": "3.3.3",
+    "python-dateutil": "2.9.0.post0",
+    "python-sat": "1.9.dev15",
+    "six": "1.17.0"
+  },
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "project_directory": "/Users/u1774790/Projects/ksat",
+  "project_sha256": {
+    ".python-version": "7b55f8e67b5623c4bef3fa691288da9437d79d3aba156de48d481db32ac7d16d",
+    "pyproject.toml": "d89a1041e5e772873417d2c728392e63da4e27e0c5f7526bbf6df5f6a174e794",
+    "uv.lock": "509f78b96cedc768308525fb92daea9c8fc9095e75924c7bd498c89176516f4f"
+  },
+  "proof_checker_preflight": "Deferred to preflight inside the allocation.",
+  "python_executable": "/Users/u1774790/Projects/ksat/.venv/bin/python",
+  "python_version": "3.12.8",
+  "schema_version": 1,
+  "setup_command": "uv sync --locked",
+  "uv_version": "uv 0.6.6 (c1a0bb85e 2025-03-12)"
+}

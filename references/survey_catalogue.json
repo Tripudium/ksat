@@ -1,0 +1,432 @@
+[
+  [
+    "S001",
+    "carenini2026",
+    "Gaia Carenini: polynomial window and limiting thresholds",
+    "papers/TR26-229.pdf",
+    "ECCC TR26-229; posted 5 October 2026; supplied original",
+    "https://eccc.weizmann.ac.il/report/2026/229/",
+    "Theorems 1.1 and 1.3, Corollary 1.2 (p. 2); proof outline, pp. 3-5; Proposition 4.2, p. 9",
+    "The statement and proof structure were read. Proper distinct-variable clauses, independent with replacement, fixed k >= 3, match PROBLEM.md. All-k existence is a preprint theorem, not a numerical evaluation or a solver. Full proof and external dependencies not independently refereed; no revision shown on the report page at access."
+  ],
+  [
+    "S002",
+    "almt2014",
+    "Amelunxen, Lotz, McCoy and Tropp: Living on the edge",
+    "papers/iau005.pdf",
+    "Published Information and Inference 3 (2014), 224-294; supplied original",
+    "https://doi.org/10.1093/imaiai/iau005",
+    "Section 2.3, Theorem I (p. 230); statistical dimension definition; Theorem 6.1",
+    "Approximate kinematic theorem and normalization read. Closed convex cones and Haar rotation are essential; Boolean clause constraints do not meet this setting. No transfer theorem to k-SAT is claimed."
+  ],
+  [
+    "S003",
+    "lotz2026",
+    "Martin Lotz and Joel A. Tropp: Euclidean integral geometry",
+    "papers/sharp-phase.pdf",
+    "Published chapter, High Dimensional Probability X, Progress in Probability 82 (2026); supplied original",
+    "https://doi.org/10.1007/978-3-032-06057-0_8",
+    "Section 3.2, Theorems I and II (p. 198 onward); Section 4 applications; Theorems 6.1 and 6.3",
+    "Weighted intrinsic-volume concentration and geometric applications read for comparison. The random objects are convex bodies under rotations/rigid motions, not uniform Boolean constraints. No whole-paper proof audit."
+  ],
+  [
+    "S004",
+    "montanari2026",
+    "Andrea Montanari and Zihao Wang: feature learning",
+    "papers/montanari-phase.pdf",
+    "arXiv:2602.01434v2, 26 February 2026; PDF date 27 February; supplied original",
+    "https://arxiv.org/abs/2602.01434v2",
+    "Title page, abstract and Section 1",
+    "Inventory check: this is a neural-network paper, not random k-SAT background. Cited only to document the mismatch, not as evidence for a SAT result."
+  ],
+  [
+    "S005",
+    "friedgut1999",
+    "Ehud Friedgut: sharp thresholds",
+    "papers/Friedgut_1999.pdf",
+    "JAMS 12(4) (1999), 1017-1054; published text, with appendix by Bourgain",
+    "https://mathweb.ucsd.edu/~sbuss/CourseWeb/Math268_2007WS/Friedgut_Treshold.pdf",
+    "Theorem 1.3 (p. 1020)",
+    "Sharpness at a size-dependent location checked. The theorem does not itself establish convergence to a limiting density. Standard proper-clause model compared with project; full proof not audited."
+  ],
+  [
+    "S006",
+    "bbckw2001",
+    "Bollobas, Borgs, Chayes, Kim and Wilson: 2-SAT window",
+    "papers/Bollobas_etal_2001_2SAT.pdf",
+    "Random Structures & Algorithms 18(3) (2001), 201-256; arXiv:math/9909031 manuscript",
+    "https://arxiv.org/abs/math/9909031",
+    "Theorem 1.1 and definition m=(1+lambda*n^(-1/3))*n immediately preceding it",
+    "Window normalization and strict-side threshold checked. Clause-count width is n^(2/3), not sqrt(n). This source does not make k >= 3 algorithmic conclusions."
+  ],
+  [
+    "S007",
+    "dss2022",
+    "Jian Ding, Allan Sly and Nike Sun: large-k satisfiability",
+    "papers/Ding_Sly_Sun_2022_LargeK.pdf",
+    "Annals of Mathematics 196(1) (2022), 1-388; consulted arXiv:1411.0650v3, 15 April 2021",
+    "https://arxiv.org/abs/1411.0650v3",
+    "Theorem 1, p. 2; Proposition 1.2; model definitions",
+    "Sufficiently large fixed k restriction and threshold characterization checked. Poisson clause count and independently sampled literal positions require the fixed-density model comparisons described in survey Section 2. No audit of the 388-page published proof."
+  ],
+  [
+    "S008",
+    "cop2016",
+    "Amin Coja-Oghlan and Konstantinos Panagiotou: asymptotic threshold",
+    "papers/CojaOghlan_Panagiotou_2016_Asymptotic.pdf",
+    "Advances in Mathematics 288 (2016), 985-1068; consulted revised arXiv:1310.2728v6, 1 November 2018",
+    "https://arxiv.org/abs/1310.2728v6",
+    "Theorem 1.1, Eq. (1.4), p. 2; model in Section 1",
+    "The theorem brackets liminf/limsup of threshold sequences by 2^k log(2)-(1+log(2))/2 +/- epsilon_k. Together with threshold existence it yields the quoted asymptotic. Repeated literal positions permitted; no small-k error estimate is inferred. Revision date recorded separately from journal year."
+  ],
+  [
+    "S009",
+    "mmz2006",
+    "Stephan Mertens, Marc Mezard and Riccardo Zecchina: cavity thresholds",
+    "papers/Mertens_Mezard_Zecchina_2006.pdf",
+    "RSA 28(3) (2006), 340-373; consulted arXiv:cs/0309020v2, 24 February 2005",
+    "https://arxiv.org/abs/cs/0309020v2",
+    "Table 1; Eq. (43); discussion of population dynamics",
+    "Numerical threshold entries and their interpretation checked. The 3-SAT estimate 4.26675 and stated numerical uncertainty are cavity/population-dynamics evidence, not a certified interval for the true threshold. Large-k proof results are cited separately."
+  ],
+  [
+    "S010",
+    "kkl2006",
+    "Alexis Kaporis, Lefteris Kirousis and Efthimios Lalas: greedy algorithms",
+    "papers/Kaporis_Kirousis_Lalas_2003.pdf",
+    "Journal continuation: RSA 28(4) (2006), 444-480; local PDF is earlier Selecting Complementary Pairs of Literals (2003)",
+    "https://www.researchgate.net/publication/2495758_The_Probabilistic_Analysis_of_a_Greedy_Satisfiability_Algorithm",
+    "Journal abstract, Section 2 and Section 5; earlier manuscript Theorem 1",
+    "Author-uploaded full journal text read online, DOI 10.1002/rsa.20104. Proper-clause distribution matches project. Lower bound 3.52 uses a positive-probability constructive result and sharpness. Numerical differential-equation analysis not independently reproduced. Local early manuscript is not mislabeled as the final journal PDF."
+  ],
+  [
+    "S011",
+    "hs2003",
+    "Mohammad Hajiaghayi and Gregory Sorkin: 3.52 lower bound",
+    "papers/Hajiaghayi_Sorkin_2003.pdf",
+    "arXiv:math/0310193; 2003 preprint",
+    "https://arxiv.org/abs/math/0310193",
+    "Introduction and numerical justification discussion before Section 2",
+    "Statement and explicit limitations read: the short text omits full Lipschitz/interval-arithmetic justification. Not used as the sole proof source for the lower bound, and calculations not rerun."
+  ],
+  [
+    "S012",
+    "diaz2008",
+    "Diaz, Kirousis, Mitsche and Perez-Gimenez: 3-SAT upper bound",
+    "papers/Diaz_etal_2008_UpperBound.pdf",
+    "FSTTCS 2008, LIPIcs 2, 163-174; official published PDF",
+    "https://drops.dagstuhl.de/storage/00lipics/lipics-vol002-fsttcs2008/LIPIcs.FSTTCS.2008.1750/LIPIcs.FSTTCS.2008.1750.pdf",
+    "Theorem 1, p. 165; model in introduction",
+    "Published 4.4898 upper bound and model checked. Sampling without replacement transfers to project at m=O(n), k=3 because collision probability is o(1). Not an efficient refutation procedure for individual inputs."
+  ],
+  [
+    "S013",
+    "vorobyev2026",
+    "Fedor Vorobyev: 4.268 upper bound",
+    "papers/Vorobyev_2026_UpperBound4268.pdf",
+    "arXiv:2610.10599v1, 6 October 2026; official page lists v1 at access",
+    "https://arxiv.org/abs/2610.10599v1",
+    "Theorem 1.1, p. 1; Section 9 and Appendix A",
+    "Exact proper-clause model and UNSAT-whp statement read. Recent preprint, not presented as peer reviewed. Claimed Lean artifact https://github.com/yamelton/sat-upper-4268 not built or audited for model correspondence. Source discloses LLM participation. Third-party revision/date claims were not adopted."
+  ],
+  [
+    "S014",
+    "coja2010",
+    "Amin Coja-Oghlan: Fix",
+    "papers/CojaOghlan_2009_Fix.pdf",
+    "SIAM J. Computing 39(7) (2010), 2823-2864; consulted 2009 author manuscript",
+    "https://www.cs.cmu.edu/~odonnell/hits09/coja-oghlan-random-k-sat-alg.pdf",
+    "Theorem 1.1, p. 2; Sections 1.1-1.2",
+    "Whp witness guarantee, epsilon_k -> 0, density (1-epsilon_k)2^k log(k)/k and O((n+m)^(3/2)) implementation read. Literal-position model comparison stated in survey. Leading large-k expression is not a certified small-k cutoff."
+  ],
+  [
+    "S015",
+    "bresler2021",
+    "Guy Bresler and Brice Huang: low-degree algorithmic barrier",
+    "papers/Bresler_Huang_2021_Algorithmic.pdf",
+    "FOCS 2021, 298-309; full arXiv:2106.02129v3, 29 October 2021",
+    "https://arxiv.org/abs/2106.02129v3",
+    "Definitions in Section 2; Theorems 2.6, 2.13 and 2.14; Appendix A",
+    "Model restrictions and success-probability caveat checked. Main constant kappa_* about 4.911; Appendix A discusses improvements, not used numerically here. No claim of hardness for all polynomial algorithms or small fixed k. The theorem also has degree and normalization restrictions."
+  ],
+  [
+    "S016",
+    "liu2018",
+    "Sixue Liu: deterministic k-SAT algorithm",
+    "papers/Liu_2018_Deterministic.pdf",
+    "ICALP 2018, LIPIcs 107, 88:1-88:13; official published PDF",
+    "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ICALP.2018.88",
+    "Abstract, introductory comparison table and 3-SAT analysis",
+    "Deterministic general-3-SAT O*(1.32793^n) bound checked; classical Schoning bound reviewed in introduction. Worst-case algorithm for arbitrary clauses of size at most k, not an empirical solver claim."
+  ],
+  [
+    "S017",
+    "scheder2024",
+    "Dominik Scheder: PPSZ analysis",
+    "papers/Scheder_2022_PPSZ.pdf",
+    "TheoretiCS 3 (2024), article 5; arXiv:2207.11071v2, 12 March 2024; filename retains initial arXiv year",
+    "https://doi.org/10.46298/theoretics.24.5",
+    "Section 1; Theorem 1.5; unique-3-SAT qualification in abstract",
+    "General-k improvement and random inference mechanism checked. Unique and general 3-SAT must be distinguished. The journal version omits part of the unique-case derivation present in arXiv v1; detailed 2026 constants cited from S018."
+  ],
+  [
+    "S018",
+    "jiang2026",
+    "Tao Jiang and Shaowei Cai: improved PPSZ constants",
+    "papers/Jiang_Cai_2026_PPSZ.pdf",
+    "arXiv:2607.10697v1, 12 July 2026",
+    "https://arxiv.org/abs/2607.10697v1",
+    "Theorem 1.1 and Corollary 1.2, pp. 1-2",
+    "Unique-case 1.306969598 and general-case 1.307031578 distinguished. Requires sufficiently strong fixed inference and sufficiently large n; O* hides polynomial factors. Recent preprint, numerical proof details not independently audited."
+  ],
+  [
+    "S019",
+    "allen2015",
+    "Sarah Allen, Ryan O'Donnell and David Witmer: random CSP refutation",
+    "papers/Allen_ODonnell_Witmer_2015.pdf",
+    "FOCS 2015, 689-708; full author manuscript, 28 June 2015",
+    "https://www.cs.cmu.edu/~odonnell/papers/random-csp-refutation.pdf",
+    "Theorem 2.3 and Section 4",
+    "Polynomial-time strong-refutation sufficient density read. Tilde notation hides logarithmic factors; this is far above constant density for k >= 3. General literal-position model; theorem is not a near-threshold solver or an optimality statement."
+  ],
+  [
+    "S020",
+    "ben2001",
+    "Eli Ben-Sasson and Avi Wigderson: resolution width",
+    "papers/BenSasson_Wigderson_2001_Width.pdf",
+    "JACM 48(2) (2001), 149-169; published PDF",
+    "https://people.inf.ethz.ch/emo/SatSem05/Papers/BensassonWidgerson01.pdf",
+    "Section 4.3, Theorem 4.19 and Corollary 4.20 (p. 158); Section 6.3",
+    "Random 3-CNF resolution-size lower bound and proof-system scope read. Used qualitatively for suitable fixed UNSAT density. Extended proof systems and modern inprocessing require separate simulation arguments; not a lower bound for all SAT algorithms."
+  ],
+  [
+    "S021",
+    "marino2016",
+    "Raffaele Marino, Giorgio Parisi and Federico Ricci-Tersenghi: BSP",
+    "papers/Marino_Parisi_RicciTersenghi_2016_BSP.pdf",
+    "Nature Communications 7:12996, 3 October 2016",
+    "https://www.nature.com/articles/ncomms12996",
+    "Results, Figures 1-5, pp. 3-5",
+    "Million-variable 3-SAT experiments and density 4.262 checked. The fitted 4.268 algorithmic threshold is not an observed successful solve at that density. No matched hardware/time comparison with S022; no experimental reproduction."
+  ],
+  [
+    "S022",
+    "luo2014",
+    "Chuan Luo, Shaowei Cai, Wei Wu and Kaile Su: DCCASat",
+    "papers/Luo_etal_2014_DCCASat.pdf",
+    "AAAI 2014, 2703-2709; published PDF",
+    "https://doi.org/10.1609/aaai.v28i1.9110",
+    "Experimental setup p. 2706; Table 2 p. 2707",
+    "Checked all five rows of Large_Threshold, 100 instances per class, one run per instance, 5000s cutoff, Core i7 2.4GHz setup. Unsolved cases are not certified UNSAT. Table reproduced as numerical facts, without claiming present-day capacity or rerunning experiments."
+  ],
+  [
+    "S023",
+    "hutter2017",
+    "Hutter et al.: Configurable SAT Solver Challenge",
+    "papers/Hutter_etal_2017_CSSC.pdf",
+    "Artificial Intelligence 243 (2017), 1-25; published PDF",
+    "https://ada.liacs.nl/papers/HutEtAl17.pdf",
+    "Appendix A.3; introduction and configuration methodology",
+    "Checked mixed random-3CNF 350 variables/1493 clauses and conditioned-SAT 1000/4260. Historical benchmarks, not current limits. Families and conditioning must be preserved in comparisons."
+  ],
+  [
+    "S024",
+    "satcomp2026",
+    "SAT Competition 2026 official results",
+    "references/SAT_Competition_2026_results.pdf",
+    "Slides dated 23 July 2026; main-track awards corrected 10 August 2026; retrieved 10 October",
+    "https://satcompetition.github.io/2026/",
+    "Slides 13 (SAT), 16 (UNSAT), 18 (overall); website correction notice",
+    "Ordinary and special AI categories distinguished. Overall satsuma-iter+kissat 276; ordinary SAT satsuma-iter+ae-kissat-mab 136. Ranking is on competition collection, not uniform-random k-SAT. Original PDF retained."
+  ],
+  [
+    "S025",
+    "biere2024",
+    "Biere et al.: CaDiCaL, Gimsatul, IsaSAT and Kissat",
+    "papers/Biere_etal_2024_Solvers.pdf",
+    "Proceedings of SAT Competition 2024, pp. 8-10; author PDF",
+    "https://cca.informatik.uni-freiburg.de/papers/BiereFallerFazekasFleuryFroleyksPollitt-SAT-Competition-2024-solvers.pdf",
+    "Sections I and IV; software README pages accessed 10 October 2026",
+    "Solver architecture and incremental/proof capabilities checked. Official repositories: https://github.com/arminbiere/kissat and https://github.com/arminbiere/cadical. No solver was compiled or benchmarked. Pin release and proof mode before a future experiment."
+  ],
+  [
+    "S026",
+    "probsat",
+    "Adrian Balint: probSAT software",
+    "references/probSAT_README_2026-10-10.md",
+    "README snapshot, 10 October 2026",
+    "https://github.com/adrianopolus/probSAT",
+    "README description and compile/use instructions",
+    "Software availability and probabilistic local-search identity checked. Underlying SAT 2012 work is identified by the authors in the README. No current performance ranking or benchmark reproduction is asserted."
+  ],
+  [
+    "S027",
+    "osama2024",
+    "Muhammad Osama, Anton Wijs and Armin Biere: ParaFROST",
+    "papers/Osama_Wijs_Biere_2024_ParaFROST.pdf",
+    "Formal Methods in System Design 62 (2024), 79-118; online 2 August 2023",
+    "https://cca.informatik.uni-freiburg.de/papers/OsamaWijsBiere-FMSD23.pdf",
+    "Section 12, especially Figures 9-10 and hardware setup",
+    "GPU-vs-related-CPU gains, Kissat comparison, Titan RTX/Xeon setup and proof overhead checked. Authors report DRAT checking; this survey did not rerun it. Published evidence does not establish GPU superiority on random k-SAT. CPU-only comparisons use Xeon E5-2630 nodes; hardware is not fully matched."
+  ],
+  [
+    "S028",
+    "cen2025",
+    "Yunuo Cen, Zhiwei Zhang and Xuanyao Fong: FastFourierSAT",
+    "papers/Cen_2025_FastFourierSAT_published.pdf",
+    "AAAI 39(11) (2025), 11140-11149; official published PDF",
+    "https://ojs.aaai.org/index.php/AAAI/article/download/33211/35366",
+    "Section 4, pp. 11145-11147; RQ3; Table 1; limitations",
+    "Published version used instead of retained 2023 arXiv v1 in Cen_2025_FastFourierSAT.pdf. Checked 5 CPU/13 GPU CNF solves, 1000s cutoff and 0.04-1.07s comparison. Hybrid-constraint/kernel gains distinguished from complete CNF solving; no UNSAT guarantee."
+  ],
+  [
+    "S029",
+    "dai2025",
+    "Steve Dai, Cunxi Yu, Kalyan Krishnamani and Brucek Khailany: TurboSAT",
+    "papers/TurboSAT_2025.pdf",
+    "arXiv:2511.07737v1, 11 November 2025",
+    "https://arxiv.org/abs/2511.07737v1",
+    "Section V and Table I; architecture and unrestricted CDCL worker",
+    "Checked 179-instance SAT24 collection, 165 vs 143 solves, 5000s limit, up to 2 B200 GPUs and 141 CPU workers. Unmatched resources prevent GPU-only attribution. Preprint, not a random-k-SAT benchmark; no reproduction."
+  ],
+  [
+    "S030",
+    "christopher2026",
+    "Cody J. Christopher and Charles Gretton: Accelerated Fourier SAT",
+    "papers/Christopher_2026_AFSAT.pdf",
+    "arXiv:2606.06641v1, 4 June 2026",
+    "https://arxiv.org/abs/2606.06641v1",
+    "Sections 3.5 and 4; Figure 2a",
+    "Random-3SAT GPU throughput/scaling and V100 setup read. Numerical stability limits and exact Boolean verification matter. Throughput is not a complete-solver guarantee. Public code permits nonzero unsatisfied thresholds; proposed benchmark must use zero. No experiments rerun."
+  ],
+  [
+    "S031",
+    "careniniWindow",
+    "Gaia Carenini: earlier scaling window",
+    "papers/Carenini_2026_ScalingWindow.pdf",
+    "ECCC TR26-145, August 2026",
+    "https://eccc.weizmann.ac.il/report/2026/145/",
+    "Main result and proper-clause application near end of Section 7",
+    "Earlier O(n/log n) window result read as background. It is distinct from supplied TR26-229; the latter gives a polynomial improvement and a convergence argument. Earlier bound alone is not presented as proving limiting threshold existence."
+  ],
+  [
+    "S032",
+    "oaVariance3",
+    "OpenAI: linear variance for random 3-SAT",
+    "papers/OpenAI_2026_LinearVariance3SAT.pdf",
+    "Manuscript dated 5 October 2026; public snapshot accessed 10 October 2026",
+    "https://github.com/openai/math/tree/main/preprints/Linear-Variance-of-the-Random-3-SAT-Hitting-Time-October-5-2026",
+    "Theorem 1.1, p. 1; Corollary 5.2; introduction",
+    "Theorem statement and model read, not full proof. Claims variance Theta(n) and sqrt(n) central window in project model. Kept separate as a recent manuscript claim. Formalization not built or matched to statement; see retained collection README for verification caveats."
+  ],
+  [
+    "S033",
+    "oaVariance",
+    "OpenAI: random k-SAT hitting-time variance",
+    "papers/OpenAI_2026_VarianceKSAT.pdf",
+    "Manuscript dated 27 September 2026; public snapshot accessed 10 October 2026",
+    "https://github.com/openai/math/tree/main/preprints/Variance-of-the-Random-k-SAT-Hitting-Time-September-27-2026",
+    "Theorem 1.1, p. 1; finite-size bias discussion p. 2",
+    "Statement checked: Theta_k(n) for k >= 4 and O(n log n) for k=3, superseded there by S032. Capped process lower bound has an additional cap condition. Not independently proof-checked or Lean-checked; no fluctuation-scale bias estimate follows."
+  ],
+  [
+    "S034",
+    "oaComputing",
+    "OpenAI: computing the 3-SAT threshold",
+    "papers/OpenAI_2026_ComputingThreshold.pdf",
+    "Manuscript dated 27 September 2026; public snapshot accessed 10 October 2026",
+    "https://github.com/openai/math/tree/main/preprints/Computing-the-Random-3-SAT-Threshold-September-27-2026",
+    "Theorem 1.1, p. 1; introduction",
+    "Computability statement and explicit lack of efficiency bound read. Proper-clause model matches project. The output is a threshold approximation, not a witness for an input formula. Recent manuscript claim, no proof/formalization audit."
+  ],
+  [
+    "S035",
+    "wilson2002",
+    "David B. Wilson: critical exponents",
+    "papers/Wilson_2002_CriticalExponents.pdf",
+    "RSA 21(2) (2002), 182-195; arXiv:math/0005136v2, 3 July 2002",
+    "https://arxiv.org/abs/math/0005136v2",
+    "Corollary 4 and preceding model discussion",
+    "Quantitative separation of fixed satisfiability probability levels checked. Gives sqrt(n) lower bound in clause count for fixed k >= 3; with/without replacement ensembles explicitly covered. Full proof not audited."
+  ],
+  [
+    "S036",
+    "jin2026",
+    "Mingming Jin et al.: PALSAT",
+    "papers/Jin_etal_2026_PALSAT.pdf",
+    "SAT 2026, LIPIcs 377, 21:1-21:18, published 16 July 2026",
+    "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.SAT.2026.21",
+    "Sections 3-4, 6.1-6.2; Table 1, p. 21:14",
+    "Incomplete solver combines unit propagation and progressive local search. Benchmarks are structured SAT Competition 2021-2025 and FCC spectrum-repacking formulas, not a uniform-random-k-SAT comparison. Single-threaded AMD EPYC 7H12 setup; no reproduction. Used to contextualize current incomplete solvers, not to claim a random-SAT champion."
+  ],
+  [
+    "S037",
+    "bangjensen2023",
+    "Jorgen Bang-Jensen: the sharp few-clause satisfiability guarantee",
+    "papers/BangJensen_2023_few_clauses.pdf",
+    "University of Southern Denmark course notes, 12 September 2023",
+    "https://www.imada.sdu.dk/u/jbj/DM551/us03.pdf",
+    "Theorem A, proof and sharpness paragraph, p. 4",
+    "Standard elementary result for proper k-clauses. P002 records a self-contained counting proof and sharpness under unused-variable and clause-repetition conventions. Read 11 October 2026 for the exposition revision; no independent review."
+  ],
+  [
+    "S038",
+    "pysatAPI",
+    "PySAT: solver API",
+    "references/PySAT_solvers_2026-10-11.html",
+    "Documentation snapshot, PySAT 1.9.dev15, accessed 11 October 2026",
+    "https://pysathq.github.io/docs/html/api/solvers.html",
+    "Module description; Solver.add_clause, solve, get_model, get_proof and assumptions documentation",
+    "Confirms incremental interfaces and named CaDiCaL195 backend. E001 records actual runtime dependencies separately. Documentation access does not establish an end-to-end performance guarantee."
+  ],
+  [
+    "S039",
+    "scrtpHardware",
+    "SCRTP: saved hardware documentation",
+    "scrtp/Hardware — scrtp-docs 0.1 documentation.html",
+    "User-supplied HTML snapshot, read 11 October 2026; publication/update date not established",
+    "Local user-supplied scrtp/ directory",
+    "Blythe compute/GPU hardware; Avon expected end-of-life entry",
+    "Saved-document hardware facts only: 168-core AMD Genoa compute nodes with 768 GB RAM; three L40 48 GB GPUs per GPU node. Current availability, limits and allocations were not verified; no cluster jobs or SLURM scripts."
+  ],
+  [
+    "S040",
+    "navon2007",
+    "Navon and Samorodnitsky: Fourier and coding-theory background",
+    "papers/Navon_Samorodnitsky_2007.pdf",
+    "Author manuscript corresponding to arXiv:math/0702425; accessed 11 October 2026",
+    "https://people.csail.mit.edu/dmoshkov/courses/codes/lec8-LP-bound.pdf",
+    "Introduction, pp. 1-2; Section 2.1, Fourier analysis on the Boolean cube",
+    "Only background for Fourier/distance-distribution positivity. No SAT theorem, concentration transfer or novelty inference is attributed to this source. Title and authors verified from retained manuscript; arXiv abstract fetch failed in root recheck."
+  ],
+  [
+    "S041",
+    "wei2011",
+    "Wei and Dudley: one-sample DKW background",
+    "papers/Wei_Dudley_2011_DKW.pdf",
+    "arXiv:1107.5356v2, 11 August 2011; accessed 11 October 2026",
+    "https://arxiv.org/abs/1107.5356v2",
+    "Section 1, equation (1), p. 1 and following Massart-constant statement",
+    "Used only for the classical one-sample empirical-CDF inequality with constant 2, which this paper recalls. Its two-sample results are not used. Applies to independent fully classified hitting times, not correlated prefixes as separate trials. Original Massart paper was not consulted. Retained PDF has arXiv v2 stamp and a typesetting date of 27 November 2024; the version identifier is retained explicitly."
+  ],
+  [
+    "S042",
+    "scrtpBlytheJobs",
+    "SCRTP: Blythe jobs, storage and resource limits",
+    "scrtp/Blythe job scripts — scrtp-docs 0.1 documentation.html",
+    "User-supplied HTML snapshots, read 11 October 2026",
+    "Local user-supplied scrtp directory",
+    "Blythe job scripts; Files and storage; SLURM concepts; Resource limits; Submitting and managing jobs",
+    "Documented compute partition, task/CPU layout, shared filesystem and limits; actual Python module and live allocation not verified. Complete hashes and scope in E002/blythe_documentation.md."
+  ],
+  [
+    "S043",
+    "dratTrimSoftware",
+    "DRAT-trim proof checker",
+    "code/vendor/drat-trim/drat-trim.c",
+    "Commit 2e3b2dc0ecf938addbd779d42877b6ed69d9a985, retrieved 11 October 2026",
+    "https://github.com/marijnheule/drat-trim",
+    "README Getting started and proof syntax; C main verification verdict",
+    "Pinned unmodified MIT source and license. E002 checks proper-CNF UNSAT proofs; not a formally verified checker or a proof of a concentration theorem."
+  ]
+]

@@ -1,0 +1,90 @@
+\section{Practical algorithms and solver selection}
+\label{sec:solvers}
+
+\subsection{Complete solving: DPLL, CDCL and portfolios}
+DPLL recursively chooses a variable, propagates forced values and backtracks
+after a contradiction. Conflict-driven clause learning (CDCL) adds a derived
+clause explaining a conflict, often jumps over irrelevant decisions, and
+uses restarts, activity-based branching and clause-database management.
+Preprocessing and inprocessing simplify the formula before and during search.
+These engineering choices, rather than the best worst-case exponential base,
+dominate many practical comparisons.
+
+Kissat and CaDiCaL are strong, actively developed CPU baselines; their authors'
+solver description documents the architecture and recent variants
+\citep{biere2024}. CaDiCaL is also a natural starting point when an incremental
+interface is required. For a one-off random-CNF experiment, compare an
+optimized complete solver with a dedicated witness-search method. Use a
+solver mode that records a compatible refutation when an independently
+checkable UNSAT result is needed. Check witnesses against the \emph{original}
+formula, including reconstruction after eliminated variables are restored.
+
+The corrected SAT Competition 2026 results place
+\texttt{satsuma-iter+kissat} first in the ordinary main overall ranking,
+with 276 solved instances; the ordinary main SAT ranking has a different
+winner, \texttt{satsuma-iter+ae-kissat-mab}, with 136
+\citep[slides 13, 16 and 18]{satcomp2026}. These results support the
+strength of the Kissat ecosystem, not a universal ranking on random $k$-SAT.
+The competition mixes benchmark families and its 2026 tracks are not a
+dedicated uniform-random-$k$-SAT comparison. Separate AI-category results
+should not be silently merged into the ordinary ranking.
+
+Parallel portfolios run diverse solver configurations and may exchange useful
+clauses. A divide-and-conquer approach instead partitions the assignment
+space. Both can reduce wall-clock time, but speedup depends on the instances
+and includes additional CPU resources. Configuration should be tuned on a
+training set and evaluated on unseen instances, rather than selected after
+examining the test results \citep{hutter2017}.
+
+\subsection{Witness search: local moves and probabilistic messages}
+Stochastic local search keeps a complete assignment and repairs violated
+clauses by flipping variables. Break counts measure how many satisfied
+clauses a flip would destroy; noise and restarts help escape local traps.
+\emph{probSAT} is a useful lightweight baseline with public source code
+\citep{probsat}. More elaborate methods use clause weights and memory of
+recent changes. For example, DCCASat combines two configuration-checking
+rules to reduce cycling \citep{luo2014}. These methods can be effective on
+large satisfiable random instances, but their failure to finish supplies no
+UNSAT evidence.
+
+Recent incomplete solvers increasingly combine logical propagation with local
+repair. PALSAT, published at SAT 2026, progressively activates variables using
+unit propagation and invokes local search to repair conflicts
+\citep{jin2026}. Its comparisons with CCAnr variants and TaSSAT show gains
+on recent competition and spectrum-repacking benchmarks. Those are structured
+collections, so this result does not establish a new uniform-random-$k$-SAT
+ranking. It does show why a present-day comparison should include newer hybrid
+methods, rather than treating probSAT or the 2014 DCCASat results as a permanent
+state of the art.
+
+Belief propagation passes approximate local marginal information on the
+variable--clause factor graph. Survey propagation (SP) instead aims to describe
+the distribution of messages across solution clusters. Decimation fixes
+strongly biased variables; backtracking survey propagation (BSP) can undo
+some earlier choices. This is particularly relevant close to the random
+satisfiability threshold, where correlations and frozen variables complicate
+simple local search \citep{mmz2006,marino2016}.
+
+BSP has impressive empirical results for random $3$-SAT, including formulas
+with $10^6$ variables. Its empirical reach is much closer to the predicted
+threshold than conservative rigorous small-$k$ guarantees. However, numerical
+extrapolation of an algorithmic threshold is not a theorem that BSP succeeds
+whp throughout the SAT phase. Nor is an SP fixed point itself a satisfying
+assignment; any resulting Boolean assignment must still be checked.
+
+\begin{table}[htbp]
+\centering\small
+\begin{tabularx}{\linewidth}{@{}L{.31\linewidth}Y@{}}
+\toprule
+Required output & Sensible first comparison \\
+\midrule
+SAT or UNSAT for each input & Complete CDCL baseline, with timeouts reported as unknown. \\
+An assignment on likely-SAT random formulas & probSAT/local search versus BSP and CDCL. \\
+A checkable UNSAT conclusion & Proof-logging complete solver plus a compatible checker. \\
+Many independent random instances & CPU portfolio or batch parallelism; then a matched GPU comparison. \\
+Native XOR/cardinality constraints & Solvers supporting those constraints directly; do not assume ordinary random-CNF results apply. \\
+\bottomrule
+\end{tabularx}
+\caption{Recommendations for an initial experiment, not an assertion that
+one implementation is best on every ensemble.}
+\end{table}

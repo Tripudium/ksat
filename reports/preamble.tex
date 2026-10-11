@@ -1,0 +1,67 @@
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsthm,mathtools}
+\usepackage{newpxtext,newpxmath}
+\usepackage[margin=27mm,headheight=16pt]{geometry}
+\usepackage{microtype}
+\usepackage{booktabs,tabularx,longtable,array}
+\usepackage{enumitem}
+\usepackage{graphicx,xcolor}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[numbers,square,sort&compress]{natbib}
+\usepackage{fancyhdr,titlesec,needspace,xurl}
+
+\definecolor{ink}{HTML}{183549}
+\definecolor{teal}{HTML}{246A72}
+\definecolor{pale}{HTML}{EDF3F5}
+\definecolor{muted}{HTML}{53636E}
+\usepackage[colorlinks=true,linkcolor=ink,citecolor=ink,urlcolor=teal]{hyperref}
+\hypersetup{pdftitle={\ReportTitle},pdfauthor={\ReportAuthor},
+  pdfsubject={\ReportSubtitle}}
+
+\titleformat{\section}{\Large\bfseries\color{ink}}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\large\bfseries\color{ink}}{\thesubsection}{0.7em}{}
+\titlespacing*{\section}{0pt}{2.5ex plus 1ex}{1ex}
+\titlespacing*{\subsection}{0pt}{2ex plus .6ex}{.6ex}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textsc{\ReportShortTitle}}
+\fancyhead[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\parskip}{4pt plus 1pt}
+\setlength{\parindent}{1em}
+\setlength{\emergencystretch}{1.5em}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\setlist{topsep=4pt,itemsep=3pt,parsep=0pt}
+\setcounter{tocdepth}{1}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\graphicspath{{figures/}}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\placeholder}[1]{\textcolor{teal}{\textnormal{[#1]}}}
+\newcommand{\claimstatus}[1]{\par\noindent\textbf{Status and scope.} #1\par}
+\newenvironment{proofoutline}{%
+  \begin{quote}\small\noindent\textbf{Incomplete argument.}\enspace
+}{\end{quote}}
+\newcommand{\reportnote}[2]{%
+  \par\medskip\noindent
+  \begingroup\setlength{\fboxsep}{10pt}%
+  \colorbox{pale}{\begin{minipage}{\dimexpr\linewidth-2\fboxsep\relax}
+    \small\color{ink}\textbf{#1}\par\smallskip #2
+  \end{minipage}}\endgroup\par\medskip
+}

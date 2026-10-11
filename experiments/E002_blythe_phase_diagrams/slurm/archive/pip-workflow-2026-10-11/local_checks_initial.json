@@ -1,0 +1,8 @@
+{
+  "state": "failed_then_harness_corrected",
+  "scope": "Local mocked shell integration, no SLURM or solver invocation",
+  "failure": "Test compared submitted canonical RUN_DIR string with an unresolved macOS temporary-directory alias.",
+  "cause": "The helper correctly uses pwd -P; on macOS /var and /private/var can name the same directory.",
+  "correction": "Compare pathlib.Path(...).resolve() values in the test; production script behavior was unchanged.",
+  "later_result": "local_checks.json records the subsequent passing run."
+}

@@ -1,0 +1,46 @@
+\section{Research priorities and source scope}
+\label{sec:outlook}
+
+For an initial random-$k$-SAT project, three next steps are concrete.
+First, review the supplied threshold proof in detail, checking its stopping-time
+and model-transfer arguments and the dependencies of the convergence criterion.
+The newer window and $4.268$ upper-bound manuscripts should be assessed
+separately, including any claimed formal artifacts. Second, run the modest
+CPU feasibility pilot in Section~\ref{sec:scale}, keeping search and complete
+decision results separate. Third, if the geometric analogy is pursued,
+specify a relaxation or discrete invariant that survives the obstruction in
+Proposition~\ref{prop:lp} before attempting a concentration theorem.
+
+The algorithmic frontier is best expressed as a collection of questions.
+How far into the satisfiable phase can one guarantee polynomial-time witness
+search? Which computational models explain the observed barrier? Can random
+UNSAT formulas at constant density be efficiently certified by stronger
+methods? For small fixed $k$, how precisely can the threshold location and
+finite-size bias be determined? The reviewed sources address parts of these
+questions; the recent preprints do not supply a complete practical solution.
+
+\subsection{The supplied inventory and added literature}
+The repository originally supplied four PDFs. \texttt{TR26-229.pdf} is
+Carenini's October 2026 random-$k$-SAT preprint. \texttt{iau005.pdf} is
+Amelunxen--Lotz--McCoy--Tropp, and \texttt{sharp-phase.pdf} is Lotz--Tropp.
+The file \texttt{montanari-phase.pdf} is actually Montanari and Wang's
+\emph{Phase Transitions for Feature Learning in Neural Networks}
+\citep{montanari2026}; it is not a second random-$k$-SAT background paper.
+It has therefore not been used as evidence for a SAT theorem. The background
+coverage here is supplied by the additional primary sources in the bibliography.
+
+Literature and software results were checked through 10 October 2026.
+The exposition revision of 11 October adds the elementary clause-count
+proof and its teaching-note reference, and expands the clause-process definition.
+The coverage is targeted, not a claim of an exhaustive literature search.
+The source registry records stable S identifiers, versions, local originals,
+precise theorem/table locations and the scope of each reading. Checking a
+stated theorem and its hypotheses is distinguished from checking its proof;
+reported computational and Lean artifacts were not rerun.
+
+The article, bibliography and P001--P002 fragments are editable LaTeX. The repository
+command \texttt{make report} produces the PDF. The project status and source
+manifest identify the dated version; earlier template material is archived.
+No new solver measurements are included. Consequently the immediate missing
+evidence for a hardware-specific size recommendation is the local pilot,
+not another extrapolation from an unrelated benchmark.

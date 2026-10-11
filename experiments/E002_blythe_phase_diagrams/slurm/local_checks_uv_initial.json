@@ -1,0 +1,7 @@
+{
+  "state": "failed_then_harness_corrected",
+  "scope": "Mock shell integration from earlier Python3.12 environment; no real SLURM call",
+  "failure": "The first fixture run failed in the submission guard; captured stderr was not retained, so its precise cause was not established.",
+  "correction": "Aligned fixture PYTHONNOUSERSITE=1 with setup_environment.sh and ran the revised harness under the actual project Python 3.12.8. Production guard was unchanged; the full harness then passed.",
+  "later_result": "local_checks_uv_2026-10-11.json"
+}

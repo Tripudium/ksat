@@ -1,0 +1,39 @@
+{
+  "read_date": "2026-10-11",
+  "sources": [
+    {
+      "path": "papers/iau005.pdf",
+      "sha256": "9d112b651d33986cb6257b374efb836041eb3e08387d5b669570c91e1b0593a5"
+    },
+    {
+      "path": "scrtp/Hardware — scrtp-docs 0.1 documentation.html",
+      "sha256": "ebd980ccb3ebf8bef02ed668ed4b70581a9194e97df472cc3f6bd8a12378908c"
+    },
+    {
+      "path": "scrtp/Resource limits and job priority — scrtp-docs 0.1 documentation.html",
+      "sha256": "9007200a7de652a06e7b5c4c829a67aaaeca18a09eeff239ed43a4047361e9b9"
+    }
+  ],
+  "almt_visual_inspection": {
+    "figure_1": {
+      "printed_page": 226,
+      "pdf_page_1_based": 3
+    },
+    "figure_5": {
+      "printed_page": 235,
+      "pdf_page_1_based": 12
+    },
+    "appendix_A1_A3": {
+      "printed_pages": [
+        273,
+        274
+      ],
+      "pdf_pages_1_based": [
+        50,
+        51
+      ]
+    },
+    "method": "pdftoppm 100 dpi; all four page PNGs visually inspected"
+  },
+  "hardware_freshness": "Saved-document facts only; no live cluster verification. Avon expected EOL August 2026 in snapshot."
+}

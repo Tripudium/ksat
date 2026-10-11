@@ -1,0 +1,21 @@
+{
+  "k": 3,
+  "n_values": [
+    6,
+    8
+  ],
+  "alpha_values": [
+    "0.00",
+    "1.00",
+    "4.00",
+    "8.00"
+  ],
+  "repetitions": 3,
+  "base_seed": 20261012000,
+  "chunk_size": 12,
+  "solve_timeout_seconds": 5,
+  "check_timeout_seconds": 5,
+  "memory_mb": 1536,
+  "proof_policy": "required",
+  "name": "local-smoke-not-threshold-data"
+}

@@ -1,0 +1,16 @@
+\begin{proposition}[The elementary clause relaxation cannot detect UNSAT]
+\label{prop:lp}
+Let $F$ be a CNF formula in which every clause contains at least two
+literals. Replace each positive literal by $x_i$, each negative literal by
+$1-x_i$, impose that each clause's literal sum is at least $1$, and relax
+$x\in\{0,1\}^n$ to $x\in[0,1]^n$. This linear system is feasible for every
+such $F$. In particular, feasibility of this relaxation is not equivalent
+to satisfiability, even for proper $k$-CNF with fixed $k\ge2$.
+\end{proposition}
+\begin{proof}
+Set every $x_i=1/2$. Every literal then has value $1/2$, so a clause with
+$r\ge2$ literals has sum $r/2\ge1$. For an explicit UNSAT proper $k$-CNF,
+take all $2^k$ sign patterns on the same $k$ variables. Every Boolean
+assignment falsifies the clause with the opposite signs, so no assignment
+satisfies the formula, although the same fractional point is feasible.
+\end{proof}

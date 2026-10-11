@@ -1,0 +1,52 @@
+# Environments and machine-local settings
+.venv/
+.venv-*/
+.uv-cache/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# Local work and newly generated experiment runs
+/tmp/
+/cluster-runs/
+/runs/
+/experiments/*/runs/
+/experiments/*/run[0-9]*/
+/experiments/*/validation/smoke[0-9]*/
+/experiments/*/validation/uv-smoke*/
+
+# Downloaded reference originals and saved websites stay local.
+# Keep the human-readable indexes, source notes and provenance manifests.
+/papers/*
+!/papers/README.md
+/scrtp/*
+!/scrtp/README.md
+/references/*.pdf
+/references/*.html
+/references/*_files/
+
+# Rebuildable report outputs and distribution archives
+/reports/build/
+/reports/output/
+/reports/archive/**/*.pdf
+/experiments/E001_diagram_feasibility/almt-*.png
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.toc
+*.out
+
+# Compiled checker binaries (the vendored C source and license are tracked)
+/code/vendor/drat-trim/drat-trim
+/code/vendor/drat-trim/lrat-check
+/code/vendor/drat-trim/compress
+/code/vendor/drat-trim/decompress
+/code/vendor/drat-trim/gapless

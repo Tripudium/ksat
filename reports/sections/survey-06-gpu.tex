@@ -1,0 +1,88 @@
+\section{What GPUs can and cannot accelerate}
+\label{sec:gpu}
+
+GPUs are good at large batches of similar operations and less well suited to
+irregular, sequential control flow. SAT offers both. Batched assignment
+evaluation, independent local searches, message updates and some simplification
+kernels expose parallel work. CDCL's trail, propagation dependencies, changing
+clause database and divergent search paths make a straightforward wholesale
+port difficult. The relevant question is therefore which computation is
+accelerated and what fraction of total solving cost it represents.
+
+\subsection{Published evidence}
+\textbf{GPU inprocessing inside a complete solver.}
+ParaFROST accelerates simplification and inprocessing and supports proof
+logging \citep{osama2024}. Its experiments use an Intel Xeon Gold 6130,
+96 GB RAM and a Titan RTX, with a 3600-second solving limit.
+The CPU comparisons use a different Xeon E5-2630 machine, so the hardware
+comparison is not fully matched.
+The GPU version improves on its related CPU engine, but the paper also
+reports that Kissat is faster overall on the evaluated collection.
+This supports GPU acceleration of selected components, not an overall
+advantage against every strong CPU solver. Proof production and checking
+cost must be included when certification is the objective.
+
+\textbf{Continuous local search.}
+FastFourierSAT maps gradient computation for symmetric Boolean constraints
+to GPU-friendly operations \citep{cen2025}. It is particularly relevant to
+hybrid formulas containing native cardinality and XOR constraints.
+The paper reports large kernel gains, but its ordinary CNF experiment is
+cautionary: in a 1000-second test on satisfiable SAT Competition 2023
+instances, its GPU variant solves 13 and its CPU variant 5. The corresponding
+competition solvers solve those easy instances in roughly $0.04$--$1.07$
+seconds. The GPU setup includes an RTX 3080 Ti. Thus a large acceleration
+within one continuous-search method does not establish competitiveness with
+CDCL on general CNF. The method is incomplete and cannot certify UNSAT.
+
+\subsection{Recent preprints and comparison limits}
+\textbf{TurboSAT.}
+The November 2025 preprint combines GPU continuous search with CPU CDCL
+\citep{dai2025}. On its 179-instance SAT Competition 2024 collection it
+reports 165 solved within 5000 seconds, versus 143 for the chosen CaDiCaL
+1.9.5 baseline. Experiments use a DGX GB200 system with up to two B200 GPUs
+and 141 CPU threads. The method retains an unrestricted CDCL worker for
+completeness. This is promising hybrid-system evidence, but it is not an
+isolated GPU speedup: the CPU portfolio, hardware resources and configurations
+also differ. These benchmarks are not a controlled random-$k$-SAT size study.
+
+\textbf{Accelerated Fourier SAT.}
+The June 2026 AFSAT preprint studies GPU implementation and throughput,
+including hard random $3$-SAT and scaling across V100 GPUs
+\citep{christopher2026}. It helps establish that this style of search can
+benefit from parallel hardware. Throughput, however, must be combined with
+the probability of finding a fully satisfying assignment to obtain a
+time-to-solution comparison. Continuous objective values and almost-satisfying
+outputs are insufficient; the benchmark must enforce zero violated clauses.
+
+\begin{table}[htbp]
+\centering\small
+\begin{tabularx}{\linewidth}{@{}L{.27\linewidth}Y Y@{}}
+\toprule
+Approach & Evidence of benefit & Main limitation \\
+\midrule
+ParaFROST & GPU simplification within complete solving; published & Improvement over related CPU engine does not imply beating Kissat. \\
+FastFourierSAT & Parallel gradients, especially hybrid constraints; published & Kernel gains and native-constraint advantages need not transfer to random CNF. \\
+TurboSAT & More solves in a large hybrid system; preprint & Many CPU workers and GPUs confound a GPU-only comparison. \\
+AFSAT & GPU throughput and random-$3$-SAT experiments; preprint & Throughput is not a complete-decision or UNSAT guarantee. \\
+\bottomrule
+\end{tabularx}
+\caption{Four concrete GPU approaches. Publication status and benchmark
+limitations are part of the comparison, not interchangeable speedup claims.}
+\end{table}
+
+\subsection{Recommendation for this project}
+Establish a CPU baseline first. A GPU comparison is most informative for
+large satisfiable random instances, many independent instances or restarts,
+and batched message-passing or continuous-search experiments. Keep formula
+generation, preprocessing, host--device transfer, compilation/warm-up,
+assignment reconstruction and verification in the accounting. Compare
+matched hardware budgets as well as raw wall-clock time; report CPU core
+counts and GPU counts explicitly.
+
+For near-threshold UNSAT certification, the checked literature provides no
+basis for assuming that buying a GPU removes the principal difficulty.
+GPUs may help specific kernels or portfolios, but a reduction in kernel
+time cannot by itself overcome a search or proof-size bottleneck. A useful
+reported speedup is the time to a verified answer on the same instances at
+the same success target, not only flips per second or gradient evaluations
+per second.

@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-11",
+  "runner_sha256": "197799ce3762883f03c64f06593bbe439823d3574c492391694bfdbdd7d5b1d0",
+  "unit_tests": 23,
+  "smoke_instances": 24,
+  "sat_verified": 19,
+  "unsat_verified": 5,
+  "truth_table_cross_check": "exact-smoke-check.json",
+  "resume_skipped": 12,
+  "independent_runner_review": "runner_review.md",
+  "cluster_jobs_submitted": 0,
+  "scope": "Local software validation, not threshold/concentration evidence",
+  "plotter_sha256": "44a917e21bf477c04e670112707a5dc2b221de8e2cb77e0f8daeec43cc13d8bc",
+  "visual_qa": "All three analysis-v2 PNGs inspected; footer overlap in preserved v1 corrected."
+}

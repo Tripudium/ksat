@@ -1,0 +1,4 @@
+Prepared environment matches project lock, Python, packages, modules and checker.
+Planned 2 chunks, at most 4 concurrent tasks x 16 CPUs.
+Command: sbatch --parsable --partition=compute --nodes=1 --ntasks=1 --cpus-per-task=16 --mem-per-cpu=2048 --time=00:45:00 --array=0-1%4 --chdir=/Users/u1774790/Projects/ksat --output=/Users/u1774790/Projects/ksat/experiments/E002_blythe_phase_diagrams/validation/uv-smoke001/slurm-logs/%A_%a.out --error=/Users/u1774790/Projects/ksat/experiments/E002_blythe_phase_diagrams/validation/uv-smoke001/slurm-logs/%A_%a.err --export=ALL /Users/u1774790/Projects/ksat/experiments/E002_blythe_phase_diagrams/slurm/run_array.sbatch /Users/u1774790/Projects/ksat/experiments/E002_blythe_phase_diagrams/validation/uv-smoke001 
+Dry run only. Add --submit to submit this command on Blythe.

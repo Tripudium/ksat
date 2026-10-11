@@ -1,0 +1,121 @@
+{
+  "date": "2026-10-11",
+  "scope": "Local macOS uv-environment migration validation; no cluster execution and no mathematical conclusion.",
+  "state": "completed",
+  "commands": [
+    {
+      "name": "preflight",
+      "argv": [
+        "/Users/u1774790/Projects/ksat/.venv/bin/python",
+        "code/ksat_experiments.py",
+        "preflight",
+        "--drat-trim",
+        "/Users/u1774790/Projects/ksat/.venv/bin/drat-trim",
+        "--output",
+        "/Users/u1774790/Projects/ksat/experiments/E002_blythe_phase_diagrams/validation/uv-setup-2026-10-11/preflight.json"
+      ],
+      "exit_code": 0,
+      "log": "preflight.log"
+    },
+    {
+      "name": "plan",
+      "argv": [
+        "/Users/u1774790/Projects/ksat/.venv/bin/python",
+        "code/ksat_experiments.py",
+        "plan",
+        "--config",
+        "experiments/E002_blythe_phase_diagrams/configs/smoke.json",
+        "--output",
+        "/Users/u1774790/Projects/ksat/experiments/E002_blythe_phase_diagrams/validation/uv-smoke001"
+      ],
+      "exit_code": 0,
+      "log": "plan.log"
+    },
+    {
+      "name": "chunk-0",
+      "argv": [
+        "/Users/u1774790/Projects/ksat/.venv/bin/python",
+        "code/ksat_experiments.py",
+        "run",
+        "--run-dir",
+        "/Users/u1774790/Projects/ksat/experiments/E002_blythe_phase_diagrams/validation/uv-smoke001",
+        "--chunk-id",
+        "0",
+        "--workers",
+        "2",
+        "--drat-trim",
+        "/Users/u1774790/Projects/ksat/.venv/bin/drat-trim"
+      ],
+      "exit_code": 0,
+      "log": "chunk-0.log"
+    },
+    {
+      "name": "chunk-1",
+      "argv": [
+        "/Users/u1774790/Projects/ksat/.venv/bin/python",
+        "code/ksat_experiments.py",
+        "run",
+        "--run-dir",
+        "/Users/u1774790/Projects/ksat/experiments/E002_blythe_phase_diagrams/validation/uv-smoke001",
+        "--chunk-id",
+        "1",
+        "--workers",
+        "2",
+        "--drat-trim",
+        "/Users/u1774790/Projects/ksat/.venv/bin/drat-trim"
+      ],
+      "exit_code": 0,
+      "log": "chunk-1.log"
+    },
+    {
+      "name": "truth-tables",
+      "argv": [
+        "/Users/u1774790/Projects/ksat/.venv/bin/python",
+        "experiments/E002_blythe_phase_diagrams/validation/verify_smoke.py",
+        "--run-dir",
+        "/Users/u1774790/Projects/ksat/experiments/E002_blythe_phase_diagrams/validation/uv-smoke001",
+        "--output",
+        "/Users/u1774790/Projects/ksat/experiments/E002_blythe_phase_diagrams/validation/uv-setup-2026-10-11/exact-smoke-check.json"
+      ],
+      "exit_code": 0,
+      "log": "truth-tables.log"
+    },
+    {
+      "name": "plot",
+      "argv": [
+        "/Users/u1774790/Projects/ksat/.venv/bin/python",
+        "code/plot_ksat_phase.py",
+        "--run-dir",
+        "/Users/u1774790/Projects/ksat/experiments/E002_blythe_phase_diagrams/validation/uv-smoke001",
+        "--output",
+        "/Users/u1774790/Projects/ksat/experiments/E002_blythe_phase_diagrams/validation/uv-smoke001/analysis-v1"
+      ],
+      "exit_code": 0,
+      "log": "plot.log"
+    },
+    {
+      "name": "dry-run",
+      "argv": [
+        "bash",
+        "experiments/E002_blythe_phase_diagrams/slurm/submit_array.sh",
+        "/Users/u1774790/Projects/ksat/experiments/E002_blythe_phase_diagrams/validation/uv-smoke001"
+      ],
+      "exit_code": 0,
+      "log": "dry-run.log"
+    }
+  ],
+  "unit_tests": {
+    "command": ".venv/bin/python -m unittest discover -s code/tests -v",
+    "passed": 23,
+    "exit_code": 0,
+    "note": "Executed immediately before this record; console output observed, not duplicated here."
+  },
+  "hashes": {
+    "pyproject.toml": "d89a1041e5e772873417d2c728392e63da4e27e0c5f7526bbf6df5f6a174e794",
+    "uv.lock": "509f78b96cedc768308525fb92daea9c8fc9095e75924c7bd498c89176516f4f",
+    ".python-version": "7b55f8e67b5623c4bef3fa691288da9437d79d3aba156de48d481db32ac7d16d",
+    "AGENTS.md": "0a50f69efa32ded720c07a924147dcc82b9dd09c250ccbdb71edf23be5c195a6",
+    "code/ksat_experiments.py": "197799ce3762883f03c64f06593bbe439823d3574c492391694bfdbdd7d5b1d0",
+    "code/plot_ksat_phase.py": "44a917e21bf477c04e670112707a5dc2b221de8e2cb77e0f8daeec43cc13d8bc"
+  }
+}

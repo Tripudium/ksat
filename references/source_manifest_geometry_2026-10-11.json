@@ -1,0 +1,330 @@
+[
+  {
+    "id": "S001",
+    "bibkey": "carenini2026",
+    "file": "papers/TR26-229.pdf",
+    "sha256": "38243eedfd7a4b89abb2c862d3476924ed238ecb8efd9f67577bc75707fdcd40",
+    "accessed": "2026-10-10",
+    "source": "https://eccc.weizmann.ac.il/report/2026/229/"
+  },
+  {
+    "id": "S002",
+    "bibkey": "almt2014",
+    "file": "papers/iau005.pdf",
+    "sha256": "9d112b651d33986cb6257b374efb836041eb3e08387d5b669570c91e1b0593a5",
+    "accessed": "2026-10-10",
+    "source": "https://doi.org/10.1093/imaiai/iau005"
+  },
+  {
+    "id": "S003",
+    "bibkey": "lotz2026",
+    "file": "papers/sharp-phase.pdf",
+    "sha256": "a8807cb8ecab367a5b5b8947ae9666519616297f95a6afbb142ad3c4d94c39b1",
+    "accessed": "2026-10-10",
+    "source": "https://doi.org/10.1007/978-3-032-06057-0_8"
+  },
+  {
+    "id": "S004",
+    "bibkey": "montanari2026",
+    "file": "papers/montanari-phase.pdf",
+    "sha256": "cfa754b159d1bac841eec2f9101de39ac586eb9a5d9e18adc409590c18765657",
+    "accessed": "2026-10-10",
+    "source": "https://arxiv.org/abs/2602.01434v2"
+  },
+  {
+    "id": "S005",
+    "bibkey": "friedgut1999",
+    "file": "papers/Friedgut_1999.pdf",
+    "sha256": "10a5da3e0bae6777a998c739a626aedcf0dcefcc107217af2b90875f45435901",
+    "accessed": "2026-10-10",
+    "source": "https://mathweb.ucsd.edu/~sbuss/CourseWeb/Math268_2007WS/Friedgut_Treshold.pdf"
+  },
+  {
+    "id": "S006",
+    "bibkey": "bbckw2001",
+    "file": "papers/Bollobas_etal_2001_2SAT.pdf",
+    "sha256": "e0aa9d9c055c22436114fe4253ebf4a4b1c6b4432c6aa96b65f9da45a35a6c40",
+    "accessed": "2026-10-10",
+    "source": "https://arxiv.org/abs/math/9909031"
+  },
+  {
+    "id": "S007",
+    "bibkey": "dss2022",
+    "file": "papers/Ding_Sly_Sun_2022_LargeK.pdf",
+    "sha256": "a05edda6b5b5174f1214832c579ccd866fde9618f68d74fff1f24f79393295db",
+    "accessed": "2026-10-10",
+    "source": "https://arxiv.org/abs/1411.0650v3"
+  },
+  {
+    "id": "S008",
+    "bibkey": "cop2016",
+    "file": "papers/CojaOghlan_Panagiotou_2016_Asymptotic.pdf",
+    "sha256": "7e00046c73946726f5bb0711cc4af1e9191653f7ee6522e0ccf60607c2a22fe9",
+    "accessed": "2026-10-10",
+    "source": "https://arxiv.org/abs/1310.2728v6"
+  },
+  {
+    "id": "S009",
+    "bibkey": "mmz2006",
+    "file": "papers/Mertens_Mezard_Zecchina_2006.pdf",
+    "sha256": "4b4d08a07809850ce2582f96a13838c99aa1e084e272b127baeab3c5604a6f9f",
+    "accessed": "2026-10-10",
+    "source": "https://arxiv.org/abs/cs/0309020v2"
+  },
+  {
+    "id": "S010",
+    "bibkey": "kkl2006",
+    "file": "papers/Kaporis_Kirousis_Lalas_2003.pdf",
+    "sha256": "1fb04d2ce3b3d989370ddad454782c56bbdd83459cde866f408962956540a0f8",
+    "accessed": "2026-10-10",
+    "source": "https://www.researchgate.net/publication/2495758_The_Probabilistic_Analysis_of_a_Greedy_Satisfiability_Algorithm"
+  },
+  {
+    "id": "S011",
+    "bibkey": "hs2003",
+    "file": "papers/Hajiaghayi_Sorkin_2003.pdf",
+    "sha256": "c1a9b952822d4538d0c8274edd36c301dc540e195376b0701db9d733bfb06a05",
+    "accessed": "2026-10-10",
+    "source": "https://arxiv.org/abs/math/0310193"
+  },
+  {
+    "id": "S012",
+    "bibkey": "diaz2008",
+    "file": "papers/Diaz_etal_2008_UpperBound.pdf",
+    "sha256": "631b0bccb72aaefd12e599ce98b8d667be316774889753bd6fd61a9b218a85bd",
+    "accessed": "2026-10-10",
+    "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol002-fsttcs2008/LIPIcs.FSTTCS.2008.1750/LIPIcs.FSTTCS.2008.1750.pdf"
+  },
+  {
+    "id": "S013",
+    "bibkey": "vorobyev2026",
+    "file": "papers/Vorobyev_2026_UpperBound4268.pdf",
+    "sha256": "9790fc63b8d099f399153acc8e159f1616a5f1353d29e534e36a74cc15e722fb",
+    "accessed": "2026-10-10",
+    "source": "https://arxiv.org/abs/2610.10599v1"
+  },
+  {
+    "id": "S014",
+    "bibkey": "coja2010",
+    "file": "papers/CojaOghlan_2009_Fix.pdf",
+    "sha256": "8189f7c1ec3bb9582976f3fe4ade2d3104c94be281c089ce0243788530778fc6",
+    "accessed": "2026-10-10",
+    "source": "https://www.cs.cmu.edu/~odonnell/hits09/coja-oghlan-random-k-sat-alg.pdf"
+  },
+  {
+    "id": "S015",
+    "bibkey": "bresler2021",
+    "file": "papers/Bresler_Huang_2021_Algorithmic.pdf",
+    "sha256": "bcfc8b0a5249b9035fd22bd63d876f2ca0cc96ae694e583539dba516ea0f0b1b",
+    "accessed": "2026-10-10",
+    "source": "https://arxiv.org/abs/2106.02129v3"
+  },
+  {
+    "id": "S016",
+    "bibkey": "liu2018",
+    "file": "papers/Liu_2018_Deterministic.pdf",
+    "sha256": "83d8c7e992ea8bf8874bc1222e5c3a07238a42174e05b90d3ccbc2891c626833",
+    "accessed": "2026-10-10",
+    "source": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ICALP.2018.88"
+  },
+  {
+    "id": "S017",
+    "bibkey": "scheder2024",
+    "file": "papers/Scheder_2022_PPSZ.pdf",
+    "sha256": "fbcb127dc6e6f30277297ae3400fccbe39bb852a1fa65a318f6b8c3219e0ae94",
+    "accessed": "2026-10-10",
+    "source": "https://doi.org/10.46298/theoretics.24.5"
+  },
+  {
+    "id": "S018",
+    "bibkey": "jiang2026",
+    "file": "papers/Jiang_Cai_2026_PPSZ.pdf",
+    "sha256": "c2930b052b0d2da5186e09fc2297df6a1e777c1812c64b05f39daf28516b6db3",
+    "accessed": "2026-10-10",
+    "source": "https://arxiv.org/abs/2607.10697v1"
+  },
+  {
+    "id": "S019",
+    "bibkey": "allen2015",
+    "file": "papers/Allen_ODonnell_Witmer_2015.pdf",
+    "sha256": "53ada2399205a137f10c7076c77adfe1fb948f12cbd1efe612571fa43bcb2e12",
+    "accessed": "2026-10-10",
+    "source": "https://www.cs.cmu.edu/~odonnell/papers/random-csp-refutation.pdf"
+  },
+  {
+    "id": "S020",
+    "bibkey": "ben2001",
+    "file": "papers/BenSasson_Wigderson_2001_Width.pdf",
+    "sha256": "a47025f36a47da2d39e490bdeaaa39b5618eb9f947cfe609f1833ea1511248f4",
+    "accessed": "2026-10-10",
+    "source": "https://people.inf.ethz.ch/emo/SatSem05/Papers/BensassonWidgerson01.pdf"
+  },
+  {
+    "id": "S021",
+    "bibkey": "marino2016",
+    "file": "papers/Marino_Parisi_RicciTersenghi_2016_BSP.pdf",
+    "sha256": "d7d5ffc23449c7f4d739f0396f16eaa16911372bf06a23d2d70112cbdba29e0c",
+    "accessed": "2026-10-10",
+    "source": "https://www.nature.com/articles/ncomms12996"
+  },
+  {
+    "id": "S022",
+    "bibkey": "luo2014",
+    "file": "papers/Luo_etal_2014_DCCASat.pdf",
+    "sha256": "28f90c2fe5e351e1f2380a95698f60a4aa6f0922cd4b034da8ba5492d4094a69",
+    "accessed": "2026-10-10",
+    "source": "https://doi.org/10.1609/aaai.v28i1.9110"
+  },
+  {
+    "id": "S023",
+    "bibkey": "hutter2017",
+    "file": "papers/Hutter_etal_2017_CSSC.pdf",
+    "sha256": "9408643ac0165e91b8a81da62ddd4f8084c33aebfee9fcc00ee384e55a881f48",
+    "accessed": "2026-10-10",
+    "source": "https://ada.liacs.nl/papers/HutEtAl17.pdf"
+  },
+  {
+    "id": "S024",
+    "bibkey": "satcomp2026",
+    "file": "references/SAT_Competition_2026_results.pdf",
+    "sha256": "f1b564c474d5f2f2cf726a399c80afa204748608220f655dca7758c6af33e2c6",
+    "accessed": "2026-10-10",
+    "source": "https://satcompetition.github.io/2026/"
+  },
+  {
+    "id": "S025",
+    "bibkey": "biere2024",
+    "file": "papers/Biere_etal_2024_Solvers.pdf",
+    "sha256": "756986d5d1d2c56c323aa2d3c0b04ece743b78ad154fb1cb7c070d0ddcbf9248",
+    "accessed": "2026-10-10",
+    "source": "https://cca.informatik.uni-freiburg.de/papers/BiereFallerFazekasFleuryFroleyksPollitt-SAT-Competition-2024-solvers.pdf"
+  },
+  {
+    "id": "S026",
+    "bibkey": "probsat",
+    "file": "references/probSAT_README_2026-10-10.md",
+    "sha256": "0f8ed3c616a352ef38260c1710fcd6210b0830873e4877e7b34b4aef801195b3",
+    "accessed": "2026-10-10",
+    "source": "https://github.com/adrianopolus/probSAT"
+  },
+  {
+    "id": "S027",
+    "bibkey": "osama2024",
+    "file": "papers/Osama_Wijs_Biere_2024_ParaFROST.pdf",
+    "sha256": "97295976c59d25d3d6e873d98a06df3fed3cf7940a7196579bf86de9459da1c4",
+    "accessed": "2026-10-10",
+    "source": "https://cca.informatik.uni-freiburg.de/papers/OsamaWijsBiere-FMSD23.pdf"
+  },
+  {
+    "id": "S028",
+    "bibkey": "cen2025",
+    "file": "papers/Cen_2025_FastFourierSAT_published.pdf",
+    "sha256": "996179fcf62dca4c1173d32917f42447598cd779b326a7a3129d5e48db95d3fd",
+    "accessed": "2026-10-10",
+    "source": "https://ojs.aaai.org/index.php/AAAI/article/download/33211/35366"
+  },
+  {
+    "id": "S029",
+    "bibkey": "dai2025",
+    "file": "papers/TurboSAT_2025.pdf",
+    "sha256": "bac4f78a39f11470a8f4655bff2c45d6bac957d7b3c6c55ef6e03ab9b093110e",
+    "accessed": "2026-10-10",
+    "source": "https://arxiv.org/abs/2511.07737v1"
+  },
+  {
+    "id": "S030",
+    "bibkey": "christopher2026",
+    "file": "papers/Christopher_2026_AFSAT.pdf",
+    "sha256": "ffbd46be9809a3f3f8c87621081412e8d519d24c72dc94e0c6930e81da55b3a8",
+    "accessed": "2026-10-10",
+    "source": "https://arxiv.org/abs/2606.06641v1"
+  },
+  {
+    "id": "S031",
+    "bibkey": "careniniWindow",
+    "file": "papers/Carenini_2026_ScalingWindow.pdf",
+    "sha256": "32afe46e787223848b5657d729a9768ac59ea8c6f1b949cfde331cc5a779eea1",
+    "accessed": "2026-10-10",
+    "source": "https://eccc.weizmann.ac.il/report/2026/145/"
+  },
+  {
+    "id": "S032",
+    "bibkey": "oaVariance3",
+    "file": "papers/OpenAI_2026_LinearVariance3SAT.pdf",
+    "sha256": "01f912a6aaba76c36cb38913ae3d902329696e1e5502feed9b71903d42b8bc08",
+    "accessed": "2026-10-10",
+    "source": "https://github.com/openai/math/tree/main/preprints/Linear-Variance-of-the-Random-3-SAT-Hitting-Time-October-5-2026"
+  },
+  {
+    "id": "S033",
+    "bibkey": "oaVariance",
+    "file": "papers/OpenAI_2026_VarianceKSAT.pdf",
+    "sha256": "9e47a7c16a835f9111435037d4103a0dd974111512c62c0f0e9c96ea14bc2d56",
+    "accessed": "2026-10-10",
+    "source": "https://github.com/openai/math/tree/main/preprints/Variance-of-the-Random-k-SAT-Hitting-Time-September-27-2026"
+  },
+  {
+    "id": "S034",
+    "bibkey": "oaComputing",
+    "file": "papers/OpenAI_2026_ComputingThreshold.pdf",
+    "sha256": "be7bde6cd4e513e134ffa36b94506ddd9fd0c13fd9f740d2ebac8494d249c530",
+    "accessed": "2026-10-10",
+    "source": "https://github.com/openai/math/tree/main/preprints/Computing-the-Random-3-SAT-Threshold-September-27-2026"
+  },
+  {
+    "id": "S035",
+    "bibkey": "wilson2002",
+    "file": "papers/Wilson_2002_CriticalExponents.pdf",
+    "sha256": "4f1b26ebe89f3dad3fc6c249594ff5656a501db269c36ed388ae069564171d3f",
+    "accessed": "2026-10-10",
+    "source": "https://arxiv.org/abs/math/0005136v2"
+  },
+  {
+    "id": "S036",
+    "bibkey": "jin2026",
+    "file": "papers/Jin_etal_2026_PALSAT.pdf",
+    "sha256": "488460c35e41bebfc6b0bacf3434e9fcb853b34ee169e1a1a28fb34ffcca89a4",
+    "accessed": "2026-10-10",
+    "source": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.SAT.2026.21"
+  },
+  {
+    "id": "S037",
+    "bibkey": "bangjensen2023",
+    "file": "papers/BangJensen_2023_few_clauses.pdf",
+    "sha256": "d622b8db66952fcdf99a4d9c65b64c8d6a90aafceb819ce61ee17144675c8062",
+    "accessed": "2026-10-11",
+    "source": "https://www.imada.sdu.dk/u/jbj/DM551/us03.pdf"
+  },
+  {
+    "id": "S038",
+    "bibkey": "pysatAPI",
+    "file": "references/PySAT_solvers_2026-10-11.html",
+    "sha256": "d915d8bcbbf7e276c30a18bf97d1040d1428a1b515997d820c6e29cf6cd8cc11",
+    "accessed": "2026-10-11",
+    "source": "https://pysathq.github.io/docs/html/api/solvers.html"
+  },
+  {
+    "id": "S039",
+    "bibkey": "scrtpHardware",
+    "file": "scrtp/Hardware — scrtp-docs 0.1 documentation.html",
+    "sha256": "ebd980ccb3ebf8bef02ed668ed4b70581a9194e97df472cc3f6bd8a12378908c",
+    "accessed": "2026-10-11",
+    "source": "Local user-supplied scrtp/ directory"
+  },
+  {
+    "id": "S040",
+    "bibkey": "navon2007",
+    "file": "papers/Navon_Samorodnitsky_2007.pdf",
+    "sha256": "fad624073e55120d5c13a42664d04a8b2953fd6c3c45ba90b984d4cdcc684e69",
+    "accessed": "2026-10-11",
+    "source": "https://people.csail.mit.edu/dmoshkov/courses/codes/lec8-LP-bound.pdf"
+  },
+  {
+    "id": "S041",
+    "bibkey": "wei2011",
+    "file": "papers/Wei_Dudley_2011_DKW.pdf",
+    "sha256": "38296a2c6b028991a6005f95a2f95ce3b19c9d99ce77f5fefbd5ff49f8057b3f",
+    "accessed": "2026-10-11",
+    "source": "https://arxiv.org/abs/1107.5356v2"
+  }
+]

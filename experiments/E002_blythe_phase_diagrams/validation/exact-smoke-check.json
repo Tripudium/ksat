@@ -1,0 +1,176 @@
+{
+  "scope": "Exact enumeration of these retained n<=12 software-smoke instances only; no threshold or concentration conclusion",
+  "checker_sha256": "3e9b3fed6f001b8499169aaa35323ff5de752bbe0fe4763ca6bddccc9ca4ba53",
+  "instances": 24,
+  "attempts_checked": 24,
+  "records": [
+    {
+      "id": "9cfd3df47ff72dc3e55aa13efed66a6b537e31a6718f4314f38ed2c92ecac889",
+      "attempt_id": "20261011T073738-5e264a75af3743acb27f39d0ecc0fb04",
+      "n": 6,
+      "m": 0,
+      "exact_satisfying_assignments": 64
+    },
+    {
+      "id": "e638120f37a06ab1580e3f89f39280d8b583af146ce4cb4e16f20e63ab4306f6",
+      "attempt_id": "20261011T073738-2f561dea60a747be8c3b0bdfed3ca77e",
+      "n": 6,
+      "m": 0,
+      "exact_satisfying_assignments": 64
+    },
+    {
+      "id": "1223e5efc1169b101ade437cd3c06623e5840b76d22b4b3a7cd13509379524e7",
+      "attempt_id": "20261011T073739-bc6614545f4c4967b1fe9c90b9b7947b",
+      "n": 6,
+      "m": 0,
+      "exact_satisfying_assignments": 64
+    },
+    {
+      "id": "2128a4b8f2f5cc13fba2d77a613d8667106267988b2f1590d20ff403aa4b1c26",
+      "attempt_id": "20261011T073739-ba642faef19f4985b06a84154d5707d8",
+      "n": 6,
+      "m": 6,
+      "exact_satisfying_assignments": 26
+    },
+    {
+      "id": "00cdb9bfb703d5565edaa42131e0ad7c0496305bb426e945cc0a119b57f34ba6",
+      "attempt_id": "20261011T073739-cd26cdf64bad4398b86063e932ed8fa5",
+      "n": 6,
+      "m": 6,
+      "exact_satisfying_assignments": 27
+    },
+    {
+      "id": "bcae7de2a070c4de066e5f0ece5d1867b177e4ec527237d2b3ce0e325ce62ab8",
+      "attempt_id": "20261011T073739-9d04da9a5a7e4639ae23f7ea1d3d188e",
+      "n": 6,
+      "m": 6,
+      "exact_satisfying_assignments": 30
+    },
+    {
+      "id": "d51e5ec94567611f71d660ea3866e4111e309a45825beb858f121602314d25a6",
+      "attempt_id": "20261011T073739-41aed7c8a11046d995e10ce44f508b1a",
+      "n": 6,
+      "m": 24,
+      "exact_satisfying_assignments": 3
+    },
+    {
+      "id": "5d4decf6acb7856830218d22631d63f0dc47a1778594f32447212baec59f7fef",
+      "attempt_id": "20261011T073739-329fde0083af4808a196fb1246bfb0bf",
+      "n": 6,
+      "m": 24,
+      "exact_satisfying_assignments": 1
+    },
+    {
+      "id": "93acdc2d63600fc8eb8fd989bf3682d2563fd65fb830b1b77debee4df7626ac8",
+      "attempt_id": "20261011T073739-382ddac263ca40f99bc553e3898ef3c2",
+      "n": 6,
+      "m": 24,
+      "exact_satisfying_assignments": 5
+    },
+    {
+      "id": "31e79b6e797970bec1c5c4b2a3059bea4782b6f6fac9825bc1624c7c7e9d561c",
+      "attempt_id": "20261011T073739-8b28e178a382412896427f3be5e90330",
+      "n": 6,
+      "m": 48,
+      "exact_satisfying_assignments": 1
+    },
+    {
+      "id": "3b968f4e12d5d8002c27b13d8bfd449e41d6fa3d367bf10ea2ff1f0935c4ad7f",
+      "attempt_id": "20261011T073739-f09fc47838eb46d8b5ebccdc5517c77a",
+      "n": 6,
+      "m": 48,
+      "exact_satisfying_assignments": 0
+    },
+    {
+      "id": "e720aaf3ab9ca8d321ae76b3bacd3c261ebf8510b8e700346981c97da68bb16b",
+      "attempt_id": "20261011T073739-77eddb6fc64247b5b49c965e6de3ff03",
+      "n": 6,
+      "m": 48,
+      "exact_satisfying_assignments": 0
+    },
+    {
+      "id": "cdd2505769d1a245c76833104a22272427aff112a5ca2a9ee049485020ffada6",
+      "attempt_id": "20261011T073956-eda69aeaeb6245c5a760a4205e29a410",
+      "n": 8,
+      "m": 0,
+      "exact_satisfying_assignments": 256
+    },
+    {
+      "id": "c625eb2aa3a6d950a55386028e8c681f186f8551dfb5f5bae1a72bc2bf9b290a",
+      "attempt_id": "20261011T073956-a15b37653cda4bc6887747347acddf28",
+      "n": 8,
+      "m": 0,
+      "exact_satisfying_assignments": 256
+    },
+    {
+      "id": "7711d14d2f88d6430bbf9f1f7d24eacf264c7ad30bfaca6023a296623c959265",
+      "attempt_id": "20261011T073956-abddd1a58cb147fea592d7f651afa14d",
+      "n": 8,
+      "m": 0,
+      "exact_satisfying_assignments": 256
+    },
+    {
+      "id": "cb4b541d24c57eb3df57a051a45f8287e2e3b257533bab60c0279eba4c07b716",
+      "attempt_id": "20261011T073956-171d117314fa42b395eaf2fc235ad432",
+      "n": 8,
+      "m": 8,
+      "exact_satisfying_assignments": 83
+    },
+    {
+      "id": "925857f0328a411feaff15fd7273939d2b91af097b2acd9e717d9ef9725d2224",
+      "attempt_id": "20261011T073956-2b358bf92ecc44cc98f466750ed85662",
+      "n": 8,
+      "m": 8,
+      "exact_satisfying_assignments": 84
+    },
+    {
+      "id": "1a6fd030e4eaf77b622d0366a79cdb8b3392d1292d0bb6991cdebfbbb84cc370",
+      "attempt_id": "20261011T073956-d15adea7e3d049f0b6aca1cba72d5071",
+      "n": 8,
+      "m": 8,
+      "exact_satisfying_assignments": 74
+    },
+    {
+      "id": "e60da46d92473fe1f1fb149033d50e336432e7246c047dbe8877d728783a4160",
+      "attempt_id": "20261011T073957-002ae345456e403e8531265b1e2ede80",
+      "n": 8,
+      "m": 32,
+      "exact_satisfying_assignments": 4
+    },
+    {
+      "id": "5d7ab2d1b1faa50aeb8ba1a8ddd8642297e669b83770e72b092419536f563015",
+      "attempt_id": "20261011T073957-cfe96ba138fe49149fd14f9458d17adc",
+      "n": 8,
+      "m": 32,
+      "exact_satisfying_assignments": 4
+    },
+    {
+      "id": "316887d425ed477542fc30476a08466fa3b2bcff425f3b4b8d4727b0ececbd0d",
+      "attempt_id": "20261011T073957-73b5508b31dc4cd79486cb1946274b4f",
+      "n": 8,
+      "m": 32,
+      "exact_satisfying_assignments": 1
+    },
+    {
+      "id": "8ca2b6c61cc8e0950f6030c60558d6473b2e5c36b96cd4bfd0ab2713dfdf35ed",
+      "attempt_id": "20261011T073957-23b13ccc0be845468dad0f6a726a6f67",
+      "n": 8,
+      "m": 64,
+      "exact_satisfying_assignments": 0
+    },
+    {
+      "id": "59039513724479e2186e2836a5c78be35ffee275e63498b556bca7be3b57bad6",
+      "attempt_id": "20261011T073957-679cdb303e85420483bbdada8bc9ca3f",
+      "n": 8,
+      "m": 64,
+      "exact_satisfying_assignments": 0
+    },
+    {
+      "id": "29e09bd60a8919ce14b4e168db7801dd0d701021c1f2bd0e0c8de42d5048f612",
+      "attempt_id": "20261011T073957-ef5a8557fda14c4d9cafb4da509cbb1c",
+      "n": 8,
+      "m": 64,
+      "exact_satisfying_assignments": 0
+    }
+  ]
+}

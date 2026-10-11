@@ -1,0 +1,66 @@
+\documentclass[11pt,a4paper]{article}
+\input{metadata}
+\input{preamble}
+\input{macros}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+  \setlength{\parindent}{0pt}
+  \vspace*{16mm}
+  {\small\sffamily\color{teal}\ReportSeries\par}
+  \vspace{11mm}
+  {\Huge\bfseries\color{ink}\ReportTitle\par}
+  \vspace{7mm}
+  {\LARGE\color{ink}\ReportSubtitle\par}
+  \vspace{10mm}
+  {\color{teal}\noindent\rule{\textwidth}{0.7pt}\par}
+  \vspace{5mm}
+  {\large\ReportSummary\par}
+  \vfill
+  \reportnote{\ReportStatus}{\ReportScope}
+  \vspace{7mm}
+  \noindent\ReportAuthor\par
+  \noindent{\color{muted}\ReportDate}\par
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\tableofcontents
+\vspace{10mm}
+\reportnote{How to use this report}{%
+  Sections 1--3 distinguish the probabilistic problem from the computational
+  tasks. For choosing a solver or planning experiments, start with
+  Sections 4--6 and 8. Section 7 compares the supplied geometry papers with
+  Boolean satisfiability. The source catalogue records versions and the
+  precise scope of the source checks.}
+
+\clearpage
+\pagenumbering{arabic}
+\input{sections/survey-01-model}
+\input{sections/survey-02-thresholds}
+\input{sections/survey-03-theory}
+\input{sections/survey-04-solvers}
+\input{sections/survey-05-scale}
+\input{sections/survey-06-gpu}
+\input{sections/survey-07-geometry}
+\input{sections/survey-08-outlook}
+
+\ifreportbibliography
+  \clearpage
+  \phantomsection
+  \addcontentsline{toc}{section}{References}
+  \begingroup
+    \small\raggedright
+    \bibliographystyle{plainnat}
+    \bibliography{references}
+  \endgroup
+\else
+  \section*{References}
+  \phantomsection
+  \addcontentsline{toc}{section}{References}
+  No sources are cited in this template. Add verified entries to
+  \texttt{references.bib} and enable the bibliography in
+  \texttt{metadata.tex} when initializing the project.
+\fi
+\end{document}

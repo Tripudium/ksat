@@ -1,0 +1,1689 @@
+{
+  "date": "2026-10-11",
+  "scope": "Prepared Blythe scripts and concentration research prompt; no cluster campaign submitted",
+  "source_and_validation_files": [
+    {
+      "path": "attempts/A001_discrete_geometry/concentration_research_prompt.md",
+      "sha256": "70ed033a477818967d5e37f29a69d1a266a09fd81a98941881c8923d0e63aa58"
+    },
+    {
+      "path": "code/README.md",
+      "sha256": "2c782bc68a7447faf12d64425fc71680c95f30355d1ea394bb504d780b8c144f"
+    },
+    {
+      "path": "code/ksat_experiments.py",
+      "sha256": "197799ce3762883f03c64f06593bbe439823d3574c492391694bfdbdd7d5b1d0"
+    },
+    {
+      "path": "code/plot_ksat_phase.py",
+      "sha256": "44a917e21bf477c04e670112707a5dc2b221de8e2cb77e0f8daeec43cc13d8bc"
+    },
+    {
+      "path": "code/tests/test_ksat_experiments.py",
+      "sha256": "d0646b7aa561204e75cfd6b4b23f7d25d83b2bc094d3295b6b15eec370120af5"
+    },
+    {
+      "path": "code/tests/test_plot_ksat_phase.py",
+      "sha256": "65ba1b006df9cc033035f6ba42f9955716846a526fdde74c7f2ddca5ead8159e"
+    },
+    {
+      "path": "code/vendor/drat-trim/LICENSE",
+      "sha256": "71ab2a9dc5a294ad8fba4ccb8c45aaa8a439596d314a2a046ac9b62266872a18"
+    },
+    {
+      "path": "code/vendor/drat-trim/README.md",
+      "sha256": "fa0b7c5b81b332aad990a1980c5d7a5fda41b153159cf331982bf36d87483054"
+    },
+    {
+      "path": "code/vendor/drat-trim/SOURCE.json",
+      "sha256": "8c117852f11dcd6c7a3f9fcfa2432c759598dbe8eb23beb08117cced6ac36e90"
+    },
+    {
+      "path": "code/vendor/drat-trim/drat-trim.c",
+      "sha256": "d834b649f437e091597f5347f259b9f681087f89ca0844d0cee250a1a1a0c2ee"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/README.md",
+      "sha256": "db4d66ab51b34f304f53bb1ba8b0cb6ee9b8d0be6837fd73b9ec307c99a2905e"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/RESULTS.md",
+      "sha256": "b6c7331aa87b4b5836c8be517b220b19746e55c14bc61d7bc6d19ed835b4f420"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/blythe_documentation.md",
+      "sha256": "0e608f895e629111f471494031469bef3ec864b356a5109d6acd53c952ebee86"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/configs/control-2sat.json",
+      "sha256": "513b063c2cbc29187400423c6bd2bda04efaa7be739cf142c855060edab6034f"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/configs/grid-3sat.json",
+      "sha256": "d6cc984d85c98552d57666fa9c57820da57b569d39bad0146f0f2114440c5bbf"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/configs/pilot-3sat.json",
+      "sha256": "0aea15b37966520a4c2196fa73b2a1f31098cd3ba820163288a237c7192ca926"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/configs/smoke.json",
+      "sha256": "9282ae4254ebb73b15232c9f3669936f2bf4c01f79bf573bcd2815fe8b9f1da9"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/requirements.txt",
+      "sha256": "e65a560d18d23b07af68c86517102eabd8519025e1b46a9993c3fcd1862d09e3"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/slurm/README.md",
+      "sha256": "1eb3a76233b96319fb34cb96a6c3625e204450804274dacb952ce7d1e20f5735"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/slurm/check_scripts.py",
+      "sha256": "1e8dc8f25734baa5c8a8c904b4fc3af23c5764d2dac5df02b864763d87ce703a"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/slurm/common.sh",
+      "sha256": "cc26eae8a30e3e188c16bfbd48cd173716e2274be9a2c0dc540dda8239cc9b23"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/slurm/local_checks.json",
+      "sha256": "b927b128a5054b59806fc1b9edfe31892ffe769f6ae2a80fc351e942250a4b7e"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/slurm/local_checks_initial.json",
+      "sha256": "82b8c11d92bc49459b394a1c40ab49e7c2d341742b42ba7b144bdeaf51d7b987"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/slurm/run_array.sbatch",
+      "sha256": "efd1af19963162d86831a34000b6c63311191360f287a8d5e8d8b30d56582d5c"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/slurm/setup_environment.sh",
+      "sha256": "0827023160ceaf423664ba8bd7775b7e2b6dc3a04b158fe88aa019669b661926"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/slurm/submit_array.sh",
+      "sha256": "0e975e92aa222bcf69477a6e817965d6bc394573a452e0f6ae9ee9b81db5ba78"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/README.md",
+      "sha256": "e2cc6ea3708e0785783b6980c27cf647e6bf924f96130aa2490e8cb07eb3e701"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/checks.json",
+      "sha256": "9d53767bd45ad268048c5273c8cbec41c612107178523c72d287c772b4607fff"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/exact-smoke-check.json",
+      "sha256": "8e6accdf6e5cc0f920d9acf1e5ccb4e3b736aedca64835ef9aacb1ba13a03f6f"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/local-preflight-glucose42.json",
+      "sha256": "68764b6f40ae7f77cc0369bcb1d4e60ae9a1219b3a1f6cedfabb0d2e1f1b6bbb"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/local-preflight.json",
+      "sha256": "182409bec6e159b9dcbbc980450136a5592e9f7e435699411d19f76f9f3c99a8"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/preflight-final.json",
+      "sha256": "eac8806ce683dc93e4204a25ed09c32247cdd790de5d808556f56ae279593e16"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/runner_review.md",
+      "sha256": "f5d2372f49ade6d964cf26a7f11aba4b0a2884a12eac39ecb8e9115689992c16"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/00cdb9bfb703d5565edaa42131e0ad7c0496305bb426e945cc0a119b57f34ba6/20261011T073519-2aeeee8dfcb741a1954bd6126238e9bb/input.cnf",
+      "sha256": "72a522e7d15e2ae57e87c565f21eb2b60ae6b9e8d61cb89c6a0f2b90512c706b"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/00cdb9bfb703d5565edaa42131e0ad7c0496305bb426e945cc0a119b57f34ba6/20261011T073519-2aeeee8dfcb741a1954bd6126238e9bb/result.json",
+      "sha256": "7ef1149f7b0581d631d8139117e589fc3eede8245da7d48a52fa6d36e4f3a08f"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/00cdb9bfb703d5565edaa42131e0ad7c0496305bb426e945cc0a119b57f34ba6/20261011T073519-2aeeee8dfcb741a1954bd6126238e9bb/solver.json",
+      "sha256": "8c3389989214bb05f7c04b1b1a8c9220b888715a8e1c598516f19831889ee6da"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/00cdb9bfb703d5565edaa42131e0ad7c0496305bb426e945cc0a119b57f34ba6/20261011T073519-2aeeee8dfcb741a1954bd6126238e9bb/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/00cdb9bfb703d5565edaa42131e0ad7c0496305bb426e945cc0a119b57f34ba6/20261011T073519-2aeeee8dfcb741a1954bd6126238e9bb/started.json",
+      "sha256": "225d9af05dce9bcd8325ca269580483699fcc4446cebc7ba9039ffaf158dd5f8"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/00cdb9bfb703d5565edaa42131e0ad7c0496305bb426e945cc0a119b57f34ba6/20261011T073519-2aeeee8dfcb741a1954bd6126238e9bb/witness.json",
+      "sha256": "8552af13eadc3c49ce564d11cbc343937521cb9d852d64e4d8fc8e17b3a55afa"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/1223e5efc1169b101ade437cd3c06623e5840b76d22b4b3a7cd13509379524e7/20261011T073519-220639c20a0640b0818641821e5f3aae/input.cnf",
+      "sha256": "49577ae12e97f42b4f37a042a00ff8d32ee083b25909b1c098f254faaa52930e"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/1223e5efc1169b101ade437cd3c06623e5840b76d22b4b3a7cd13509379524e7/20261011T073519-220639c20a0640b0818641821e5f3aae/result.json",
+      "sha256": "aa85fa8fed8f5718292b4d74c153b3765966318d77796820c268551da927f7d7"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/1223e5efc1169b101ade437cd3c06623e5840b76d22b4b3a7cd13509379524e7/20261011T073519-220639c20a0640b0818641821e5f3aae/solver.json",
+      "sha256": "de80c886056f894c1cab051a8029d4bea2d7bb8534af4c4c74fd1c8f9a0b3234"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/1223e5efc1169b101ade437cd3c06623e5840b76d22b4b3a7cd13509379524e7/20261011T073519-220639c20a0640b0818641821e5f3aae/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/1223e5efc1169b101ade437cd3c06623e5840b76d22b4b3a7cd13509379524e7/20261011T073519-220639c20a0640b0818641821e5f3aae/started.json",
+      "sha256": "8ad520a116a30da314daecfa71ba04a218e1c13619197e232be6df6feacde136"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/1223e5efc1169b101ade437cd3c06623e5840b76d22b4b3a7cd13509379524e7/20261011T073519-220639c20a0640b0818641821e5f3aae/witness.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/1a6fd030e4eaf77b622d0366a79cdb8b3392d1292d0bb6991cdebfbbb84cc370/20261011T073530-2b22788338c24823a93d1ffa92b5f0ff/input.cnf",
+      "sha256": "67db9c7e7bd971f3ae16281dcda73c06120934ab87b07034cd6c3cbe7ca18f58"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/1a6fd030e4eaf77b622d0366a79cdb8b3392d1292d0bb6991cdebfbbb84cc370/20261011T073530-2b22788338c24823a93d1ffa92b5f0ff/result.json",
+      "sha256": "2c2f00c7946f453f71092e72a1763799f6ce54db24a6ad6022fda0f49a902f66"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/1a6fd030e4eaf77b622d0366a79cdb8b3392d1292d0bb6991cdebfbbb84cc370/20261011T073530-2b22788338c24823a93d1ffa92b5f0ff/solver.json",
+      "sha256": "375ac743772306b56ac6bb730492358cb781961fa2acb1f72a1bf0f29b1d287f"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/1a6fd030e4eaf77b622d0366a79cdb8b3392d1292d0bb6991cdebfbbb84cc370/20261011T073530-2b22788338c24823a93d1ffa92b5f0ff/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/1a6fd030e4eaf77b622d0366a79cdb8b3392d1292d0bb6991cdebfbbb84cc370/20261011T073530-2b22788338c24823a93d1ffa92b5f0ff/started.json",
+      "sha256": "5db515e7691c8cc223c910526e29fcbd1dc3db9d359e7952e6393718e74b9c7d"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/1a6fd030e4eaf77b622d0366a79cdb8b3392d1292d0bb6991cdebfbbb84cc370/20261011T073530-2b22788338c24823a93d1ffa92b5f0ff/witness.json",
+      "sha256": "936c22f1905af5d1b5a47bcf6a458233018a537ec32d90056b8548d68f290e3c"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/2128a4b8f2f5cc13fba2d77a613d8667106267988b2f1590d20ff403aa4b1c26/20261011T073519-bbfcd0f398634921a4c197daf52e98c2/input.cnf",
+      "sha256": "d54ca6d41715a7b0ef1b5662d7815ba0c107aab4da9796cfbed0b83451f0f1f9"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/2128a4b8f2f5cc13fba2d77a613d8667106267988b2f1590d20ff403aa4b1c26/20261011T073519-bbfcd0f398634921a4c197daf52e98c2/result.json",
+      "sha256": "cdec0d419ac6d3b983c2886fc44da91b72f8d5bdfc1c06d3b4c6ddaea8cd4af4"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/2128a4b8f2f5cc13fba2d77a613d8667106267988b2f1590d20ff403aa4b1c26/20261011T073519-bbfcd0f398634921a4c197daf52e98c2/solver.json",
+      "sha256": "173c59cce1e52eee6a1959bdf34038b9c569fa022d3c54cb0a530e3b1a7cf5c3"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/2128a4b8f2f5cc13fba2d77a613d8667106267988b2f1590d20ff403aa4b1c26/20261011T073519-bbfcd0f398634921a4c197daf52e98c2/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/2128a4b8f2f5cc13fba2d77a613d8667106267988b2f1590d20ff403aa4b1c26/20261011T073519-bbfcd0f398634921a4c197daf52e98c2/started.json",
+      "sha256": "e220d5fb2042332d0543880e38b694c7713d644c333b954343fce49d1fdd0c9b"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/2128a4b8f2f5cc13fba2d77a613d8667106267988b2f1590d20ff403aa4b1c26/20261011T073519-bbfcd0f398634921a4c197daf52e98c2/witness.json",
+      "sha256": "145e9207944457a407c90b0edcbad8e1c488419470354fd119875810f1cfef53"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/29e09bd60a8919ce14b4e168db7801dd0d701021c1f2bd0e0c8de42d5048f612/20261011T073531-7e932d6ee8e74dcea42312b601215451/checker.log",
+      "sha256": "0da963ddcafa454036d5c6154420e242a933c531a8c1f40d09d3958d7e559496"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/29e09bd60a8919ce14b4e168db7801dd0d701021c1f2bd0e0c8de42d5048f612/20261011T073531-7e932d6ee8e74dcea42312b601215451/input.cnf",
+      "sha256": "16edeb2252ac9d5742fecfb742f04570e0e1b2df9136b447240f93dc21f00929"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/29e09bd60a8919ce14b4e168db7801dd0d701021c1f2bd0e0c8de42d5048f612/20261011T073531-7e932d6ee8e74dcea42312b601215451/proof.drat",
+      "sha256": "3cced0dcfaa7adabdbc7d09d2b7be719e28f08d8d77742ce9ee128e638113e44"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/29e09bd60a8919ce14b4e168db7801dd0d701021c1f2bd0e0c8de42d5048f612/20261011T073531-7e932d6ee8e74dcea42312b601215451/result.json",
+      "sha256": "66552efb8a9b606f95e4f7a4eb5341acbf83192cb994dcaa564a05bb80e609c5"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/29e09bd60a8919ce14b4e168db7801dd0d701021c1f2bd0e0c8de42d5048f612/20261011T073531-7e932d6ee8e74dcea42312b601215451/solver.json",
+      "sha256": "857ce0188c34abb4a86846af65cb10d955c242f075d23aa4e4fce6905ea388f7"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/29e09bd60a8919ce14b4e168db7801dd0d701021c1f2bd0e0c8de42d5048f612/20261011T073531-7e932d6ee8e74dcea42312b601215451/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/29e09bd60a8919ce14b4e168db7801dd0d701021c1f2bd0e0c8de42d5048f612/20261011T073531-7e932d6ee8e74dcea42312b601215451/started.json",
+      "sha256": "77df6a8fb19e9c3f18be155d0f31f55cfe7590c6a47eb5fd5bf3c51887191a57"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/316887d425ed477542fc30476a08466fa3b2bcff425f3b4b8d4727b0ececbd0d/20261011T073531-2d3a7ab13b4a42de9c69913eb7817bfd/input.cnf",
+      "sha256": "87b604069079b790069c741308c5c986b7e6627383885aba8a620569eaad20f9"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/316887d425ed477542fc30476a08466fa3b2bcff425f3b4b8d4727b0ececbd0d/20261011T073531-2d3a7ab13b4a42de9c69913eb7817bfd/result.json",
+      "sha256": "035971808964bc5e7293bcbbd2fa2c93f3bb53d7959350c2bd6015529ff816f8"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/316887d425ed477542fc30476a08466fa3b2bcff425f3b4b8d4727b0ececbd0d/20261011T073531-2d3a7ab13b4a42de9c69913eb7817bfd/solver.json",
+      "sha256": "2ff7e3a3f69f272378b663c98cf04cdc1572d3938728edf15b7c2e6c95391670"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/316887d425ed477542fc30476a08466fa3b2bcff425f3b4b8d4727b0ececbd0d/20261011T073531-2d3a7ab13b4a42de9c69913eb7817bfd/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/316887d425ed477542fc30476a08466fa3b2bcff425f3b4b8d4727b0ececbd0d/20261011T073531-2d3a7ab13b4a42de9c69913eb7817bfd/started.json",
+      "sha256": "f76b2cb961ccec9e9dcb97813e015f301c02da4b2a113b228042d531f0e34c3b"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/316887d425ed477542fc30476a08466fa3b2bcff425f3b4b8d4727b0ececbd0d/20261011T073531-2d3a7ab13b4a42de9c69913eb7817bfd/witness.json",
+      "sha256": "898dc42548d68af38123fb1b5aaef790e77461ff7549a23e2be742ab8b24a168"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/31e79b6e797970bec1c5c4b2a3059bea4782b6f6fac9825bc1624c7c7e9d561c/20261011T073519-daeda35028e5493b9a7ee628d9b77d45/input.cnf",
+      "sha256": "49815310e578ed5adcaa4d96c131b7ec00056a0adb3adeb07e75ff9a25d82701"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/31e79b6e797970bec1c5c4b2a3059bea4782b6f6fac9825bc1624c7c7e9d561c/20261011T073519-daeda35028e5493b9a7ee628d9b77d45/result.json",
+      "sha256": "d05a990eded165dd2b337f389e78568d7033ebe9257b0c4707ff5aaffcbb4c43"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/31e79b6e797970bec1c5c4b2a3059bea4782b6f6fac9825bc1624c7c7e9d561c/20261011T073519-daeda35028e5493b9a7ee628d9b77d45/solver.json",
+      "sha256": "3f5394e133de92598f9b3ac2d5019d6dd568041e7004c6894e185998a10341d7"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/31e79b6e797970bec1c5c4b2a3059bea4782b6f6fac9825bc1624c7c7e9d561c/20261011T073519-daeda35028e5493b9a7ee628d9b77d45/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/31e79b6e797970bec1c5c4b2a3059bea4782b6f6fac9825bc1624c7c7e9d561c/20261011T073519-daeda35028e5493b9a7ee628d9b77d45/started.json",
+      "sha256": "becb539713280f06359c4046d3fc5b73a021b019258a01ea518c38334926867f"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/31e79b6e797970bec1c5c4b2a3059bea4782b6f6fac9825bc1624c7c7e9d561c/20261011T073519-daeda35028e5493b9a7ee628d9b77d45/witness.json",
+      "sha256": "e2add4b6fbd53d77e338694e1249cee5870cb80a87ecdc3c8976400376d947ad"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/3b968f4e12d5d8002c27b13d8bfd449e41d6fa3d367bf10ea2ff1f0935c4ad7f/20261011T073519-af9853fa94b640d29aca18afe024bd48/checker.log",
+      "sha256": "04b0327595fd7c12f7b39ca15f628276b9be9c761cdcf8318ea0303e55654898"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/3b968f4e12d5d8002c27b13d8bfd449e41d6fa3d367bf10ea2ff1f0935c4ad7f/20261011T073519-af9853fa94b640d29aca18afe024bd48/input.cnf",
+      "sha256": "448e1edb8ca7ab1fda972f531d7c4bcc7a830587a09f3f081e7cfe1ec746abb8"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/3b968f4e12d5d8002c27b13d8bfd449e41d6fa3d367bf10ea2ff1f0935c4ad7f/20261011T073519-af9853fa94b640d29aca18afe024bd48/proof.drat",
+      "sha256": "e9fb8c66836b01c47547abc16709872018e21d30e675b530f386883636bb3e0f"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/3b968f4e12d5d8002c27b13d8bfd449e41d6fa3d367bf10ea2ff1f0935c4ad7f/20261011T073519-af9853fa94b640d29aca18afe024bd48/result.json",
+      "sha256": "75e692e9e73c598fcb3ce9894eb034888430b9578f6f4421c753c22d3284a367"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/3b968f4e12d5d8002c27b13d8bfd449e41d6fa3d367bf10ea2ff1f0935c4ad7f/20261011T073519-af9853fa94b640d29aca18afe024bd48/solver.json",
+      "sha256": "751e4b83f1b638c2e9eef85011ee3e939f66a4f71f824e5ac6e5120c35c3cea2"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/3b968f4e12d5d8002c27b13d8bfd449e41d6fa3d367bf10ea2ff1f0935c4ad7f/20261011T073519-af9853fa94b640d29aca18afe024bd48/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/3b968f4e12d5d8002c27b13d8bfd449e41d6fa3d367bf10ea2ff1f0935c4ad7f/20261011T073519-af9853fa94b640d29aca18afe024bd48/started.json",
+      "sha256": "37af6004e1dcc1095ee96189c2f020c892c2d4d0856ccedc809e164e4f1284f7"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/59039513724479e2186e2836a5c78be35ffee275e63498b556bca7be3b57bad6/20261011T073531-c71d349b163d48fcb987075054966bb6/checker.log",
+      "sha256": "7ce8a48c0c8be2e5dc387a5e18de273f0fd92146075b704073bcefde76c8dd6c"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/59039513724479e2186e2836a5c78be35ffee275e63498b556bca7be3b57bad6/20261011T073531-c71d349b163d48fcb987075054966bb6/input.cnf",
+      "sha256": "4c250a32b9fba0443e3a8723fd17f31e361a9db371c8748adcaef4c4b34f242e"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/59039513724479e2186e2836a5c78be35ffee275e63498b556bca7be3b57bad6/20261011T073531-c71d349b163d48fcb987075054966bb6/proof.drat",
+      "sha256": "889afe1e1bb03b4400bb4c4a73ba9f0c31f31131f06fd50d98c7ce699918ad48"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/59039513724479e2186e2836a5c78be35ffee275e63498b556bca7be3b57bad6/20261011T073531-c71d349b163d48fcb987075054966bb6/result.json",
+      "sha256": "c8fdb19a80c348be0b1e9b03bd1f2ea43ea3a19ce6a1953ff898120bdabb615a"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/59039513724479e2186e2836a5c78be35ffee275e63498b556bca7be3b57bad6/20261011T073531-c71d349b163d48fcb987075054966bb6/solver.json",
+      "sha256": "6c3cf6c8e7911a34d9d66cc5365f67e9bdd58790b89d76b47f17ff86e707a16b"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/59039513724479e2186e2836a5c78be35ffee275e63498b556bca7be3b57bad6/20261011T073531-c71d349b163d48fcb987075054966bb6/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/59039513724479e2186e2836a5c78be35ffee275e63498b556bca7be3b57bad6/20261011T073531-c71d349b163d48fcb987075054966bb6/started.json",
+      "sha256": "1a7d77c3375b2f979ec79b18747c93f860fc83844058460e1f371b6a00f2c335"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/5d4decf6acb7856830218d22631d63f0dc47a1778594f32447212baec59f7fef/20261011T073519-ff78d3f8e1d54a9d8d1fd8e816fcb5c9/input.cnf",
+      "sha256": "2fcc344d52bbd1de6a8bf261795fa48be1fb1dbb21fee15fe628ab8042e6d53e"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/5d4decf6acb7856830218d22631d63f0dc47a1778594f32447212baec59f7fef/20261011T073519-ff78d3f8e1d54a9d8d1fd8e816fcb5c9/result.json",
+      "sha256": "12b725c14c22dcfe096ad46f6a20fbbb2c2b88267e6f1c6899687b9562ec2bc4"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/5d4decf6acb7856830218d22631d63f0dc47a1778594f32447212baec59f7fef/20261011T073519-ff78d3f8e1d54a9d8d1fd8e816fcb5c9/solver.json",
+      "sha256": "8b3967cc148ca654862785f0c02033be62575135ddf1de7ef698a4df514c3ff8"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/5d4decf6acb7856830218d22631d63f0dc47a1778594f32447212baec59f7fef/20261011T073519-ff78d3f8e1d54a9d8d1fd8e816fcb5c9/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/5d4decf6acb7856830218d22631d63f0dc47a1778594f32447212baec59f7fef/20261011T073519-ff78d3f8e1d54a9d8d1fd8e816fcb5c9/started.json",
+      "sha256": "94e862c7f32df2a7ffef58569643c3dd71d07759319cf324b2a8dc404676cde7"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/5d4decf6acb7856830218d22631d63f0dc47a1778594f32447212baec59f7fef/20261011T073519-ff78d3f8e1d54a9d8d1fd8e816fcb5c9/witness.json",
+      "sha256": "85a3419eaa9570837cb477f5ac14132b5b9edd583ddf8b070cf0e242c24a0b89"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/5d7ab2d1b1faa50aeb8ba1a8ddd8642297e669b83770e72b092419536f563015/20261011T073530-c3fe5f8e2084401ba6c6281d15b16077/input.cnf",
+      "sha256": "98fca1ddff32ee9e1aad509f79e462cae60150e4b448b21d65f67bb9913d926b"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/5d7ab2d1b1faa50aeb8ba1a8ddd8642297e669b83770e72b092419536f563015/20261011T073530-c3fe5f8e2084401ba6c6281d15b16077/result.json",
+      "sha256": "25715d8178abb165a27ba6181b901c7b258bafb9af07bc71e04aa6ff470b795f"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/5d7ab2d1b1faa50aeb8ba1a8ddd8642297e669b83770e72b092419536f563015/20261011T073530-c3fe5f8e2084401ba6c6281d15b16077/solver.json",
+      "sha256": "84db5c5c0b8a71aedc97fec53815bd97474d59ca442a1abedf413de6b203b704"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/5d7ab2d1b1faa50aeb8ba1a8ddd8642297e669b83770e72b092419536f563015/20261011T073530-c3fe5f8e2084401ba6c6281d15b16077/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/5d7ab2d1b1faa50aeb8ba1a8ddd8642297e669b83770e72b092419536f563015/20261011T073530-c3fe5f8e2084401ba6c6281d15b16077/started.json",
+      "sha256": "083c0271051534b3e700c7d40265cb91806276107233b341ad516ae128191f5e"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/5d7ab2d1b1faa50aeb8ba1a8ddd8642297e669b83770e72b092419536f563015/20261011T073530-c3fe5f8e2084401ba6c6281d15b16077/witness.json",
+      "sha256": "a83cdc2b908c3867429d6884cc8066a3910218184446af391eedfd1c7e4fd2b1"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/7711d14d2f88d6430bbf9f1f7d24eacf264c7ad30bfaca6023a296623c959265/20261011T073530-8777698950424ac9b93797b372e6a8b7/input.cnf",
+      "sha256": "b581544316f3c7976e241f6dac59a4005fef9952e6f3526b83de7c5d5928c321"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/7711d14d2f88d6430bbf9f1f7d24eacf264c7ad30bfaca6023a296623c959265/20261011T073530-8777698950424ac9b93797b372e6a8b7/result.json",
+      "sha256": "216177b65c956b58419ffc784edf0825b6f208f9a57e1ceb64ddb29a30d937e6"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/7711d14d2f88d6430bbf9f1f7d24eacf264c7ad30bfaca6023a296623c959265/20261011T073530-8777698950424ac9b93797b372e6a8b7/solver.json",
+      "sha256": "cc2b8a99601b97088f729438437427cd1094fcf3dfd286d39f697315c161a5cd"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/7711d14d2f88d6430bbf9f1f7d24eacf264c7ad30bfaca6023a296623c959265/20261011T073530-8777698950424ac9b93797b372e6a8b7/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/7711d14d2f88d6430bbf9f1f7d24eacf264c7ad30bfaca6023a296623c959265/20261011T073530-8777698950424ac9b93797b372e6a8b7/started.json",
+      "sha256": "7932a4b6fb0cbf8c0d826c58c91d7b0e1d62c506a163f7e7ee72406ed08a601b"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/7711d14d2f88d6430bbf9f1f7d24eacf264c7ad30bfaca6023a296623c959265/20261011T073530-8777698950424ac9b93797b372e6a8b7/witness.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/8ca2b6c61cc8e0950f6030c60558d6473b2e5c36b96cd4bfd0ab2713dfdf35ed/20261011T073531-1f3dfe9a49164a29b71e96f999c5dc4f/checker.log",
+      "sha256": "7c905cb7a04089f4fdc810dd5a706c7b638c395af264820151c1da62a40dd326"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/8ca2b6c61cc8e0950f6030c60558d6473b2e5c36b96cd4bfd0ab2713dfdf35ed/20261011T073531-1f3dfe9a49164a29b71e96f999c5dc4f/input.cnf",
+      "sha256": "51e977f2cf9c65dd5bf1588b6a3999b871014370dff10f48f1b12c2ca4cfe54e"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/8ca2b6c61cc8e0950f6030c60558d6473b2e5c36b96cd4bfd0ab2713dfdf35ed/20261011T073531-1f3dfe9a49164a29b71e96f999c5dc4f/proof.drat",
+      "sha256": "f4f6683877f28bdd9bc527290171f9e22f7ea6c4e0ad43450b43f8a0a704cb48"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/8ca2b6c61cc8e0950f6030c60558d6473b2e5c36b96cd4bfd0ab2713dfdf35ed/20261011T073531-1f3dfe9a49164a29b71e96f999c5dc4f/result.json",
+      "sha256": "493750ec8f5d8d1c5e11a55a70594bb168a83c751f02a5fe248c09174840f44a"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/8ca2b6c61cc8e0950f6030c60558d6473b2e5c36b96cd4bfd0ab2713dfdf35ed/20261011T073531-1f3dfe9a49164a29b71e96f999c5dc4f/solver.json",
+      "sha256": "cd47a54fb2790322eaa85fdb72822e9cc4e2b9c0d00a590e8f4a594c6c4cf08a"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/8ca2b6c61cc8e0950f6030c60558d6473b2e5c36b96cd4bfd0ab2713dfdf35ed/20261011T073531-1f3dfe9a49164a29b71e96f999c5dc4f/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/8ca2b6c61cc8e0950f6030c60558d6473b2e5c36b96cd4bfd0ab2713dfdf35ed/20261011T073531-1f3dfe9a49164a29b71e96f999c5dc4f/started.json",
+      "sha256": "41f162691971b9c841c486ee0328284058613497ffd9bdcf9089c789a0a9a1cb"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/925857f0328a411feaff15fd7273939d2b91af097b2acd9e717d9ef9725d2224/20261011T073530-e4fe1e2a64fa4bc29144bfae7c5653d0/input.cnf",
+      "sha256": "4ce258cb5e439c3a14974ab497e7c7dc83bb402a5dd92dda6b1ed0a67f80e4b8"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/925857f0328a411feaff15fd7273939d2b91af097b2acd9e717d9ef9725d2224/20261011T073530-e4fe1e2a64fa4bc29144bfae7c5653d0/result.json",
+      "sha256": "181f382c7c7a5a456f2e89960cf1d32c4ac7ef550a9b23d31242ec26deca9397"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/925857f0328a411feaff15fd7273939d2b91af097b2acd9e717d9ef9725d2224/20261011T073530-e4fe1e2a64fa4bc29144bfae7c5653d0/solver.json",
+      "sha256": "27d80da29c9910df0da31bd162447638dd1e27caebbe3105fdc9bad2fc1ce392"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/925857f0328a411feaff15fd7273939d2b91af097b2acd9e717d9ef9725d2224/20261011T073530-e4fe1e2a64fa4bc29144bfae7c5653d0/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/925857f0328a411feaff15fd7273939d2b91af097b2acd9e717d9ef9725d2224/20261011T073530-e4fe1e2a64fa4bc29144bfae7c5653d0/started.json",
+      "sha256": "789a138278e4807a80a750656c8941ad2eea1350e83db4cfd92605a938d39dfc"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/925857f0328a411feaff15fd7273939d2b91af097b2acd9e717d9ef9725d2224/20261011T073530-e4fe1e2a64fa4bc29144bfae7c5653d0/witness.json",
+      "sha256": "ce1280987b7753903ef56fa6e226332d0f090eae30ed277deeb6abe5904df6e0"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/93acdc2d63600fc8eb8fd989bf3682d2563fd65fb830b1b77debee4df7626ac8/20261011T073519-5e1d2d96969a4b12a65bd80d6504822b/input.cnf",
+      "sha256": "ce49dc85894fa2eb4ae3dbc1c827a9c121cd0a1312acb691858d45bfe1d30b21"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/93acdc2d63600fc8eb8fd989bf3682d2563fd65fb830b1b77debee4df7626ac8/20261011T073519-5e1d2d96969a4b12a65bd80d6504822b/result.json",
+      "sha256": "c76a8df69312a385abdc1841b03381dc648477e7e7316dcfb8e0620de6388cee"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/93acdc2d63600fc8eb8fd989bf3682d2563fd65fb830b1b77debee4df7626ac8/20261011T073519-5e1d2d96969a4b12a65bd80d6504822b/solver.json",
+      "sha256": "fbf2261f4b5f5a624ff5ef009c5d04c48f0e5ac31856a31d219ffa969eababca"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/93acdc2d63600fc8eb8fd989bf3682d2563fd65fb830b1b77debee4df7626ac8/20261011T073519-5e1d2d96969a4b12a65bd80d6504822b/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/93acdc2d63600fc8eb8fd989bf3682d2563fd65fb830b1b77debee4df7626ac8/20261011T073519-5e1d2d96969a4b12a65bd80d6504822b/started.json",
+      "sha256": "b90c501fb6e57a9dd26376cbe06830fa92e353a00f35b1f37b5e8fe5bb6234d0"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/93acdc2d63600fc8eb8fd989bf3682d2563fd65fb830b1b77debee4df7626ac8/20261011T073519-5e1d2d96969a4b12a65bd80d6504822b/witness.json",
+      "sha256": "5c6b29c0a9dafc9c8b5c7e658f7c7adbbcb003c328e4be610219e9364e90db7a"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/9cfd3df47ff72dc3e55aa13efed66a6b537e31a6718f4314f38ed2c92ecac889/20261011T073518-a60a39fb86034da386b29eba07256a44/input.cnf",
+      "sha256": "49577ae12e97f42b4f37a042a00ff8d32ee083b25909b1c098f254faaa52930e"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/9cfd3df47ff72dc3e55aa13efed66a6b537e31a6718f4314f38ed2c92ecac889/20261011T073518-a60a39fb86034da386b29eba07256a44/result.json",
+      "sha256": "a07ef086308e2e3bee31e3f577584fbcb4b92a186fe57ea4f3f749ce6322230e"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/9cfd3df47ff72dc3e55aa13efed66a6b537e31a6718f4314f38ed2c92ecac889/20261011T073518-a60a39fb86034da386b29eba07256a44/solver.json",
+      "sha256": "85a78fd246ebaa552f18da81feacb949c9dc5aefee6cc9c4d747f35bb73e5f94"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/9cfd3df47ff72dc3e55aa13efed66a6b537e31a6718f4314f38ed2c92ecac889/20261011T073518-a60a39fb86034da386b29eba07256a44/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/9cfd3df47ff72dc3e55aa13efed66a6b537e31a6718f4314f38ed2c92ecac889/20261011T073518-a60a39fb86034da386b29eba07256a44/started.json",
+      "sha256": "24c4da5c271d3e23dd636ebb5042782a3d2630df977b97b96111dfc099f79af1"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/9cfd3df47ff72dc3e55aa13efed66a6b537e31a6718f4314f38ed2c92ecac889/20261011T073518-a60a39fb86034da386b29eba07256a44/witness.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/bcae7de2a070c4de066e5f0ece5d1867b177e4ec527237d2b3ce0e325ce62ab8/20261011T073519-e145ce31fee1441090d62bb4ad723659/input.cnf",
+      "sha256": "93ca0fc194502dd274f79231864fe80e5489ed9a22a9761fca2122a9644e0379"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/bcae7de2a070c4de066e5f0ece5d1867b177e4ec527237d2b3ce0e325ce62ab8/20261011T073519-e145ce31fee1441090d62bb4ad723659/result.json",
+      "sha256": "dd71f99893696cd3a9d28e1089b6778fdc400408cb8358ab14e8f53a697e9091"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/bcae7de2a070c4de066e5f0ece5d1867b177e4ec527237d2b3ce0e325ce62ab8/20261011T073519-e145ce31fee1441090d62bb4ad723659/solver.json",
+      "sha256": "9fbdaadcaebbb39b4d42d2c74146351797597de69dd67f328b2ce5e51b3dc3d7"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/bcae7de2a070c4de066e5f0ece5d1867b177e4ec527237d2b3ce0e325ce62ab8/20261011T073519-e145ce31fee1441090d62bb4ad723659/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/bcae7de2a070c4de066e5f0ece5d1867b177e4ec527237d2b3ce0e325ce62ab8/20261011T073519-e145ce31fee1441090d62bb4ad723659/started.json",
+      "sha256": "30c916f0f712a3b82d24343ef36ec40117d0e6d37620361fbc20d867c319d923"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/bcae7de2a070c4de066e5f0ece5d1867b177e4ec527237d2b3ce0e325ce62ab8/20261011T073519-e145ce31fee1441090d62bb4ad723659/witness.json",
+      "sha256": "a269bf1757df206d8d63daa57a0141615f3acde6c3211fd757dc7c34a8c288c8"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/c625eb2aa3a6d950a55386028e8c681f186f8551dfb5f5bae1a72bc2bf9b290a/20261011T073530-e0c65f2f63a3476fb04d9d0de258fde2/input.cnf",
+      "sha256": "b581544316f3c7976e241f6dac59a4005fef9952e6f3526b83de7c5d5928c321"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/c625eb2aa3a6d950a55386028e8c681f186f8551dfb5f5bae1a72bc2bf9b290a/20261011T073530-e0c65f2f63a3476fb04d9d0de258fde2/result.json",
+      "sha256": "71df411c2430080bc7bd09b1c90e899378d35e312c93a39ed46433f88f5a50eb"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/c625eb2aa3a6d950a55386028e8c681f186f8551dfb5f5bae1a72bc2bf9b290a/20261011T073530-e0c65f2f63a3476fb04d9d0de258fde2/solver.json",
+      "sha256": "a02c230a663b682db3081d3383c2b0c07c7245f2cee81e3e6d970cfa9591d7d5"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/c625eb2aa3a6d950a55386028e8c681f186f8551dfb5f5bae1a72bc2bf9b290a/20261011T073530-e0c65f2f63a3476fb04d9d0de258fde2/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/c625eb2aa3a6d950a55386028e8c681f186f8551dfb5f5bae1a72bc2bf9b290a/20261011T073530-e0c65f2f63a3476fb04d9d0de258fde2/started.json",
+      "sha256": "9ecc6366a20269f1e909a72da143d664723f167d02f672d4ef3735d9dff9628b"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/c625eb2aa3a6d950a55386028e8c681f186f8551dfb5f5bae1a72bc2bf9b290a/20261011T073530-e0c65f2f63a3476fb04d9d0de258fde2/witness.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/cb4b541d24c57eb3df57a051a45f8287e2e3b257533bab60c0279eba4c07b716/20261011T073530-a1e62d2ca7f447438c9c89292f5653f2/input.cnf",
+      "sha256": "d28926e3b642ff1c5b448168a90b73089113987b0bc8e04a277f2b53c84add55"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/cb4b541d24c57eb3df57a051a45f8287e2e3b257533bab60c0279eba4c07b716/20261011T073530-a1e62d2ca7f447438c9c89292f5653f2/result.json",
+      "sha256": "77c84b3a9fa838a5c4dbc2b3520fd8a62d5ba3a41e760749d703492b57a8b524"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/cb4b541d24c57eb3df57a051a45f8287e2e3b257533bab60c0279eba4c07b716/20261011T073530-a1e62d2ca7f447438c9c89292f5653f2/solver.json",
+      "sha256": "eb8ae8c85678331994480cbf7fb80dee01d79ac954e01e186ce31d10d8813cae"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/cb4b541d24c57eb3df57a051a45f8287e2e3b257533bab60c0279eba4c07b716/20261011T073530-a1e62d2ca7f447438c9c89292f5653f2/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/cb4b541d24c57eb3df57a051a45f8287e2e3b257533bab60c0279eba4c07b716/20261011T073530-a1e62d2ca7f447438c9c89292f5653f2/started.json",
+      "sha256": "d0767bb1ea6a6d393c9e6b85df24435d5dd342431a0bd3cebb1f358c6e263e38"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/cb4b541d24c57eb3df57a051a45f8287e2e3b257533bab60c0279eba4c07b716/20261011T073530-a1e62d2ca7f447438c9c89292f5653f2/witness.json",
+      "sha256": "ce1280987b7753903ef56fa6e226332d0f090eae30ed277deeb6abe5904df6e0"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/cdd2505769d1a245c76833104a22272427aff112a5ca2a9ee049485020ffada6/20261011T073530-4b05907298894459b337d6ec8cf46765/input.cnf",
+      "sha256": "b581544316f3c7976e241f6dac59a4005fef9952e6f3526b83de7c5d5928c321"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/cdd2505769d1a245c76833104a22272427aff112a5ca2a9ee049485020ffada6/20261011T073530-4b05907298894459b337d6ec8cf46765/result.json",
+      "sha256": "3f7e5b8f2113c2300cfe0dea7072f571544535d010dd3d3f72337008680cee96"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/cdd2505769d1a245c76833104a22272427aff112a5ca2a9ee049485020ffada6/20261011T073530-4b05907298894459b337d6ec8cf46765/solver.json",
+      "sha256": "18e08e4c6b9d1a3491f10695d632cfe4171e747c3c01e09a12b25e63bd065001"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/cdd2505769d1a245c76833104a22272427aff112a5ca2a9ee049485020ffada6/20261011T073530-4b05907298894459b337d6ec8cf46765/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/cdd2505769d1a245c76833104a22272427aff112a5ca2a9ee049485020ffada6/20261011T073530-4b05907298894459b337d6ec8cf46765/started.json",
+      "sha256": "8462d3622fd0e0280a82c52fd1637222fff38575b51d1e600dc20bf626a85002"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/cdd2505769d1a245c76833104a22272427aff112a5ca2a9ee049485020ffada6/20261011T073530-4b05907298894459b337d6ec8cf46765/witness.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/d51e5ec94567611f71d660ea3866e4111e309a45825beb858f121602314d25a6/20261011T073519-5c044eb917b4416ab9e06e8b533fbf96/input.cnf",
+      "sha256": "3639883dee1d5901f010af32dcf3df581d47bca1308e3345b60ea5d2f6023407"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/d51e5ec94567611f71d660ea3866e4111e309a45825beb858f121602314d25a6/20261011T073519-5c044eb917b4416ab9e06e8b533fbf96/result.json",
+      "sha256": "5365ad4e757334395e3a0ba4bbccaa9a9af7dfa7146e449538ad1beab9f7bd7e"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/d51e5ec94567611f71d660ea3866e4111e309a45825beb858f121602314d25a6/20261011T073519-5c044eb917b4416ab9e06e8b533fbf96/solver.json",
+      "sha256": "58947acfcccd19dccf20239dd2707828574a5c3b97f8790935159e4ae051c1ee"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/d51e5ec94567611f71d660ea3866e4111e309a45825beb858f121602314d25a6/20261011T073519-5c044eb917b4416ab9e06e8b533fbf96/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/d51e5ec94567611f71d660ea3866e4111e309a45825beb858f121602314d25a6/20261011T073519-5c044eb917b4416ab9e06e8b533fbf96/started.json",
+      "sha256": "effdc7028c03cfacef8e43084b346e7fd82a1bc204964e310e85ab18689ffad3"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/d51e5ec94567611f71d660ea3866e4111e309a45825beb858f121602314d25a6/20261011T073519-5c044eb917b4416ab9e06e8b533fbf96/witness.json",
+      "sha256": "5dbef6be1cf89f7a4389b5145e1d21995c244e2bebdfdb096680f116754b2320"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/e60da46d92473fe1f1fb149033d50e336432e7246c047dbe8877d728783a4160/20261011T073530-dba20e12d1cb4900b3f3136883496a80/input.cnf",
+      "sha256": "16c2c86400ff9f400757781c6641a5281ea27ff123e270c2cabb39c0beaac834"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/e60da46d92473fe1f1fb149033d50e336432e7246c047dbe8877d728783a4160/20261011T073530-dba20e12d1cb4900b3f3136883496a80/result.json",
+      "sha256": "be715ed8d69317e970f7dd24316cc8fde0ea35cc8e3332723c4b145158fa50d0"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/e60da46d92473fe1f1fb149033d50e336432e7246c047dbe8877d728783a4160/20261011T073530-dba20e12d1cb4900b3f3136883496a80/solver.json",
+      "sha256": "42e62c3cc48f808d6628187c14bc5d15d1b3a9f19602909e979145569ae03771"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/e60da46d92473fe1f1fb149033d50e336432e7246c047dbe8877d728783a4160/20261011T073530-dba20e12d1cb4900b3f3136883496a80/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/e60da46d92473fe1f1fb149033d50e336432e7246c047dbe8877d728783a4160/20261011T073530-dba20e12d1cb4900b3f3136883496a80/started.json",
+      "sha256": "e786821605e9c5749b82acd2691c34275b342fc26b59dd5954c337f00f21d262"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/e60da46d92473fe1f1fb149033d50e336432e7246c047dbe8877d728783a4160/20261011T073530-dba20e12d1cb4900b3f3136883496a80/witness.json",
+      "sha256": "8505d67454ec95af421d6b7fd78566cf2ea5f9b08429f226446c9af1acc33818"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/e638120f37a06ab1580e3f89f39280d8b583af146ce4cb4e16f20e63ab4306f6/20261011T073518-0c5b666fbad844d5b253bc8af3b15797/input.cnf",
+      "sha256": "49577ae12e97f42b4f37a042a00ff8d32ee083b25909b1c098f254faaa52930e"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/e638120f37a06ab1580e3f89f39280d8b583af146ce4cb4e16f20e63ab4306f6/20261011T073518-0c5b666fbad844d5b253bc8af3b15797/result.json",
+      "sha256": "6b5a377c6cb7cc0643e2cee0c3cb7f3ff6b62da6280fa7ec467840df5a379a75"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/e638120f37a06ab1580e3f89f39280d8b583af146ce4cb4e16f20e63ab4306f6/20261011T073518-0c5b666fbad844d5b253bc8af3b15797/solver.json",
+      "sha256": "8ae331e74fbdf7355041b266ae743d61cbdede9b02220196a0b3799d1c113b36"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/e638120f37a06ab1580e3f89f39280d8b583af146ce4cb4e16f20e63ab4306f6/20261011T073518-0c5b666fbad844d5b253bc8af3b15797/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/e638120f37a06ab1580e3f89f39280d8b583af146ce4cb4e16f20e63ab4306f6/20261011T073518-0c5b666fbad844d5b253bc8af3b15797/started.json",
+      "sha256": "549ca3b1fd8ed22bd0e890a95868be81627c33cc3fec8fecd3b592cc277d250c"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/e638120f37a06ab1580e3f89f39280d8b583af146ce4cb4e16f20e63ab4306f6/20261011T073518-0c5b666fbad844d5b253bc8af3b15797/witness.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/e720aaf3ab9ca8d321ae76b3bacd3c261ebf8510b8e700346981c97da68bb16b/20261011T073519-f433393a93db4441a03a256011dfbc28/checker.log",
+      "sha256": "3dcf22008eed506192327328f810655f739f134de6c1ae875a33a4de20aa0884"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/e720aaf3ab9ca8d321ae76b3bacd3c261ebf8510b8e700346981c97da68bb16b/20261011T073519-f433393a93db4441a03a256011dfbc28/input.cnf",
+      "sha256": "efd2e19d1889e7e75f749af19ac1de1d276222dd7b88f85a03bbf981448005a3"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/e720aaf3ab9ca8d321ae76b3bacd3c261ebf8510b8e700346981c97da68bb16b/20261011T073519-f433393a93db4441a03a256011dfbc28/proof.drat",
+      "sha256": "d78d5c19ec3f003c6cb52e5d8198dd82a2291b5e0b76d29166e312b2427a1c4c"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/e720aaf3ab9ca8d321ae76b3bacd3c261ebf8510b8e700346981c97da68bb16b/20261011T073519-f433393a93db4441a03a256011dfbc28/result.json",
+      "sha256": "aa318dc5241e77eb398508ed1553ce3b4f05910b21d4d2126bb4fb2e2bc632bc"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/e720aaf3ab9ca8d321ae76b3bacd3c261ebf8510b8e700346981c97da68bb16b/20261011T073519-f433393a93db4441a03a256011dfbc28/solver.json",
+      "sha256": "55312646c087212a156d9cf9c5b0b89df7a664aafdf5afacafccb0ce1b135883"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/e720aaf3ab9ca8d321ae76b3bacd3c261ebf8510b8e700346981c97da68bb16b/20261011T073519-f433393a93db4441a03a256011dfbc28/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/attempts/e720aaf3ab9ca8d321ae76b3bacd3c261ebf8510b8e700346981c97da68bb16b/20261011T073519-f433393a93db4441a03a256011dfbc28/started.json",
+      "sha256": "74017b5eedab7a046c3f56ce8e2a3cca746a7068a50ae38fd4154dafc74e462a"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/chunks/chunk-00000-570c16fbd7b643c0b29083df7d08e090-completion.json",
+      "sha256": "9891e1fe29f19d184c9c2da7b82a7f75d04d9308194af509b80eb16e612bc693"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/chunks/chunk-00000-570c16fbd7b643c0b29083df7d08e090.json",
+      "sha256": "773825172d59dbc15a6a8d0e0c4a9b4367cbf65d6b3c41a8159b6bab6014639d"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/chunks/chunk-00001-269e888f281b4dad9c44c2c7fabc8aaf-completion.json",
+      "sha256": "66d09205cb746c7bbf7be9f04c3c29d11ac30d2d0168c425daa4ebf0492e2721"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/chunks/chunk-00001-269e888f281b4dad9c44c2c7fabc8aaf.json",
+      "sha256": "1e4826786f6981992e5a7f211e4854bd0703b071cefd9826615950ae6dabf2da"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/locks/00cdb9bfb703d5565edaa42131e0ad7c0496305bb426e945cc0a119b57f34ba6",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/locks/1223e5efc1169b101ade437cd3c06623e5840b76d22b4b3a7cd13509379524e7",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/locks/1a6fd030e4eaf77b622d0366a79cdb8b3392d1292d0bb6991cdebfbbb84cc370",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/locks/2128a4b8f2f5cc13fba2d77a613d8667106267988b2f1590d20ff403aa4b1c26",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/locks/29e09bd60a8919ce14b4e168db7801dd0d701021c1f2bd0e0c8de42d5048f612",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/locks/316887d425ed477542fc30476a08466fa3b2bcff425f3b4b8d4727b0ececbd0d",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/locks/31e79b6e797970bec1c5c4b2a3059bea4782b6f6fac9825bc1624c7c7e9d561c",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/locks/3b968f4e12d5d8002c27b13d8bfd449e41d6fa3d367bf10ea2ff1f0935c4ad7f",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/locks/59039513724479e2186e2836a5c78be35ffee275e63498b556bca7be3b57bad6",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/locks/5d4decf6acb7856830218d22631d63f0dc47a1778594f32447212baec59f7fef",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/locks/5d7ab2d1b1faa50aeb8ba1a8ddd8642297e669b83770e72b092419536f563015",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/locks/7711d14d2f88d6430bbf9f1f7d24eacf264c7ad30bfaca6023a296623c959265",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/locks/8ca2b6c61cc8e0950f6030c60558d6473b2e5c36b96cd4bfd0ab2713dfdf35ed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/locks/925857f0328a411feaff15fd7273939d2b91af097b2acd9e717d9ef9725d2224",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/locks/93acdc2d63600fc8eb8fd989bf3682d2563fd65fb830b1b77debee4df7626ac8",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/locks/9cfd3df47ff72dc3e55aa13efed66a6b537e31a6718f4314f38ed2c92ecac889",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/locks/bcae7de2a070c4de066e5f0ece5d1867b177e4ec527237d2b3ce0e325ce62ab8",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/locks/c625eb2aa3a6d950a55386028e8c681f186f8551dfb5f5bae1a72bc2bf9b290a",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/locks/cb4b541d24c57eb3df57a051a45f8287e2e3b257533bab60c0279eba4c07b716",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/locks/cdd2505769d1a245c76833104a22272427aff112a5ca2a9ee049485020ffada6",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/locks/d51e5ec94567611f71d660ea3866e4111e309a45825beb858f121602314d25a6",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/locks/e60da46d92473fe1f1fb149033d50e336432e7246c047dbe8877d728783a4160",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/locks/e638120f37a06ab1580e3f89f39280d8b583af146ce4cb4e16f20e63ab4306f6",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/locks/e720aaf3ab9ca8d321ae76b3bacd3c261ebf8510b8e700346981c97da68bb16b",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/manifest.json",
+      "sha256": "7a671920d42cf361d9b204fdd56fc295d9dbc4be7bfdfe9445f984b390ecc057"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke001/source/ksat_experiments.py",
+      "sha256": "e5cdf99887aa61b53ff2857d026b995eafc92ea00607a8880eaf24aa8cc3a63a"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/analysis-v1/README.txt",
+      "sha256": "1cac9fde564a10adf2630511bb83897d823143a60903b7de0eb3b8ac0d959bb9"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/analysis-v1/finite_size_curves.pdf",
+      "sha256": "4f76caa22295ed390a4c22b0df226b7215b625664dabaa017a9061a2e007c0f7"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/analysis-v1/finite_size_curves.png",
+      "sha256": "7e5c19d3c4d080c61d2ccf2866c708a6ec5e6e801112c01c8ddc79a0f68d233a"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/analysis-v1/instances.csv",
+      "sha256": "b05a85faece5f70a5c79f963e0ce5001fa1c00ba5b6dc06f6a681e4493a7cfc3"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/analysis-v1/phase_bounds.pdf",
+      "sha256": "110f0fa186ccbfab95543e2e676315bfcc37fa8e44d7b9e1e3cbd67fc141ae2e"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/analysis-v1/phase_bounds.png",
+      "sha256": "fa5783478d64004bfa9cd996d305cb321c57fae23e03a1076c1de7742eb89914"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/analysis-v1/phase_complete_estimates.pdf",
+      "sha256": "94053d668198c66bf6d10c89d44f20e033365ddbe9ae36711cc43f4c6d3cf2ff"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/analysis-v1/phase_complete_estimates.png",
+      "sha256": "2ccb9df7572d67f69aebe466c4ebfac6cf79bf5ddc36eb8c2efda2a5d7dc0da2"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/analysis-v1/summary.csv",
+      "sha256": "ec58889738db4a8604698743b21880547c0ddd4f0cf7743d630558710975973d"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/analysis-v1/summary.json",
+      "sha256": "d37373e4b066f1a176f561100344a2342a16cef7b7ef4ed06a26a3f47343378b"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/analysis-v2/README.txt",
+      "sha256": "1cac9fde564a10adf2630511bb83897d823143a60903b7de0eb3b8ac0d959bb9"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/analysis-v2/finite_size_curves.pdf",
+      "sha256": "317a7730ba3fae8ab96c546daa93ca4fa4056f93a924c70928a2cc3e4e68a8c8"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/analysis-v2/finite_size_curves.png",
+      "sha256": "9dac22e7179732ae09abc62a867f169110921d892287c0649ef238c6e483522d"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/analysis-v2/instances.csv",
+      "sha256": "b05a85faece5f70a5c79f963e0ce5001fa1c00ba5b6dc06f6a681e4493a7cfc3"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/analysis-v2/phase_bounds.pdf",
+      "sha256": "db203ce9a734c89f5cee623b226b6b167eadaab388e005a32359f0f1b2f25e05"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/analysis-v2/phase_bounds.png",
+      "sha256": "d712d5b2ce6241f5cc00cf1dfde377fcbf19e5df93f915e33766e5982e7c4453"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/analysis-v2/phase_complete_estimates.pdf",
+      "sha256": "2ac36c1a4518060d83f52ba6a9d94e9dc8118371fa0c06ceda797f335d103946"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/analysis-v2/phase_complete_estimates.png",
+      "sha256": "249eabc9766cbafae5c2cd437f2c0b61ededbbe0172b899d41efe51277989429"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/analysis-v2/summary.csv",
+      "sha256": "ec58889738db4a8604698743b21880547c0ddd4f0cf7743d630558710975973d"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/analysis-v2/summary.json",
+      "sha256": "b7da34f11754b04f83ec53ce9b44bc4e46d473f1b011a50174f4ac73be7f63d4"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/00cdb9bfb703d5565edaa42131e0ad7c0496305bb426e945cc0a119b57f34ba6/20261011T073739-cd26cdf64bad4398b86063e932ed8fa5/input.cnf",
+      "sha256": "72a522e7d15e2ae57e87c565f21eb2b60ae6b9e8d61cb89c6a0f2b90512c706b"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/00cdb9bfb703d5565edaa42131e0ad7c0496305bb426e945cc0a119b57f34ba6/20261011T073739-cd26cdf64bad4398b86063e932ed8fa5/result.json",
+      "sha256": "08647997503f5c6d510d4ae5814bf40be1d837b50787cb25f2681d4f8e919c21"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/00cdb9bfb703d5565edaa42131e0ad7c0496305bb426e945cc0a119b57f34ba6/20261011T073739-cd26cdf64bad4398b86063e932ed8fa5/solver.json",
+      "sha256": "cf2be35b52ca64222529e523e289310668b73f5e6d6fa5fc314d2248133fb644"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/00cdb9bfb703d5565edaa42131e0ad7c0496305bb426e945cc0a119b57f34ba6/20261011T073739-cd26cdf64bad4398b86063e932ed8fa5/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/00cdb9bfb703d5565edaa42131e0ad7c0496305bb426e945cc0a119b57f34ba6/20261011T073739-cd26cdf64bad4398b86063e932ed8fa5/started.json",
+      "sha256": "24ea272696dbcc6eb93303c1f7beb7c5dbc293c2dc8dddfae1b1b0def8669b71"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/00cdb9bfb703d5565edaa42131e0ad7c0496305bb426e945cc0a119b57f34ba6/20261011T073739-cd26cdf64bad4398b86063e932ed8fa5/witness.json",
+      "sha256": "8552af13eadc3c49ce564d11cbc343937521cb9d852d64e4d8fc8e17b3a55afa"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/1223e5efc1169b101ade437cd3c06623e5840b76d22b4b3a7cd13509379524e7/20261011T073739-bc6614545f4c4967b1fe9c90b9b7947b/input.cnf",
+      "sha256": "49577ae12e97f42b4f37a042a00ff8d32ee083b25909b1c098f254faaa52930e"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/1223e5efc1169b101ade437cd3c06623e5840b76d22b4b3a7cd13509379524e7/20261011T073739-bc6614545f4c4967b1fe9c90b9b7947b/result.json",
+      "sha256": "52f3e91d08ee5d26407b773c031d23fae479723c85161910af69d88fd2bc4231"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/1223e5efc1169b101ade437cd3c06623e5840b76d22b4b3a7cd13509379524e7/20261011T073739-bc6614545f4c4967b1fe9c90b9b7947b/solver.json",
+      "sha256": "638e6331d91de2a9e46decd8e833a83500cf00370fba7e7be17c4265887b338f"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/1223e5efc1169b101ade437cd3c06623e5840b76d22b4b3a7cd13509379524e7/20261011T073739-bc6614545f4c4967b1fe9c90b9b7947b/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/1223e5efc1169b101ade437cd3c06623e5840b76d22b4b3a7cd13509379524e7/20261011T073739-bc6614545f4c4967b1fe9c90b9b7947b/started.json",
+      "sha256": "3cfe6047f6c29217d22fe763d31e27a2c1588a05d4f1621befd4d5b034f3ee81"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/1223e5efc1169b101ade437cd3c06623e5840b76d22b4b3a7cd13509379524e7/20261011T073739-bc6614545f4c4967b1fe9c90b9b7947b/witness.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/1a6fd030e4eaf77b622d0366a79cdb8b3392d1292d0bb6991cdebfbbb84cc370/20261011T073956-d15adea7e3d049f0b6aca1cba72d5071/input.cnf",
+      "sha256": "67db9c7e7bd971f3ae16281dcda73c06120934ab87b07034cd6c3cbe7ca18f58"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/1a6fd030e4eaf77b622d0366a79cdb8b3392d1292d0bb6991cdebfbbb84cc370/20261011T073956-d15adea7e3d049f0b6aca1cba72d5071/result.json",
+      "sha256": "ed875753722f63bfba9abebae5e78a48d7d7aab46ddb3d6e4cf49c8ce6209f61"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/1a6fd030e4eaf77b622d0366a79cdb8b3392d1292d0bb6991cdebfbbb84cc370/20261011T073956-d15adea7e3d049f0b6aca1cba72d5071/solver.json",
+      "sha256": "361b68bd8db0af0829e98855ec4d234ac1a9b97edd6b94e991f77aa54224fb7f"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/1a6fd030e4eaf77b622d0366a79cdb8b3392d1292d0bb6991cdebfbbb84cc370/20261011T073956-d15adea7e3d049f0b6aca1cba72d5071/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/1a6fd030e4eaf77b622d0366a79cdb8b3392d1292d0bb6991cdebfbbb84cc370/20261011T073956-d15adea7e3d049f0b6aca1cba72d5071/started.json",
+      "sha256": "45e5b50adb06bf7ff09faf03b92e81839d3e3bee92481e35e8acf045e78e8fa4"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/1a6fd030e4eaf77b622d0366a79cdb8b3392d1292d0bb6991cdebfbbb84cc370/20261011T073956-d15adea7e3d049f0b6aca1cba72d5071/witness.json",
+      "sha256": "936c22f1905af5d1b5a47bcf6a458233018a537ec32d90056b8548d68f290e3c"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/2128a4b8f2f5cc13fba2d77a613d8667106267988b2f1590d20ff403aa4b1c26/20261011T073739-ba642faef19f4985b06a84154d5707d8/input.cnf",
+      "sha256": "d54ca6d41715a7b0ef1b5662d7815ba0c107aab4da9796cfbed0b83451f0f1f9"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/2128a4b8f2f5cc13fba2d77a613d8667106267988b2f1590d20ff403aa4b1c26/20261011T073739-ba642faef19f4985b06a84154d5707d8/result.json",
+      "sha256": "32be1de073ce0290f37ba5cb752ab196bdf4bdd072b181b07e5a9e624556800a"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/2128a4b8f2f5cc13fba2d77a613d8667106267988b2f1590d20ff403aa4b1c26/20261011T073739-ba642faef19f4985b06a84154d5707d8/solver.json",
+      "sha256": "d788d3a1e0d0052c11d574c5b72b2a676d4a7a8190a5ac66923ae2a4e009d1aa"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/2128a4b8f2f5cc13fba2d77a613d8667106267988b2f1590d20ff403aa4b1c26/20261011T073739-ba642faef19f4985b06a84154d5707d8/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/2128a4b8f2f5cc13fba2d77a613d8667106267988b2f1590d20ff403aa4b1c26/20261011T073739-ba642faef19f4985b06a84154d5707d8/started.json",
+      "sha256": "90118a8945bcf40068e6a06bf95e1463e59788ceaf2ebddca07124d9c25af4a3"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/2128a4b8f2f5cc13fba2d77a613d8667106267988b2f1590d20ff403aa4b1c26/20261011T073739-ba642faef19f4985b06a84154d5707d8/witness.json",
+      "sha256": "145e9207944457a407c90b0edcbad8e1c488419470354fd119875810f1cfef53"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/29e09bd60a8919ce14b4e168db7801dd0d701021c1f2bd0e0c8de42d5048f612/20261011T073957-ef5a8557fda14c4d9cafb4da509cbb1c/checker.log",
+      "sha256": "a592784446d200fa78f3f85cc5104f7c50cdfed3829c64f4e86bc77dd12ec0b3"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/29e09bd60a8919ce14b4e168db7801dd0d701021c1f2bd0e0c8de42d5048f612/20261011T073957-ef5a8557fda14c4d9cafb4da509cbb1c/input.cnf",
+      "sha256": "16edeb2252ac9d5742fecfb742f04570e0e1b2df9136b447240f93dc21f00929"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/29e09bd60a8919ce14b4e168db7801dd0d701021c1f2bd0e0c8de42d5048f612/20261011T073957-ef5a8557fda14c4d9cafb4da509cbb1c/proof.drat",
+      "sha256": "3cced0dcfaa7adabdbc7d09d2b7be719e28f08d8d77742ce9ee128e638113e44"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/29e09bd60a8919ce14b4e168db7801dd0d701021c1f2bd0e0c8de42d5048f612/20261011T073957-ef5a8557fda14c4d9cafb4da509cbb1c/result.json",
+      "sha256": "d38a83e6004ab217b27504a0fc4356e8422d231db0138ca130134280e2d70aba"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/29e09bd60a8919ce14b4e168db7801dd0d701021c1f2bd0e0c8de42d5048f612/20261011T073957-ef5a8557fda14c4d9cafb4da509cbb1c/solver.json",
+      "sha256": "c7ac351f1514367d3c86f7faa4df5bccb8d000646ebdd1e45a6b2f0d6dc254e1"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/29e09bd60a8919ce14b4e168db7801dd0d701021c1f2bd0e0c8de42d5048f612/20261011T073957-ef5a8557fda14c4d9cafb4da509cbb1c/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/29e09bd60a8919ce14b4e168db7801dd0d701021c1f2bd0e0c8de42d5048f612/20261011T073957-ef5a8557fda14c4d9cafb4da509cbb1c/started.json",
+      "sha256": "190bd37537ea9f01a26dc2de98dca17bad7085c0a0c1437efbbd61f0722c427d"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/316887d425ed477542fc30476a08466fa3b2bcff425f3b4b8d4727b0ececbd0d/20261011T073957-73b5508b31dc4cd79486cb1946274b4f/input.cnf",
+      "sha256": "87b604069079b790069c741308c5c986b7e6627383885aba8a620569eaad20f9"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/316887d425ed477542fc30476a08466fa3b2bcff425f3b4b8d4727b0ececbd0d/20261011T073957-73b5508b31dc4cd79486cb1946274b4f/result.json",
+      "sha256": "a2d8713ea96e24ef836b071e0e2b54b33d22e5de5176290246069a4279381bab"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/316887d425ed477542fc30476a08466fa3b2bcff425f3b4b8d4727b0ececbd0d/20261011T073957-73b5508b31dc4cd79486cb1946274b4f/solver.json",
+      "sha256": "6c11cf5995622cbefee1ee5c4981f15b0b5bbf2524abd3a9a930d9a24ef6aa18"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/316887d425ed477542fc30476a08466fa3b2bcff425f3b4b8d4727b0ececbd0d/20261011T073957-73b5508b31dc4cd79486cb1946274b4f/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/316887d425ed477542fc30476a08466fa3b2bcff425f3b4b8d4727b0ececbd0d/20261011T073957-73b5508b31dc4cd79486cb1946274b4f/started.json",
+      "sha256": "3a691a2913c442739cd0ef82a1fed5c0d3f885659fdf84a74f34e3d14e067b10"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/316887d425ed477542fc30476a08466fa3b2bcff425f3b4b8d4727b0ececbd0d/20261011T073957-73b5508b31dc4cd79486cb1946274b4f/witness.json",
+      "sha256": "898dc42548d68af38123fb1b5aaef790e77461ff7549a23e2be742ab8b24a168"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/31e79b6e797970bec1c5c4b2a3059bea4782b6f6fac9825bc1624c7c7e9d561c/20261011T073739-8b28e178a382412896427f3be5e90330/input.cnf",
+      "sha256": "49815310e578ed5adcaa4d96c131b7ec00056a0adb3adeb07e75ff9a25d82701"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/31e79b6e797970bec1c5c4b2a3059bea4782b6f6fac9825bc1624c7c7e9d561c/20261011T073739-8b28e178a382412896427f3be5e90330/result.json",
+      "sha256": "eb532173000abf543eb595bf24e5aee313cf427cff750ae2ca7817dc66afbb1b"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/31e79b6e797970bec1c5c4b2a3059bea4782b6f6fac9825bc1624c7c7e9d561c/20261011T073739-8b28e178a382412896427f3be5e90330/solver.json",
+      "sha256": "35823a4fd02c681abacc9616cf499c8306e99f6e9784919ee79184379214d3c5"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/31e79b6e797970bec1c5c4b2a3059bea4782b6f6fac9825bc1624c7c7e9d561c/20261011T073739-8b28e178a382412896427f3be5e90330/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/31e79b6e797970bec1c5c4b2a3059bea4782b6f6fac9825bc1624c7c7e9d561c/20261011T073739-8b28e178a382412896427f3be5e90330/started.json",
+      "sha256": "823eb544b698c39c8ed210e2a0c0ebd1551fd0b8323b557fe736281af1c1f3d4"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/31e79b6e797970bec1c5c4b2a3059bea4782b6f6fac9825bc1624c7c7e9d561c/20261011T073739-8b28e178a382412896427f3be5e90330/witness.json",
+      "sha256": "e2add4b6fbd53d77e338694e1249cee5870cb80a87ecdc3c8976400376d947ad"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/3b968f4e12d5d8002c27b13d8bfd449e41d6fa3d367bf10ea2ff1f0935c4ad7f/20261011T073739-f09fc47838eb46d8b5ebccdc5517c77a/checker.log",
+      "sha256": "b413ed27f6635ea0591ce58f0457c7ffcb74584ee325f477fc092ff8b3ae7875"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/3b968f4e12d5d8002c27b13d8bfd449e41d6fa3d367bf10ea2ff1f0935c4ad7f/20261011T073739-f09fc47838eb46d8b5ebccdc5517c77a/input.cnf",
+      "sha256": "448e1edb8ca7ab1fda972f531d7c4bcc7a830587a09f3f081e7cfe1ec746abb8"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/3b968f4e12d5d8002c27b13d8bfd449e41d6fa3d367bf10ea2ff1f0935c4ad7f/20261011T073739-f09fc47838eb46d8b5ebccdc5517c77a/proof.drat",
+      "sha256": "e9fb8c66836b01c47547abc16709872018e21d30e675b530f386883636bb3e0f"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/3b968f4e12d5d8002c27b13d8bfd449e41d6fa3d367bf10ea2ff1f0935c4ad7f/20261011T073739-f09fc47838eb46d8b5ebccdc5517c77a/result.json",
+      "sha256": "efff5d61949169a4cca759a2f6a57242a3d3041a944effe35e8fd108913f7f2b"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/3b968f4e12d5d8002c27b13d8bfd449e41d6fa3d367bf10ea2ff1f0935c4ad7f/20261011T073739-f09fc47838eb46d8b5ebccdc5517c77a/solver.json",
+      "sha256": "00df58bb74a3b4876fbefbe4ca66ef45bc86928867f8cc7695460443c7968616"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/3b968f4e12d5d8002c27b13d8bfd449e41d6fa3d367bf10ea2ff1f0935c4ad7f/20261011T073739-f09fc47838eb46d8b5ebccdc5517c77a/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/3b968f4e12d5d8002c27b13d8bfd449e41d6fa3d367bf10ea2ff1f0935c4ad7f/20261011T073739-f09fc47838eb46d8b5ebccdc5517c77a/started.json",
+      "sha256": "a2ec671c6e2ddbc6b6f8137da08b84f8a07a48913ad6b03b27453609a72a2c0f"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/59039513724479e2186e2836a5c78be35ffee275e63498b556bca7be3b57bad6/20261011T073957-679cdb303e85420483bbdada8bc9ca3f/checker.log",
+      "sha256": "ab155443e5b8278e490b7b6394bd73b4d91f96d3d5c73f491d78ad5c474eb0f1"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/59039513724479e2186e2836a5c78be35ffee275e63498b556bca7be3b57bad6/20261011T073957-679cdb303e85420483bbdada8bc9ca3f/input.cnf",
+      "sha256": "4c250a32b9fba0443e3a8723fd17f31e361a9db371c8748adcaef4c4b34f242e"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/59039513724479e2186e2836a5c78be35ffee275e63498b556bca7be3b57bad6/20261011T073957-679cdb303e85420483bbdada8bc9ca3f/proof.drat",
+      "sha256": "889afe1e1bb03b4400bb4c4a73ba9f0c31f31131f06fd50d98c7ce699918ad48"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/59039513724479e2186e2836a5c78be35ffee275e63498b556bca7be3b57bad6/20261011T073957-679cdb303e85420483bbdada8bc9ca3f/result.json",
+      "sha256": "9d31718086b4f312270567d11281ea47f5d58d41ce32e7c080c654127c7d58e3"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/59039513724479e2186e2836a5c78be35ffee275e63498b556bca7be3b57bad6/20261011T073957-679cdb303e85420483bbdada8bc9ca3f/solver.json",
+      "sha256": "0608bc1134dade5cc1077dd2f6c0ed30ed74afcdade9336fb7b58d0a8f55fabc"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/59039513724479e2186e2836a5c78be35ffee275e63498b556bca7be3b57bad6/20261011T073957-679cdb303e85420483bbdada8bc9ca3f/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/59039513724479e2186e2836a5c78be35ffee275e63498b556bca7be3b57bad6/20261011T073957-679cdb303e85420483bbdada8bc9ca3f/started.json",
+      "sha256": "e3ae92eef0456eaa98ff07dbe976889e0769b8897912b257d3a9447081715c61"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/5d4decf6acb7856830218d22631d63f0dc47a1778594f32447212baec59f7fef/20261011T073739-329fde0083af4808a196fb1246bfb0bf/input.cnf",
+      "sha256": "2fcc344d52bbd1de6a8bf261795fa48be1fb1dbb21fee15fe628ab8042e6d53e"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/5d4decf6acb7856830218d22631d63f0dc47a1778594f32447212baec59f7fef/20261011T073739-329fde0083af4808a196fb1246bfb0bf/result.json",
+      "sha256": "26a6c3724ca2831c91470627fb82cd1c1a0fd79f25d23c390030db135d95ec48"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/5d4decf6acb7856830218d22631d63f0dc47a1778594f32447212baec59f7fef/20261011T073739-329fde0083af4808a196fb1246bfb0bf/solver.json",
+      "sha256": "0e0561436f72234c89bba39444b1c7cfe0706b2b20ac0093876e1c1d740ebdf2"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/5d4decf6acb7856830218d22631d63f0dc47a1778594f32447212baec59f7fef/20261011T073739-329fde0083af4808a196fb1246bfb0bf/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/5d4decf6acb7856830218d22631d63f0dc47a1778594f32447212baec59f7fef/20261011T073739-329fde0083af4808a196fb1246bfb0bf/started.json",
+      "sha256": "f950e4cf892f0a71f94ec98519ab251a457c393c5f1d5d66575c036c77b628de"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/5d4decf6acb7856830218d22631d63f0dc47a1778594f32447212baec59f7fef/20261011T073739-329fde0083af4808a196fb1246bfb0bf/witness.json",
+      "sha256": "85a3419eaa9570837cb477f5ac14132b5b9edd583ddf8b070cf0e242c24a0b89"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/5d7ab2d1b1faa50aeb8ba1a8ddd8642297e669b83770e72b092419536f563015/20261011T073957-cfe96ba138fe49149fd14f9458d17adc/input.cnf",
+      "sha256": "98fca1ddff32ee9e1aad509f79e462cae60150e4b448b21d65f67bb9913d926b"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/5d7ab2d1b1faa50aeb8ba1a8ddd8642297e669b83770e72b092419536f563015/20261011T073957-cfe96ba138fe49149fd14f9458d17adc/result.json",
+      "sha256": "63585e9c8ad389d1214ea2e57c8ea33116a7480904d6c0700845b28bbaaa8fae"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/5d7ab2d1b1faa50aeb8ba1a8ddd8642297e669b83770e72b092419536f563015/20261011T073957-cfe96ba138fe49149fd14f9458d17adc/solver.json",
+      "sha256": "455872abc80dd3b53149c6cbda6df4eca7589427627550d1ac5d07f0be0132f3"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/5d7ab2d1b1faa50aeb8ba1a8ddd8642297e669b83770e72b092419536f563015/20261011T073957-cfe96ba138fe49149fd14f9458d17adc/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/5d7ab2d1b1faa50aeb8ba1a8ddd8642297e669b83770e72b092419536f563015/20261011T073957-cfe96ba138fe49149fd14f9458d17adc/started.json",
+      "sha256": "b818a2bc81975b45775889d807b5311c76de8d72c5f4bde470039532a93c3701"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/5d7ab2d1b1faa50aeb8ba1a8ddd8642297e669b83770e72b092419536f563015/20261011T073957-cfe96ba138fe49149fd14f9458d17adc/witness.json",
+      "sha256": "a83cdc2b908c3867429d6884cc8066a3910218184446af391eedfd1c7e4fd2b1"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/7711d14d2f88d6430bbf9f1f7d24eacf264c7ad30bfaca6023a296623c959265/20261011T073956-abddd1a58cb147fea592d7f651afa14d/input.cnf",
+      "sha256": "b581544316f3c7976e241f6dac59a4005fef9952e6f3526b83de7c5d5928c321"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/7711d14d2f88d6430bbf9f1f7d24eacf264c7ad30bfaca6023a296623c959265/20261011T073956-abddd1a58cb147fea592d7f651afa14d/result.json",
+      "sha256": "125115d41c49a59580b5b0cb23b9b50c1e7c1ce5829a6c7f35140bc01e92b03d"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/7711d14d2f88d6430bbf9f1f7d24eacf264c7ad30bfaca6023a296623c959265/20261011T073956-abddd1a58cb147fea592d7f651afa14d/solver.json",
+      "sha256": "3cfe4919fad1ab1791bb020251752a676c38db36dcecd0d7a9b11360c859d486"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/7711d14d2f88d6430bbf9f1f7d24eacf264c7ad30bfaca6023a296623c959265/20261011T073956-abddd1a58cb147fea592d7f651afa14d/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/7711d14d2f88d6430bbf9f1f7d24eacf264c7ad30bfaca6023a296623c959265/20261011T073956-abddd1a58cb147fea592d7f651afa14d/started.json",
+      "sha256": "d46e69994d98d2439be02321fa6a7385c46773f7583fdd14230363e4bf68efca"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/7711d14d2f88d6430bbf9f1f7d24eacf264c7ad30bfaca6023a296623c959265/20261011T073956-abddd1a58cb147fea592d7f651afa14d/witness.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/8ca2b6c61cc8e0950f6030c60558d6473b2e5c36b96cd4bfd0ab2713dfdf35ed/20261011T073957-23b13ccc0be845468dad0f6a726a6f67/checker.log",
+      "sha256": "984d2cca357b49a39078f58d61cbc17123f87672793b4eac7880ee431711b5b8"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/8ca2b6c61cc8e0950f6030c60558d6473b2e5c36b96cd4bfd0ab2713dfdf35ed/20261011T073957-23b13ccc0be845468dad0f6a726a6f67/input.cnf",
+      "sha256": "51e977f2cf9c65dd5bf1588b6a3999b871014370dff10f48f1b12c2ca4cfe54e"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/8ca2b6c61cc8e0950f6030c60558d6473b2e5c36b96cd4bfd0ab2713dfdf35ed/20261011T073957-23b13ccc0be845468dad0f6a726a6f67/proof.drat",
+      "sha256": "f4f6683877f28bdd9bc527290171f9e22f7ea6c4e0ad43450b43f8a0a704cb48"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/8ca2b6c61cc8e0950f6030c60558d6473b2e5c36b96cd4bfd0ab2713dfdf35ed/20261011T073957-23b13ccc0be845468dad0f6a726a6f67/result.json",
+      "sha256": "174f856217e54c2c532d030903a063b845ec41510dbc16899167069bf9372089"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/8ca2b6c61cc8e0950f6030c60558d6473b2e5c36b96cd4bfd0ab2713dfdf35ed/20261011T073957-23b13ccc0be845468dad0f6a726a6f67/solver.json",
+      "sha256": "39359ad8e0d23e7a79eb97b90beae8371871eea88a4aa218b02160c2d00f5eda"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/8ca2b6c61cc8e0950f6030c60558d6473b2e5c36b96cd4bfd0ab2713dfdf35ed/20261011T073957-23b13ccc0be845468dad0f6a726a6f67/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/8ca2b6c61cc8e0950f6030c60558d6473b2e5c36b96cd4bfd0ab2713dfdf35ed/20261011T073957-23b13ccc0be845468dad0f6a726a6f67/started.json",
+      "sha256": "dd93928068c8d69dc45c54c2ec4370ac347d460b6fc56b97bf30767490ebf3c6"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/925857f0328a411feaff15fd7273939d2b91af097b2acd9e717d9ef9725d2224/20261011T073956-2b358bf92ecc44cc98f466750ed85662/input.cnf",
+      "sha256": "4ce258cb5e439c3a14974ab497e7c7dc83bb402a5dd92dda6b1ed0a67f80e4b8"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/925857f0328a411feaff15fd7273939d2b91af097b2acd9e717d9ef9725d2224/20261011T073956-2b358bf92ecc44cc98f466750ed85662/result.json",
+      "sha256": "ae085d43a70012a5fcab9a7240277fc1426166ec9d809b407bccc765b0bd0b4e"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/925857f0328a411feaff15fd7273939d2b91af097b2acd9e717d9ef9725d2224/20261011T073956-2b358bf92ecc44cc98f466750ed85662/solver.json",
+      "sha256": "e37bac59a0d8dbbddf68ba9c2fabf962c612a463f8aebea2ca3a001fdfc2987a"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/925857f0328a411feaff15fd7273939d2b91af097b2acd9e717d9ef9725d2224/20261011T073956-2b358bf92ecc44cc98f466750ed85662/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/925857f0328a411feaff15fd7273939d2b91af097b2acd9e717d9ef9725d2224/20261011T073956-2b358bf92ecc44cc98f466750ed85662/started.json",
+      "sha256": "a21c1d53662e12d8cff3590707a957f22113dca84c77d134132c431dbc7ef171"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/925857f0328a411feaff15fd7273939d2b91af097b2acd9e717d9ef9725d2224/20261011T073956-2b358bf92ecc44cc98f466750ed85662/witness.json",
+      "sha256": "ce1280987b7753903ef56fa6e226332d0f090eae30ed277deeb6abe5904df6e0"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/93acdc2d63600fc8eb8fd989bf3682d2563fd65fb830b1b77debee4df7626ac8/20261011T073739-382ddac263ca40f99bc553e3898ef3c2/input.cnf",
+      "sha256": "ce49dc85894fa2eb4ae3dbc1c827a9c121cd0a1312acb691858d45bfe1d30b21"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/93acdc2d63600fc8eb8fd989bf3682d2563fd65fb830b1b77debee4df7626ac8/20261011T073739-382ddac263ca40f99bc553e3898ef3c2/result.json",
+      "sha256": "eb6407106153bd09bb185b1c20464d5f51fc137f4b1514c62a2658cf0a019abc"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/93acdc2d63600fc8eb8fd989bf3682d2563fd65fb830b1b77debee4df7626ac8/20261011T073739-382ddac263ca40f99bc553e3898ef3c2/solver.json",
+      "sha256": "39ae54ff5bb54032e6e6fa7423a4c3c97dac4e62f702417f986ecc063cb66dcc"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/93acdc2d63600fc8eb8fd989bf3682d2563fd65fb830b1b77debee4df7626ac8/20261011T073739-382ddac263ca40f99bc553e3898ef3c2/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/93acdc2d63600fc8eb8fd989bf3682d2563fd65fb830b1b77debee4df7626ac8/20261011T073739-382ddac263ca40f99bc553e3898ef3c2/started.json",
+      "sha256": "ea32fc135f94bf426e64c872079bb615340f732e959f809d8918f4eab875b546"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/93acdc2d63600fc8eb8fd989bf3682d2563fd65fb830b1b77debee4df7626ac8/20261011T073739-382ddac263ca40f99bc553e3898ef3c2/witness.json",
+      "sha256": "5c6b29c0a9dafc9c8b5c7e658f7c7adbbcb003c328e4be610219e9364e90db7a"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/9cfd3df47ff72dc3e55aa13efed66a6b537e31a6718f4314f38ed2c92ecac889/20261011T073738-5e264a75af3743acb27f39d0ecc0fb04/input.cnf",
+      "sha256": "49577ae12e97f42b4f37a042a00ff8d32ee083b25909b1c098f254faaa52930e"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/9cfd3df47ff72dc3e55aa13efed66a6b537e31a6718f4314f38ed2c92ecac889/20261011T073738-5e264a75af3743acb27f39d0ecc0fb04/result.json",
+      "sha256": "465a83c4dcc1598b1af803e9a1c4061b95fe37cce3ec61d4b64582c10cebea19"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/9cfd3df47ff72dc3e55aa13efed66a6b537e31a6718f4314f38ed2c92ecac889/20261011T073738-5e264a75af3743acb27f39d0ecc0fb04/solver.json",
+      "sha256": "b17afbb8ddd85d676ef7f4eebc04a9325b2f07a229d7120c24239f6d102c2c2f"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/9cfd3df47ff72dc3e55aa13efed66a6b537e31a6718f4314f38ed2c92ecac889/20261011T073738-5e264a75af3743acb27f39d0ecc0fb04/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/9cfd3df47ff72dc3e55aa13efed66a6b537e31a6718f4314f38ed2c92ecac889/20261011T073738-5e264a75af3743acb27f39d0ecc0fb04/started.json",
+      "sha256": "2a62ea28f3f59773fcd2e43b7d06d766a531055a5b156eb0aba1329883f5d97c"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/9cfd3df47ff72dc3e55aa13efed66a6b537e31a6718f4314f38ed2c92ecac889/20261011T073738-5e264a75af3743acb27f39d0ecc0fb04/witness.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/bcae7de2a070c4de066e5f0ece5d1867b177e4ec527237d2b3ce0e325ce62ab8/20261011T073739-9d04da9a5a7e4639ae23f7ea1d3d188e/input.cnf",
+      "sha256": "93ca0fc194502dd274f79231864fe80e5489ed9a22a9761fca2122a9644e0379"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/bcae7de2a070c4de066e5f0ece5d1867b177e4ec527237d2b3ce0e325ce62ab8/20261011T073739-9d04da9a5a7e4639ae23f7ea1d3d188e/result.json",
+      "sha256": "cfbbdd4d8817086d5100ed54ada91f6b9a908789790513ef9641d781df39cfea"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/bcae7de2a070c4de066e5f0ece5d1867b177e4ec527237d2b3ce0e325ce62ab8/20261011T073739-9d04da9a5a7e4639ae23f7ea1d3d188e/solver.json",
+      "sha256": "5ac3a1fe78258d22447c334252433ea81cca8cd9ed049c13768764c71daeb41c"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/bcae7de2a070c4de066e5f0ece5d1867b177e4ec527237d2b3ce0e325ce62ab8/20261011T073739-9d04da9a5a7e4639ae23f7ea1d3d188e/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/bcae7de2a070c4de066e5f0ece5d1867b177e4ec527237d2b3ce0e325ce62ab8/20261011T073739-9d04da9a5a7e4639ae23f7ea1d3d188e/started.json",
+      "sha256": "89ef47945317ae4535a04e1adaf0f91099d3d9813f0733f3fc9b6e09d835b919"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/bcae7de2a070c4de066e5f0ece5d1867b177e4ec527237d2b3ce0e325ce62ab8/20261011T073739-9d04da9a5a7e4639ae23f7ea1d3d188e/witness.json",
+      "sha256": "a269bf1757df206d8d63daa57a0141615f3acde6c3211fd757dc7c34a8c288c8"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/c625eb2aa3a6d950a55386028e8c681f186f8551dfb5f5bae1a72bc2bf9b290a/20261011T073956-a15b37653cda4bc6887747347acddf28/input.cnf",
+      "sha256": "b581544316f3c7976e241f6dac59a4005fef9952e6f3526b83de7c5d5928c321"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/c625eb2aa3a6d950a55386028e8c681f186f8551dfb5f5bae1a72bc2bf9b290a/20261011T073956-a15b37653cda4bc6887747347acddf28/result.json",
+      "sha256": "9a1a182a29b86f8f7b10a095eba703f4dbcd40d893f2f6a28ca3400abb77acdf"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/c625eb2aa3a6d950a55386028e8c681f186f8551dfb5f5bae1a72bc2bf9b290a/20261011T073956-a15b37653cda4bc6887747347acddf28/solver.json",
+      "sha256": "b63961dc7962427410ba446de05c3480f68351179a5c984af9b2735f949d9e01"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/c625eb2aa3a6d950a55386028e8c681f186f8551dfb5f5bae1a72bc2bf9b290a/20261011T073956-a15b37653cda4bc6887747347acddf28/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/c625eb2aa3a6d950a55386028e8c681f186f8551dfb5f5bae1a72bc2bf9b290a/20261011T073956-a15b37653cda4bc6887747347acddf28/started.json",
+      "sha256": "964dabce39e20871517b4a2c750dcba07a852a7e62dedb17b78d2b5ceebebe09"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/c625eb2aa3a6d950a55386028e8c681f186f8551dfb5f5bae1a72bc2bf9b290a/20261011T073956-a15b37653cda4bc6887747347acddf28/witness.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/cb4b541d24c57eb3df57a051a45f8287e2e3b257533bab60c0279eba4c07b716/20261011T073956-171d117314fa42b395eaf2fc235ad432/input.cnf",
+      "sha256": "d28926e3b642ff1c5b448168a90b73089113987b0bc8e04a277f2b53c84add55"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/cb4b541d24c57eb3df57a051a45f8287e2e3b257533bab60c0279eba4c07b716/20261011T073956-171d117314fa42b395eaf2fc235ad432/result.json",
+      "sha256": "d7103542527cfe4d84916322446ab0c3c31fbec4ddddeb24473bf3dad21b3d09"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/cb4b541d24c57eb3df57a051a45f8287e2e3b257533bab60c0279eba4c07b716/20261011T073956-171d117314fa42b395eaf2fc235ad432/solver.json",
+      "sha256": "85d5e331fb36099c804c4fd86a4a8e867024f2c9d9bfc88e6c1533295a71a765"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/cb4b541d24c57eb3df57a051a45f8287e2e3b257533bab60c0279eba4c07b716/20261011T073956-171d117314fa42b395eaf2fc235ad432/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/cb4b541d24c57eb3df57a051a45f8287e2e3b257533bab60c0279eba4c07b716/20261011T073956-171d117314fa42b395eaf2fc235ad432/started.json",
+      "sha256": "7a3b0bc075f61409dc30c780862c41ee634bedff2ec4a47bfc21c8dc549324d7"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/cb4b541d24c57eb3df57a051a45f8287e2e3b257533bab60c0279eba4c07b716/20261011T073956-171d117314fa42b395eaf2fc235ad432/witness.json",
+      "sha256": "ce1280987b7753903ef56fa6e226332d0f090eae30ed277deeb6abe5904df6e0"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/cdd2505769d1a245c76833104a22272427aff112a5ca2a9ee049485020ffada6/20261011T073956-eda69aeaeb6245c5a760a4205e29a410/input.cnf",
+      "sha256": "b581544316f3c7976e241f6dac59a4005fef9952e6f3526b83de7c5d5928c321"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/cdd2505769d1a245c76833104a22272427aff112a5ca2a9ee049485020ffada6/20261011T073956-eda69aeaeb6245c5a760a4205e29a410/result.json",
+      "sha256": "cdf2d82339bb4d4d0ac3a80d83947c07f1df53e3ecafbbef1467f0b1d2e4b803"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/cdd2505769d1a245c76833104a22272427aff112a5ca2a9ee049485020ffada6/20261011T073956-eda69aeaeb6245c5a760a4205e29a410/solver.json",
+      "sha256": "26f04f289eddace1c130cec00a71ea00df88feadcd092514c850db9d35daf1e7"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/cdd2505769d1a245c76833104a22272427aff112a5ca2a9ee049485020ffada6/20261011T073956-eda69aeaeb6245c5a760a4205e29a410/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/cdd2505769d1a245c76833104a22272427aff112a5ca2a9ee049485020ffada6/20261011T073956-eda69aeaeb6245c5a760a4205e29a410/started.json",
+      "sha256": "5302898014fb7ad6fa306a7712a083e5b4c808109c1539340aa5109405032027"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/cdd2505769d1a245c76833104a22272427aff112a5ca2a9ee049485020ffada6/20261011T073956-eda69aeaeb6245c5a760a4205e29a410/witness.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/d51e5ec94567611f71d660ea3866e4111e309a45825beb858f121602314d25a6/20261011T073739-41aed7c8a11046d995e10ce44f508b1a/input.cnf",
+      "sha256": "3639883dee1d5901f010af32dcf3df581d47bca1308e3345b60ea5d2f6023407"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/d51e5ec94567611f71d660ea3866e4111e309a45825beb858f121602314d25a6/20261011T073739-41aed7c8a11046d995e10ce44f508b1a/result.json",
+      "sha256": "bf0eeae111c39da70d7f0bf4c186065e6f8c9f6c9deaa5c2635c86d6e4040111"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/d51e5ec94567611f71d660ea3866e4111e309a45825beb858f121602314d25a6/20261011T073739-41aed7c8a11046d995e10ce44f508b1a/solver.json",
+      "sha256": "b006139c87d85d5b588c3090a9df008cd41c70488f5d93760ea9ae9e4d54a842"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/d51e5ec94567611f71d660ea3866e4111e309a45825beb858f121602314d25a6/20261011T073739-41aed7c8a11046d995e10ce44f508b1a/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/d51e5ec94567611f71d660ea3866e4111e309a45825beb858f121602314d25a6/20261011T073739-41aed7c8a11046d995e10ce44f508b1a/started.json",
+      "sha256": "eaca33f6c5791b8d641e2bcec8951ccaae9ad887fd79f3e6b1eb09b532003717"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/d51e5ec94567611f71d660ea3866e4111e309a45825beb858f121602314d25a6/20261011T073739-41aed7c8a11046d995e10ce44f508b1a/witness.json",
+      "sha256": "5dbef6be1cf89f7a4389b5145e1d21995c244e2bebdfdb096680f116754b2320"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/e60da46d92473fe1f1fb149033d50e336432e7246c047dbe8877d728783a4160/20261011T073957-002ae345456e403e8531265b1e2ede80/input.cnf",
+      "sha256": "16c2c86400ff9f400757781c6641a5281ea27ff123e270c2cabb39c0beaac834"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/e60da46d92473fe1f1fb149033d50e336432e7246c047dbe8877d728783a4160/20261011T073957-002ae345456e403e8531265b1e2ede80/result.json",
+      "sha256": "56fa6a31df4170d96fa79ecab2c4fe55ac30c16e70015186eefd98ed0bac42cc"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/e60da46d92473fe1f1fb149033d50e336432e7246c047dbe8877d728783a4160/20261011T073957-002ae345456e403e8531265b1e2ede80/solver.json",
+      "sha256": "fe31106b9e8f921ff1a264cef1d538bde02af71e1d96a25bf953ebb674f19ccf"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/e60da46d92473fe1f1fb149033d50e336432e7246c047dbe8877d728783a4160/20261011T073957-002ae345456e403e8531265b1e2ede80/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/e60da46d92473fe1f1fb149033d50e336432e7246c047dbe8877d728783a4160/20261011T073957-002ae345456e403e8531265b1e2ede80/started.json",
+      "sha256": "d6573aeaac6d297f6ba8a3c689bda002f549318a2f8ead6f0dc8e06887875836"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/e60da46d92473fe1f1fb149033d50e336432e7246c047dbe8877d728783a4160/20261011T073957-002ae345456e403e8531265b1e2ede80/witness.json",
+      "sha256": "8505d67454ec95af421d6b7fd78566cf2ea5f9b08429f226446c9af1acc33818"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/e638120f37a06ab1580e3f89f39280d8b583af146ce4cb4e16f20e63ab4306f6/20261011T073738-2f561dea60a747be8c3b0bdfed3ca77e/input.cnf",
+      "sha256": "49577ae12e97f42b4f37a042a00ff8d32ee083b25909b1c098f254faaa52930e"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/e638120f37a06ab1580e3f89f39280d8b583af146ce4cb4e16f20e63ab4306f6/20261011T073738-2f561dea60a747be8c3b0bdfed3ca77e/result.json",
+      "sha256": "8ffd7e7dabd5a716619fc656b09ba32e0f9a93b5aa139ed33f6fc19dcaa58c4b"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/e638120f37a06ab1580e3f89f39280d8b583af146ce4cb4e16f20e63ab4306f6/20261011T073738-2f561dea60a747be8c3b0bdfed3ca77e/solver.json",
+      "sha256": "b954c2be0a31113e36ab52d76aaff92f3b66239e907642f90c71effa7cb6ddc3"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/e638120f37a06ab1580e3f89f39280d8b583af146ce4cb4e16f20e63ab4306f6/20261011T073738-2f561dea60a747be8c3b0bdfed3ca77e/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/e638120f37a06ab1580e3f89f39280d8b583af146ce4cb4e16f20e63ab4306f6/20261011T073738-2f561dea60a747be8c3b0bdfed3ca77e/started.json",
+      "sha256": "8fbf7d1b7987e9df8f0412ca3631efad3915c5d36949ca42f7eeac2e138b4f01"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/e638120f37a06ab1580e3f89f39280d8b583af146ce4cb4e16f20e63ab4306f6/20261011T073738-2f561dea60a747be8c3b0bdfed3ca77e/witness.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/e720aaf3ab9ca8d321ae76b3bacd3c261ebf8510b8e700346981c97da68bb16b/20261011T073739-77eddb6fc64247b5b49c965e6de3ff03/checker.log",
+      "sha256": "405eec2c4f6217088a5758a3783108d78efac27ba934d7a85dac4a72057e6d14"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/e720aaf3ab9ca8d321ae76b3bacd3c261ebf8510b8e700346981c97da68bb16b/20261011T073739-77eddb6fc64247b5b49c965e6de3ff03/input.cnf",
+      "sha256": "efd2e19d1889e7e75f749af19ac1de1d276222dd7b88f85a03bbf981448005a3"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/e720aaf3ab9ca8d321ae76b3bacd3c261ebf8510b8e700346981c97da68bb16b/20261011T073739-77eddb6fc64247b5b49c965e6de3ff03/proof.drat",
+      "sha256": "d78d5c19ec3f003c6cb52e5d8198dd82a2291b5e0b76d29166e312b2427a1c4c"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/e720aaf3ab9ca8d321ae76b3bacd3c261ebf8510b8e700346981c97da68bb16b/20261011T073739-77eddb6fc64247b5b49c965e6de3ff03/result.json",
+      "sha256": "0e137bdf06e1824cf3b1288d28c959decf9281083cf320230c764ab40634706e"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/e720aaf3ab9ca8d321ae76b3bacd3c261ebf8510b8e700346981c97da68bb16b/20261011T073739-77eddb6fc64247b5b49c965e6de3ff03/solver.json",
+      "sha256": "1ec05eac423e7bceacc30c100df4878872b4ed48ab27b2ce1ab304133babb46a"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/e720aaf3ab9ca8d321ae76b3bacd3c261ebf8510b8e700346981c97da68bb16b/20261011T073739-77eddb6fc64247b5b49c965e6de3ff03/solver.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/attempts/e720aaf3ab9ca8d321ae76b3bacd3c261ebf8510b8e700346981c97da68bb16b/20261011T073739-77eddb6fc64247b5b49c965e6de3ff03/started.json",
+      "sha256": "52c7dec3730fffa7175ae82bd1701320a01bb8cfe2014f6c33d2b421765d779c"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/chunks/chunk-00000-cb0905aa3d6a4506a9eb551475ec12b1-completion.json",
+      "sha256": "5927ace1424894d6de0d4745aae9ca7bac319053a6502e79d47509a7417adac2"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/chunks/chunk-00000-cb0905aa3d6a4506a9eb551475ec12b1.json",
+      "sha256": "e7855f787e4ef26be054ed36b08e61c8a0f51db7001774307d30ce067991d1c5"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/chunks/chunk-00000-e5641b068f3e414695da4a714fb9bc9a-completion.json",
+      "sha256": "3d51035f790e4e9c154954fac73277b01217f79214a047faa9e09fa6791e2bf7"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/chunks/chunk-00000-e5641b068f3e414695da4a714fb9bc9a.json",
+      "sha256": "21c9811a925300264002c2723a300dad38594780c8d2f04138df926629eebc8e"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/chunks/chunk-00001-343d066b327d4aa38d0d2479de852b35-completion.json",
+      "sha256": "269ed166902e6b206a09c1e0871541c509c2a83623dba0458d80d2f1df706e36"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/chunks/chunk-00001-343d066b327d4aa38d0d2479de852b35.json",
+      "sha256": "225556f0c476cd957d5c1549202aa38d5cabd7fc4f3189812728cb2e6d9bac2b"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/locks/00cdb9bfb703d5565edaa42131e0ad7c0496305bb426e945cc0a119b57f34ba6",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/locks/1223e5efc1169b101ade437cd3c06623e5840b76d22b4b3a7cd13509379524e7",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/locks/1a6fd030e4eaf77b622d0366a79cdb8b3392d1292d0bb6991cdebfbbb84cc370",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/locks/2128a4b8f2f5cc13fba2d77a613d8667106267988b2f1590d20ff403aa4b1c26",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/locks/29e09bd60a8919ce14b4e168db7801dd0d701021c1f2bd0e0c8de42d5048f612",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/locks/316887d425ed477542fc30476a08466fa3b2bcff425f3b4b8d4727b0ececbd0d",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/locks/31e79b6e797970bec1c5c4b2a3059bea4782b6f6fac9825bc1624c7c7e9d561c",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/locks/3b968f4e12d5d8002c27b13d8bfd449e41d6fa3d367bf10ea2ff1f0935c4ad7f",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/locks/59039513724479e2186e2836a5c78be35ffee275e63498b556bca7be3b57bad6",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/locks/5d4decf6acb7856830218d22631d63f0dc47a1778594f32447212baec59f7fef",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/locks/5d7ab2d1b1faa50aeb8ba1a8ddd8642297e669b83770e72b092419536f563015",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/locks/7711d14d2f88d6430bbf9f1f7d24eacf264c7ad30bfaca6023a296623c959265",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/locks/8ca2b6c61cc8e0950f6030c60558d6473b2e5c36b96cd4bfd0ab2713dfdf35ed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/locks/925857f0328a411feaff15fd7273939d2b91af097b2acd9e717d9ef9725d2224",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/locks/93acdc2d63600fc8eb8fd989bf3682d2563fd65fb830b1b77debee4df7626ac8",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/locks/9cfd3df47ff72dc3e55aa13efed66a6b537e31a6718f4314f38ed2c92ecac889",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/locks/bcae7de2a070c4de066e5f0ece5d1867b177e4ec527237d2b3ce0e325ce62ab8",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/locks/c625eb2aa3a6d950a55386028e8c681f186f8551dfb5f5bae1a72bc2bf9b290a",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/locks/cb4b541d24c57eb3df57a051a45f8287e2e3b257533bab60c0279eba4c07b716",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/locks/cdd2505769d1a245c76833104a22272427aff112a5ca2a9ee049485020ffada6",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/locks/d51e5ec94567611f71d660ea3866e4111e309a45825beb858f121602314d25a6",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/locks/e60da46d92473fe1f1fb149033d50e336432e7246c047dbe8877d728783a4160",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/locks/e638120f37a06ab1580e3f89f39280d8b583af146ce4cb4e16f20e63ab4306f6",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/locks/e720aaf3ab9ca8d321ae76b3bacd3c261ebf8510b8e700346981c97da68bb16b",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/manifest.json",
+      "sha256": "23ab935d19c9607892f5c515d506b4453e0c6954fdfaebdecef649ab3e10608f"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/smoke002/source/ksat_experiments.py",
+      "sha256": "197799ce3762883f03c64f06593bbe439823d3574c492391694bfdbdd7d5b1d0"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/unit-tests.log",
+      "sha256": "82195cb4c982102162a06e028a9694a7541860c0ddd847e0e5ad9d8198e57cd7"
+    },
+    {
+      "path": "experiments/E002_blythe_phase_diagrams/validation/verify_smoke.py",
+      "sha256": "3e9b3fed6f001b8499169aaa35323ff5de752bbe0fe4763ca6bddccc9ca4ba53"
+    },
+    {
+      "path": "references/S042.md",
+      "sha256": "0e0332c0f7fd0a2e6687ffa593c78ae5aecaa14fe766ac0b3cd90ff67be8f33f"
+    },
+    {
+      "path": "references/S043.md",
+      "sha256": "a388bf02cb0add9a819c6b20f641cbc7f4507d209d182f3318251a75c1f62804"
+    }
+  ],
+  "checks": {
+    "date": "2026-10-11",
+    "runner_sha256": "197799ce3762883f03c64f06593bbe439823d3574c492391694bfdbdd7d5b1d0",
+    "unit_tests": 23,
+    "smoke_instances": 24,
+    "sat_verified": 19,
+    "unsat_verified": 5,
+    "truth_table_cross_check": "exact-smoke-check.json",
+    "resume_skipped": 12,
+    "independent_runner_review": "runner_review.md",
+    "cluster_jobs_submitted": 0,
+    "scope": "Local software validation, not threshold/concentration evidence",
+    "plotter_sha256": "44a917e21bf477c04e670112707a5dc2b221de8e2cb77e0f8daeec43cc13d8bc",
+    "visual_qa": "All three analysis-v2 PNGs inspected; footer overlap in preserved v1 corrected."
+  }
+}
