@@ -8,7 +8,14 @@ evidence that a cluster experiment has run.
 
 ## Collect and render
 
-From the repository root, in the pinned Python environment:
+**On Blythe, submit collection through
+[plot_results.sbatch](slurm/README.md#submit-collection-and-plotting).** Auditing
+hashes all retained artifacts, so a large collection also requires a
+non-interactive compute allocation.
+
+For a local workstation with a copy of the complete run directory, the
+underlying command-line interface is, from the repository root in the pinned
+Python environment:
 
 ```sh
 python code/plot_ksat_phase.py --run-dir /path/to/run --output /path/to/new-plots

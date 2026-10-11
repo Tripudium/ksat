@@ -4,6 +4,23 @@
 Apple M3/macOS environment. They are not Blythe benchmarks, measurements of
 a phase transition, or proofs of concentration.
 
+## Follow-up: explicit batch workflow and collection
+
+The E002 and Git/uv guides now separate login-node preparation/submission from
+compute-node work. The new [plotting batch script](../slurm/plot_results.sbatch)
+also keeps artifact hashing and plotting inside SLURM. The existing solver
+array, numerical implementation, configurations and recorded results are
+unchanged.
+
+The updated shell integration checks passed with mocked scheduler commands;
+see [the batch check record](../slurm/local_checks_batch_2026-10-11.json).
+They cover the plotting script's SLURM requirement, spooled-script location,
+paths containing spaces, partial-result flag, output preservation, stale
+environment rejection and propagation of collector failures. An independent
+read-only review by `slurm_workflow_review` found no required correction to
+the worker or submission instructions. These checks made no real SLURM,
+solver or uv calls; compute-node execution remains untested here.
+
 ## Follow-up: root uv project
 
 The later [POSIX checker follow-up](posix-checker-2026-10-11/README.md) records
@@ -68,7 +85,11 @@ preserved; the delivery validation uses smoke002 and preflight-final.
 
 ## Reproduce in fresh destinations
 
-From the project root, with the pinned requirements available:
+The commands below reproduce the historical local validation on a workstation,
+not a Blythe login node. On Blythe use the
+[batch workflow](../README.md#run-on-blythe-through-non-interactive-slurm-jobs),
+selecting `configs/smoke.json` for a small software check. From the project root,
+with the pinned requirements available:
 
 ```sh
 cc -std=c99 -O2 code/vendor/drat-trim/drat-trim.c -o /tmp/ksat-drat-trim

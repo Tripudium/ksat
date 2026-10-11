@@ -9,6 +9,7 @@ while preparing the scripts.
 
 | Setting | Documentation and implication |
 | --- | --- |
+| Execution mode | “HPC clusters FAQ”, How does HPC differ from a standard computer: calculations normally run unattended through the batch queue; long calculations should not routinely use interactive sessions. The user explicitly requires E002's larger computations to use non-interactive SLURM. Both experiment arrays and result collection now have batch scripts. |
 | CPU partition | “SLURM concepts (HPC)”, Partition: default `compute`; scripts name it explicitly. |
 | CPU nodes | “Hardware”, Blythe / Compute nodes: two 84-core AMD 9634 Genoa processors, 168 cores total, 768 GB physical RAM. |
 | CPU task resources | “Blythe job scripts”: one task using multiple CPUs is `--nodes=1 --ntasks-per-node=1 --cpus-per-task=N`; a Python child-process pool uses the same resource pattern. |

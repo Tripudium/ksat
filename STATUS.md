@@ -88,6 +88,15 @@ a pinned DRAT-trim build. A local CaDiCaL proof-interface preflight failed
 and is preserved; E001's timings do not calibrate this new certified workflow.
 The exact model and sampling denominator are unchanged by solver timeouts.
 
+The E002 README now gives an explicit non-interactive SLURM walkthrough:
+login-node preparation/planning, array submission, monitoring, and a separate
+batch job for result auditing and plotting. The new `plot_results.sbatch`
+keeps large artifact-hashing work on a compute node. Matching Git/uv and
+result-schema instructions were updated. Shell syntax and mocked scheduler
+checks passed, including output preservation, stale-environment rejection and
+collector failure propagation; an independent read-only review found no
+required correction. No real SLURM job was submitted for this update.
+
 ## Checks and remaining gaps
 
 The feasibility report built with no LaTeX/BibTeX or layout-box warnings;

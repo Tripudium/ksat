@@ -39,7 +39,24 @@ Chunks contain at most 128 instances. At 16 workers, the 3-SAT capped work
 is about eight minutes per full chunk, plus generation/storage and preflight;
 the job requests 45 minutes. These are caps and planning choices, not timings.
 
-## Setup, plan, submit, plot
+## Run on Blythe through non-interactive SLURM jobs
+
+**Run experiments and result collection as SLURM batch jobs.** The login node
+is used for environment setup, lightweight planning, submission and monitoring.
+`bash submit_array.sh ... --submit` calls **`sbatch`**; it returns after queuing
+the work. The solvers and certificate checks run on allocated compute nodes
+through [run_array.sbatch](slurm/run_array.sbatch). Do not run that batch script
+with `bash`, run the Python solver directly on the login node, or use an
+interactive session for this campaign. Jobs continue after you disconnect.
+
+| Step | Where it runs | Entry point |
+| --- | --- | --- |
+| Prepare dependencies and checker | Login node | `setup_environment.sh` |
+| Write the seeded run manifest (no solving) | Login node | `ksat_experiments.py plan` |
+| Queue the experiment array | Submit from login node; compute on allocated nodes | `submit_array.sh RUN_DIR --submit` |
+| Audit results and produce plots | Submit from login node; compute on an allocated node | `sbatch ... plot_results.sbatch RUN_DIR OUTPUT_DIR` |
+
+### 1. Prepare the environment and pilot plan
 
 Clone the project into your actual Blythe `/springbrook/share/<group>/...`
 share; see the [Git and uv guide](../../docs/blythe-uv.md). From that repository
@@ -56,42 +73,112 @@ export KSAT_RUN_DIR="$PWD/cluster-runs/3sat-pilot-001"
 .venv/bin/python code/ksat_experiments.py plan \
   --config experiments/E002_blythe_phase_diagrams/configs/pilot-3sat.json \
   --output "$KSAT_RUN_DIR"
+```
 
+Use a fresh run directory. Planning writes the configuration, source snapshot
+and instance metadata; it does not generate or solve the formulas. The pilot
+contains 600 instances in five array tasks (at most 128 instances per task).
+
+### 2. Submit the pilot with SLURM
+
+```sh
 # Print the complete sbatch command without submitting.
 bash experiments/E002_blythe_phase_diagrams/slurm/submit_array.sh "$KSAT_RUN_DIR"
 
-# Submit on Blythe when ready to run the prepared batch.
+# Queue the non-interactive job array on Blythe.
 bash experiments/E002_blythe_phase_diagrams/slurm/submit_array.sh \
   "$KSAT_RUN_DIR" --submit
-
-# After jobs finish; choose a new analysis directory for each collection.
-.venv/bin/python code/plot_ksat_phase.py \
-  --run-dir "$KSAT_RUN_DIR" --output "$KSAT_RUN_DIR/analysis-v1"
 ```
 
+Defaults are the `compute` partition, one node and 16 CPUs per array task,
+2048 MB per CPU, 45 minutes per task, and at most four concurrent tasks
+(64 CPUs). The helper derives the array range from the plan: the pilot uses
+`--array=0-4%4`. It prints the command and then the job ID returned by SLURM.
+Supply an actual account with `--account ACCOUNT` if your association requires
+one. Resource options include `--cpus`, `--concurrency`, `--time` and
+`--mem-per-cpu`; see the [script guide](slurm/README.md).
+
+### 3. Monitor jobs and inspect logs
+
+Replace `12345` below with the array job ID printed at submission:
+
+```sh
+KSAT_ARRAY_JOB_ID=12345
+squeue -u "$USER"
+sacct -j "$KSAT_ARRAY_JOB_ID" --format=JobID,State,ExitCode,Elapsed
+```
+
+Task logs are in `$KSAT_RUN_DIR/slurm-logs/<job>_<task>.out` and `.err`;
+certificate-preflight JSON files are recorded there too. Check all task states
+and logs before collecting results. A completed job can still contain timed-out
+or unresolved formulas; the plots retain these outcomes. To cancel this array,
+use `scancel "$KSAT_ARRAY_JOB_ID"`. There is no automatic resubmission.
+
+### 4. Submit result collection and plotting as a batch job
+
+After all array tasks have finished, submit this from the repository root:
+
+```sh
+mkdir -p "$KSAT_RUN_DIR/slurm-logs"
+sbatch --parsable --export=ALL --chdir="$PWD" \
+  --output="$KSAT_RUN_DIR/slurm-logs/plot-%j.out" \
+  --error="$KSAT_RUN_DIR/slurm-logs/plot-%j.err" \
+  experiments/E002_blythe_phase_diagrams/slurm/plot_results.sbatch \
+  "$KSAT_RUN_DIR" "$KSAT_RUN_DIR/analysis-v1"
+```
+
+This serial job requests one CPU, 4096 MB and 30 minutes on `compute`.
+If needed, add `--account=ACCOUNT` **before** the script path; the array
+helper's `KSAT_ACCOUNT` setting is not automatically applied by plain `sbatch`.
+The collector reads and hashes retained input/certificate files, so large
+collections also belong on a compute node. It writes `summary.csv`,
+`instances.csv`, `summary.json`, and PDF/PNG plots in `analysis-v1`.
+Use a new output directory for every collection, including after a failed one.
+
+If tasks failed or were interrupted, either retry first or append
+`--allow-partial` **after** the two directory arguments to include missing
+results as unresolved. To retry, repeat the array submission; completed
+outcomes are skipped. Add `--retry-unknown` to request new attempts for
+unresolved completed outcomes while retaining earlier attempts. Investigate
+invalid certificates or conflicting outcomes before retrying. Alternatively,
+copy the complete run directory to your own workstation and run the plotter
+there; direct plotting is not the Blythe login-node workflow.
+
+### 5. Scale up after reviewing the pilot
+
+Check runtime, unresolved fractions, proof sizes and filesystem load first.
+If the pilot supports the prepared full grid, create and submit a fresh plan:
+
+```sh
+export KSAT_RUN_DIR="$PWD/cluster-runs/3sat-grid-001"
+.venv/bin/python code/ksat_experiments.py plan \
+  --config experiments/E002_blythe_phase_diagrams/configs/grid-3sat.json \
+  --output "$KSAT_RUN_DIR"
+bash experiments/E002_blythe_phase_diagrams/slurm/submit_array.sh \
+  "$KSAT_RUN_DIR" --submit
+```
+
+This grid has 194 array tasks. For the 66-task 2-SAT control, use
+`experiments/E002_blythe_phase_diagrams/configs/control-2sat.json` and another
+fresh run directory. Repeat steps 3–4 with the new run path. Reduce the grid
+in a copied configuration if the pilot shows excessive costs.
+The arrays process separate chunks; extra concurrency increases throughput
+across formulas, not the speed of one SAT solve.
+
+### Environment and reproducibility
+
 These commands use the default `.venv`. If you override `KSAT_ENV_DIR`, use its
-`bin/python` instead. Setup records project/lock hashes, Python, packages,
-modules and checker provenance. Submission and workers validate that record;
-compute jobs perform no dependency sync or installation. Rerun setup after
-pulling dependency changes, and keep active jobs' checkout/environment fixed.
+`bin/python` for planning instead. Setup records project/lock hashes, Python,
+packages, modules and checker provenance. Submission and workers validate that
+record; compute jobs perform no dependency sync or installation. Keep the same
+exported `KSAT_MODULES` selection used for setup. Rerun setup after pulling
+dependency changes, and keep active jobs' checkout/environment fixed.
+
 The guard binds the environment to the current checkout; a run manifest pins
 runner code but does not pin the dependency lock. Start a fresh plan after
 dependency changes to keep campaign timings comparable. An old plan can
-otherwise resume under a new recorded environment.
-
-Defaults are the `compute` partition, one node and 16 CPUs per array task,
-at most four concurrent tasks (64 CPUs). An actual account can be supplied
-with `--account`; none is assumed. Job IDs are printed by `sbatch --parsable`.
-Use normal site tools such as `squeue -u "$USER"` and `sacct -j JOB_ID` to
-inspect state; there is no polling loop or automatic resubmission.
-
-Plotting may run locally after copying the complete run directory. Add
-`--allow-partial` to include missing jobs as unresolved entries. A retry of the
-same submission skips completed outcomes; `--retry-unknown` also retries
-unresolved completed attempts. Every earlier attempt remains intact. Correct
-systematic errors before retrying; an invalid retained certificate or conflicting
-outcomes requires investigation rather than silent replacement. Changing the
-runner or cutoff requires a fresh plan, which preserves the earlier run.
+otherwise resume under a new recorded environment. Changing the runner or
+cutoff also requires a fresh plan, preserving the earlier run.
 
 ## Model, solver and certificates
 

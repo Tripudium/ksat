@@ -82,15 +82,40 @@ bash experiments/E002_blythe_phase_diagrams/slurm/submit_array.sh "$KSAT_RUN_DIR
 
 The last command prints the proposed `sbatch` command. Add `--submit` to run it;
 see the [SLURM guide](../experiments/E002_blythe_phase_diagrams/slurm/README.md)
-for resource/account overrides and retries. No jobs have been submitted during
-preparation. After completion, collect the results with:
+for resource/account overrides and retries. The actual submission is:
 
 ```sh
-.venv/bin/python code/plot_ksat_phase.py \
-  --run-dir "$KSAT_RUN_DIR" --output "$KSAT_RUN_DIR/analysis-v1"
+bash experiments/E002_blythe_phase_diagrams/slurm/submit_array.sh \
+  "$KSAT_RUN_DIR" --submit
 ```
 
-Use `--allow-partial` to retain missing jobs as unresolved. Save the Git revision
+The helper queues `run_array.sbatch`; solver and certificate work runs on
+compute nodes in a non-interactive SLURM allocation. Do not run the solver or
+batch worker directly on a login node. Monitor with `squeue -u "$USER"` and
+`sacct -j JOB_ID --format=JobID,State,ExitCode,Elapsed`, replacing `JOB_ID` with
+the returned array ID. Jobs continue after disconnecting SSH. No jobs have
+been submitted during preparation.
+
+After the array finishes, submit collection and plotting as another batch job:
+
+```sh
+mkdir -p "$KSAT_RUN_DIR/slurm-logs"
+sbatch --parsable --export=ALL --chdir="$PWD" \
+  --output="$KSAT_RUN_DIR/slurm-logs/plot-%j.out" \
+  --error="$KSAT_RUN_DIR/slurm-logs/plot-%j.err" \
+  experiments/E002_blythe_phase_diagrams/slurm/plot_results.sbatch \
+  "$KSAT_RUN_DIR" "$KSAT_RUN_DIR/analysis-v1"
+```
+
+This also keeps the potentially large artifact-hashing workload off the login
+node. If required, put `--account=ACCOUNT` before the script path; plain
+`sbatch` does not automatically use `KSAT_ACCOUNT`. Append `--allow-partial`
+after the directory arguments to retain missing jobs as unresolved. Use a
+fresh analysis output directory for each collection. The complete
+[E002 walkthrough](../experiments/E002_blythe_phase_diagrams/README.md#run-on-blythe-through-non-interactive-slurm-jobs)
+covers logs, resource requests, retries and scaling beyond the pilot.
+
+Save the Git revision
 (`git rev-parse HEAD`), setup record and lock with the run archive. Inputs,
 certificates, timings, seeds and runtime provenance are recorded by the runner.
 Numerical phase diagrams do not prove concentration of T_n.

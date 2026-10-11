@@ -12,7 +12,8 @@ import tempfile
 scripts = Path(__file__).resolve().parent
 if sys.version_info[:2] != (3, 12):
     raise SystemExit('Run these checks with the uv project Python 3.12 (uv run --locked python ...).')
-for name in ('common.sh', 'setup_environment.sh', 'submit_array.sh', 'run_array.sbatch'):
+for name in ('common.sh', 'setup_environment.sh', 'submit_array.sh',
+             'run_array.sbatch', 'plot_results.sbatch'):
     subprocess.run(['bash', '-n', str(scripts/name)], check=True)
 
 with tempfile.TemporaryDirectory(prefix='ksat-slurm-check-') as folder:
@@ -42,6 +43,11 @@ with open(os.environ['MOCK_PIPELINE_LOG'], 'a') as log:
 if sys.argv[1] == 'preflight':
     pathlib.Path(sys.argv[sys.argv.index('--output')+1]).write_text('{"mock": true}\\n')
 ''')
+    (project/'code/plot_ksat_phase.py').write_text('''import json, os, sys
+with open(os.environ['MOCK_PLOT_LOG'], 'a') as log:
+    log.write(json.dumps(sys.argv[1:])+'\\n')
+sys.exit(int(os.environ.get('MOCK_PLOT_EXIT', '0')))
+''')
     (mockbin/'sbatch.py').write_text('''import json, os, sys
 with open(os.environ['MOCK_SBATCH_LOG'], 'a') as log:
     log.write(json.dumps(sys.argv[1:])+'\\n')
@@ -66,7 +72,8 @@ os.execv(args[0], args)
                KSAT_PROJECT_DIR=str(project), KSAT_ENV_DIR=str(envdir),
                KSAT_MODULES='', PYTHONNOUSERSITE='1',
                MOCK_SBATCH_LOG=str(temp/'sbatch.jsonl'),
-               MOCK_PIPELINE_LOG=str(temp/'pipeline.jsonl'))
+               MOCK_PIPELINE_LOG=str(temp/'pipeline.jsonl'),
+               MOCK_PLOT_LOG=str(temp/'plots.jsonl'))
     env.pop('KSAT_DRAT_TRIM', None)
     env.pop('KSAT_USE_CURRENT_ENV', None)
     subprocess.run([str(envdir/'bin/python'), str(target_scripts/'environment_guard.py'),
@@ -105,6 +112,36 @@ os.execv(args[0], args)
     assert '--retry-unknown' in calls[1]
     assert len(list((run/'slurm-logs').glob('preflight-*.json'))) == 1
 
+    # Collection must stay inside a batch allocation, preserve paths/flags and
+    # refuse overwrites. Use a spooled script, as SLURM does on compute nodes.
+    plot_spooled = temp/'spooled-plot-script'
+    shutil.copy(scripts/'plot_results.sbatch', plot_spooled)
+    plot_output = run/'analysis with spaces'
+    plot_command = ['bash', str(plot_spooled), str(run), str(plot_output)]
+    login_env = dict(env)
+    login_env.pop('SLURM_JOB_ID', None)
+    login_plot = subprocess.run(plot_command, env=login_env, cwd=temp,
+                                capture_output=True, text=True)
+    assert login_plot.returncode != 0 and 'Submit this script with sbatch' in login_plot.stderr
+    assert not (temp/'plots.jsonl').exists()
+    plot_env = dict(env, SLURM_JOB_ID='23456', SLURM_SUBMIT_DIR=str(project))
+    plot_env.pop('KSAT_PROJECT_DIR')  # Verify submission-directory fallback.
+    subprocess.run(plot_command+['--allow-partial'], env=plot_env, cwd=temp,
+                   capture_output=True, text=True, check=True)
+    plot_calls = [json.loads(line) for line in (temp/'plots.jsonl').read_text().splitlines()]
+    assert plot_calls == [['--run-dir', str(run), '--output', str(plot_output), '--allow-partial']]
+    plot_output.mkdir()
+    overwrite = subprocess.run(plot_command, env=plot_env, capture_output=True, text=True)
+    assert overwrite.returncode != 0 and 'already exists' in overwrite.stderr
+    plot_output.rmdir()
+    bad_option = subprocess.run(plot_command+['--invalid'], env=plot_env,
+                                capture_output=True, text=True)
+    assert bad_option.returncode != 0 and 'Only --allow-partial' in bad_option.stderr
+    assert len((temp/'plots.jsonl').read_text().splitlines()) == 1
+    failed_plot = subprocess.run(plot_command, env=dict(plot_env, MOCK_PLOT_EXIT='7'),
+                                 capture_output=True, text=True)
+    assert failed_plot.returncode == 7
+
     # A changed lock is rejected before submission or any solver/preflight call.
     lock = project/'uv.lock'
     original_lock = lock.read_text()
@@ -114,8 +151,11 @@ os.execv(args[0], args)
     stale_worker = subprocess.run(['bash', str(spooled), str(run)], env=worker_env,
                                   capture_output=True, text=True)
     assert stale_worker.returncode != 0 and 'uv.lock changed' in stale_worker.stderr
+    stale_plot = subprocess.run(plot_command, env=plot_env, capture_output=True, text=True)
+    assert stale_plot.returncode != 0 and 'uv.lock changed' in stale_plot.stderr
     assert len((temp/'sbatch.jsonl').read_text().splitlines()) == 1
     assert len((temp/'pipeline.jsonl').read_text().splitlines()) == 2
+    assert len((temp/'plots.jsonl').read_text().splitlines()) == 2
     lock.write_text(original_lock)
     prepared = envdir/'ksat-environment.json'
     prepared_text = prepared.read_text()
@@ -138,6 +178,11 @@ print(json.dumps({'shell_syntax': 'passed', 'mock_submission': 'passed',
                   'mock_interpreter_and_command_paths_with_spaces': 'passed',
                   'resource_validation': 'passed', 'optional_module_selection': 'passed',
                   'spooled_worker_preflight_and_chunk': 'passed',
+                  'spooled_plot_worker_and_partial_flag': 'passed',
+                  'plot_rejected_outside_slurm': 'passed',
+                  'plot_existing_output_and_bad_option_rejected': 'passed',
+                  'plot_failure_propagated': 'passed',
+                  'plot_stale_environment_rejected': 'passed',
                   'stale_lock_rejected_before_submit_and_run': 'passed',
                   'missing_record_and_changed_packages_rejected': 'passed',
                   'changed_checker_rejected': 'passed',

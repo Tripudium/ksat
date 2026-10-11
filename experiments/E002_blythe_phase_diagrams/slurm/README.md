@@ -9,6 +9,13 @@ Defaults remain `compute`, one node, 16 CPU workers, 2048 MB per CPU, 45 minutes
 and at most four array tasks concurrently. These are initial planning choices,
 not a measured optimal configuration. No GPU is requested.
 
+**Use non-interactive SLURM jobs for both experiments and result collection.**
+The [E002 walkthrough](../README.md#run-on-blythe-through-non-interactive-slurm-jobs)
+gives the complete pilot-to-plots sequence. Run the submission commands on the
+login node; the batch scripts execute on allocated compute nodes. `bash
+submit_array.sh ... --submit` is a submission helper that calls `sbatch`, not
+a command that solves formulas on the login node.
+
 ## Prepare after cloning or pulling
 
 Have `uv` and a C compiler available on the login node. A Python module is
@@ -111,6 +118,35 @@ Failed or killed work is not counted as UNSAT. Audit and aggregate results
 before plotting. Archive important results away from the live GPFS filesystem,
 whose saved documentation provides no backup guarantee.
 
+## Submit collection and plotting
+
+Collection audits the result records and hashes retained inputs, witnesses and
+proofs. Submit it as a separate batch job after the experiment array finishes.
+From the repository root, with `KSAT_RUN_DIR` set to the absolute run path:
+
+```sh
+mkdir -p "$KSAT_RUN_DIR/slurm-logs"
+sbatch --parsable --export=ALL --chdir="$PWD" \
+  --output="$KSAT_RUN_DIR/slurm-logs/plot-%j.out" \
+  --error="$KSAT_RUN_DIR/slurm-logs/plot-%j.err" \
+  experiments/E002_blythe_phase_diagrams/slurm/plot_results.sbatch \
+  "$KSAT_RUN_DIR" "$KSAT_RUN_DIR/analysis-v1"
+```
+
+[plot_results.sbatch](plot_results.sbatch) requests one CPU, 4096 MB and
+30 minutes on `compute`, checks the prepared environment and runs the collector
+with `srun`. It rejects direct execution outside SLURM. The plotter uses a
+non-interactive backend; no desktop or interactive allocation is needed.
+Monitor its job ID with `squeue`/`sacct` and inspect `plot-<job>.out`/`.err`.
+
+Add resource overrides such as `--time=01:00:00`, and an actual `--account`
+if required, before the script path. Plain `sbatch` does not consume the
+array helper's `KSAT_ACCOUNT` variable. Keep the exported `KSAT_MODULES` and
+`KSAT_ENV_DIR` settings consistent with setup. Output directories must be new;
+use `analysis-v2` for a later collection or a rerun after partial output.
+Append `--allow-partial` after the output path only when you intend to include
+missing results as unresolved entries. All earlier attempts remain in place.
+
 ## Local validation and previous delivery
 
 Run `uv run --locked python experiments/E002_blythe_phase_diagrams/slurm/check_scripts.py`
@@ -119,11 +155,15 @@ pipeline commands: they exercise dry runs, resource validation, paths containing
 spaces (including actual mock interpreter/command paths), accounts, retries,
 spooled-script paths and rejection of stale locks,
 missing setup records, changed packages and changed checker binaries.
+They also exercise the plotting batch script from a simulated SLURM spool
+directory, argument forwarding, rejection outside SLURM, existing-output
+protection, stale-environment rejection and propagation of a collector failure.
 They do not sync/install anything, run a module stack, or contact SLURM.
 
-The final validation record is `local_checks_uv_2026-10-11_revision2.json`,
-which includes the interpreter-path portability correction. The preceding uv
-record `local_checks_uv_2026-10-11.json` is preserved unchanged.
+The batch-collection follow-up is recorded in
+`local_checks_batch_2026-10-11.json`. The preceding
+`local_checks_uv_2026-10-11_revision2.json` includes the interpreter-path
+portability correction; it and earlier records are preserved unchanged.
 Original pip/venv scripts, documentation and validation records are preserved
 under `archive/pip-workflow-2026-10-11/`; original `local_checks*.json` files remain
 unchanged. They describe the earlier delivery and are not claims that the uv
