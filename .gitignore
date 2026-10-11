@@ -19,6 +19,7 @@ __pycache__/
 /experiments/*/run[0-9]*/
 /experiments/*/validation/smoke[0-9]*/
 /experiments/*/validation/uv-smoke*/
+/experiments/*/validation/posix-checker*/drat-trim-local
 
 # Downloaded reference originals and saved websites stay local.
 # Keep the human-readable indexes, source notes and provenance manifests.

@@ -12,6 +12,9 @@ and the connection to phase transitions in convex geometry.
 - [Blythe experiment workflow](experiments/E002_blythe_phase_diagrams/README.md):
   SLURM batches, retained certificates, CSV/JSON data and phase-diagram plotting.
 - [Concentration research prompt](attempts/A001_discrete_geometry/concentration_research_prompt.md).
+- [Concentration investigation](reports/output/pdf/concentration-2026-10-11.pdf):
+  the proposed two-sided bound is refuted by rare early UNSAT cores; exact
+  tilted-process identities and a conditional one-sided route are recorded.
 - [Editable LaTeX entry point](reports/main.tex) and [bibliography](reports/references.bib).
 - [Problem specification](PROBLEM.md), [current status](STATUS.md), and
   [source catalogue](references/README.md).

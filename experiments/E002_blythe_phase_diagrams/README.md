@@ -1,6 +1,10 @@
 # E002: Blythe random k-SAT phase diagrams
 
 **State:** workflow prepared and locally validated; cluster campaign **not run**.
+**Blythe setup update:** the user reports successful login02 setup on
+2026-10-11. A compiler feature-selection warning was addressed in the helper;
+see the [POSIX follow-up](validation/posix-checker-2026-10-11/README.md).
+Compute-node preflight and the scientific pilot remain unrun by this project.
 **Date:** 2026-10-11. **Question:** estimate finite-size SAT probabilities as a
 function of variable count and clause density, with visible computational and
 sampling uncertainty. This is an empirical study, not a concentration proof.

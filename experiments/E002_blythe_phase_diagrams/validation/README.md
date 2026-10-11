@@ -6,6 +6,11 @@ a phase transition, or proofs of concentration.
 
 ## Follow-up: root uv project
 
+The later [POSIX checker follow-up](posix-checker-2026-10-11/README.md) records
+the user's successful Blythe login-node setup and a compiler-warning fix,
+with separate local build/preflight checks. It does not establish a completed
+Blythe compute-node run.
+
 The [uv validation record](uv-setup-2026-10-11/README.md) checks the subsequent
 root `pyproject.toml`/`uv.lock` workflow: locked sync and checker setup, the
 23-test suite, certificate preflight, a fresh 24-formula exact smoke check,

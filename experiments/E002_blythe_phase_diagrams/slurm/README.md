@@ -25,8 +25,10 @@ bash experiments/E002_blythe_phase_diagrams/slurm/setup_environment.sh
 ```
 
 Setup runs `uv sync --locked`, verifies the vendored proof-checker source hash,
-and compiles `drat-trim` into `.venv/bin/` with `cc -std=c99 -O2`. Set `CC` to a
-different compiler executable if needed. This login-node step can download
+and compiles `drat-trim` into `.venv/bin/` with
+`cc -std=c99 -D_POSIX_C_SOURCE=200809L -O2`. The POSIX selection exposes
+`getc_unlocked` on glibc in strict C99 mode. Set `CC` to a different compiler
+executable if needed. This login-node step can download
 Python and locked packages. Jobs use the prepared executable directly and
 never run uv, sync packages, or make package-installation network requests.
 

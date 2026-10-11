@@ -1,5 +1,10 @@
 # Analytic transfer from the supplied geometry papers
 
+**Later outcome, 2026-10-11:** the historical proposals below are preserved.
+P005 refutes the displayed two-sided finite-tilt target by a rare-core argument.
+P006 supplies an exact tilted-process identity and a separately conditional
+one-sided criterion. See the [current A001 record](README.md).
+
 Reading note, 2026-10-11. This is a scoped source comparison and research proposal, not a new threshold proof or independent review of the sources. The original PDFs were read through their local text extractions. Page numbers below are printed page numbers; PDF page numbers are included where useful. No external theorem absent from the supplied/current project sources is needed for the observations below.
 
 ## 1. What the sharp-phase paper actually does

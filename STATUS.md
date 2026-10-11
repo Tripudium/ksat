@@ -1,11 +1,17 @@
 # Project status
 
 **Updated:** 2026-10-11.
-**Phase:** survey and feasibility assessment delivered; Blythe experiment workflow
-and concentration research prompt prepared. The research programme remains open.
+**Phase:** concentration prompt investigated: its two-sided target is refuted,
+and an exact tilted-process reduction is recorded. The wider programme is open.
 **Objective:** [PROBLEM.md](PROBLEM.md).
 
 ## Current deliverables
+
+- The [concentration report](reports/output/pdf/concentration-2026-10-11.pdf)
+  proves the rare-core obstruction (P005), gives exact tilted-process identities
+  and a conditional right-tail criterion (P006), and compares the cited sources.
+  [Editable source](reports/concentration-2026-10-11.tex). Both canonical
+  fragments have independent internal reviews; (H+) remains unproved.
 
 - The [18-page survey, v1.1](reports/output/pdf/report.pdf) covers thresholds,
   algorithms, certificates, practical sizes and GPUs. Section 2.1 contains the
@@ -22,7 +28,7 @@ and concentration research prompt prepared. The research programme remains open.
   support separate local/Blythe environments. Setup builds the pinned checker;
   submission/workers reject stale environment records. Git initialization was
   blocked by this workspace's `.git` write restriction; terminal commands are
-  documented. No remote repository or commit has been created.
+  documented. No remote repository or commit was created by the assistant.
 - The [concentration research prompt](attempts/A001_discrete_geometry/concentration_research_prompt.md)
   specifies the exact target, source audits, known obstructions, varied methods
   and standards for numerical evidence and independent proof review.
@@ -42,16 +48,26 @@ manuscript claims remain distinguished by status and scope.
 | [P002](proofs/P002_few_clauses.md) | Every proper k-CNF with m < 2^k is SAT; sharp when unused variables and repeated clauses are allowed. | `proof-written` | Standard result, S037; independent review queued. |
 | [P003](proofs/P003_discrete_kinematics.md) | Cubical intersection, projection and overlap identities; expected random-SAT face counts; exact obstructions to face-vector transfers. | `internally-reviewed` | v2 by discrete_kinematics; reviewed independently by analytic_transfer at the recorded hash. |
 | [P004](proofs/P004_hitting_time_tails.md) | Exact real mgf domain of T_n and a coupon-collector obstruction to the unmodified Poisson variance inequality. | `internally-reviewed` | v1 by analytic_transfer; reviewed independently by discrete_kinematics at the recorded hash. |
+| [P005](proofs/P005_rare_core_obstruction.md) | The proposed uniform two-sided n-sub-gamma target fails for every fixed k >= 2; a shrinking negative tilt has variance at least order n²/log n. | `internally-reviewed` | v1 by analytic_transfer; independently reviewed by discrete_kinematics. |
+| [P006](proofs/P006_tilted_continuation.md) | Exact tilted continuation kernel and variance-occupation identity; right-tail bound conditional on the unproved estimate (H+). | `internally-reviewed` | v1 by root; independently reviewed by analytic_transfer. |
 
 Internal review is neither external refereeing nor formal verification.
-P003/P004 establish elementary statements, not a new sharp-threshold theorem.
+P003-P006 do not establish a new sharp-threshold theorem or an unconditional
+right-tail concentration inequality. P005 refutes the precise former target.
+The [dated source audit](references/concentration_source_audit_2026-10-11.md)
+checks current versions and specified parts of S001/S032/S033. No gap was found
+in S032's inspected main upper-bound chain, but the report does not claim full
+verification of all source dependencies or formal artifacts. The variance
+claims are compatible with the rare-core obstruction.
 
 ## Approaches and experiments
 
-[A001](attempts/A001_discrete_geometry/README.md) records the proposed transfer
-programme. The prioritized analytic route seeks a finite-tilt variance/entropy
-bound for T_n. Its first gap is a model-specific conditional-variance or
-clause-deletion estimate under the tilted law. The geometric route needs an
+[A001](attempts/A001_discrete_geometry/README.md) now records an active transfer
+programme with its original two-sided bound refuted. P005 combines the uniform
+mean bound E T_n >= n/(8e²) with polynomial early-UNSAT mass; no numerical evidence
+is used. P006 isolates a separate one-sided occupation estimate (H+) as an
+unproved sufficient condition. Any replacement lower-tail claim must account
+for exceptional mass rather than silently condition it away. The geometric route needs an
 invariant that both detects nonemptiness and admits useful concentration or
 correlation estimates. The naive Euler/face-vector substitutions fail by P003.
 
@@ -96,12 +112,20 @@ tables, and all plots were generated/inspected. Setup and a real helper dry run
 passed. These repeated fixtures are software checks, not additional independent
 scientific samples. Previous records and raw data are preserved.
 
+The user subsequently reported successful uv/checker setup on Blythe login02,
+with a getc_unlocked declaration warning. The helper now requests POSIX.1-2008
+declarations without altering the pinned C source. Local strict compilation,
+setup, mocked shell checks and certificate preflight passed; see the
+[POSIX follow-up](experiments/E002_blythe_phase_diagrams/validation/posix-checker-2026-10-11/README.md).
+The updated compiler flags have not been rebuilt on Blythe by the assistant.
+
 ## Ordered next actions
 
-1. Derive the deletion/influence terms for the stated finite-tilt target,
-   comparing the existing S032-S033 variance claims before claiming novelty.
-2. Initialize/publish the prepared Git sources, clone on Blythe and run the
-   locked uv/checker setup with an available compiler. Run E002's prepared
+1. Investigate P006's explicitly positive-tilt estimate (H+) or a separately
+   specified bound with exceptional lower-tail mass. The original two-sided
+   target is refuted, not an unresolved lemma to retry unchanged.
+2. Transfer the compiler-flag update and rerun setup on an idle Blythe checkout.
+   Run E002's prepared
    certified pilot, and use its timings/censoring/storage to choose the final
    grid before submitting a larger batch. Preserve all unresolved outcomes.
 3. Explore projection/overlap statistics at exhaustively accessible sizes;
@@ -109,6 +133,18 @@ scientific samples. Previous records and raw data are preserved.
 4. Queue scoped independent review of external threshold claims and P001/P002.
 
 ## Latest handoff
+
+Executed the concentration brief without changing the clause ensemble.
+P005 refutes its exact two-sided target; P006 supplies exact identities and a
+conditional one-sided consequence. Both have independent source-hashed reviews.
+The dated source audit found no matching two-sided claim in S001/S032/S033,
+and records checked proof steps and remaining audit limits. The original target,
+earlier proposals, reports and data are preserved. No new scientific experiment
+was run. The first remaining concentration gap is (H+), not proof of the
+refuted negative-tilt estimate. The user's Blythe warning was addressed and
+locally validated during the same work.
+
+## Previous handoff: uv setup
 
 Converted environment setup to the root uv project, preserving the earlier
 pip delivery and validation. Each machine creates its own `.venv`; the lock,

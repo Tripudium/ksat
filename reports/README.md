@@ -1,5 +1,24 @@
 # Random k-SAT survey
 
+## Concentration investigation, 11 October 2026
+
+The separate [concentration report](output/pdf/concentration-2026-10-11.pdf)
+records the rare-core refutation of the proposed two-sided bound (P005), an
+exact tilted-process reduction and conditional one-sided criterion (P006),
+and a scoped audit of S001/S032/S033. Both canonical arguments have independent
+internal reviews; the positive-tilt hypothesis (H+) remains unproved.
+The earlier feasibility report and its proposed target are preserved.
+
+[Editable source](concentration-2026-10-11.tex) |
+[Build/visual QA](QA_concentration_2026-10-11.md) |
+[Source audit](../references/concentration_source_audit_2026-10-11.md)
+
+```sh
+make report REPORT_MAIN=concentration-2026-10-11 REPORT_NAME=concentration-2026-10-11
+```
+
+## Original survey
+
 **Version:** 1.1, 11 October 2026. **Literature cutoff:** 10 October 2026.
 
 [PDF](output/pdf/report.pdf) | [LaTeX entry point](main.tex) |

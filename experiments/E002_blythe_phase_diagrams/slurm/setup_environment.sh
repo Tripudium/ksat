@@ -33,7 +33,8 @@ PY
 checker_target="$KSAT_ENV_DIR/bin/drat-trim"
 checker_temp="$checker_target.build.$$"
 trap 'rm -f -- "$checker_temp"' EXIT
-"$compiler" -std=c99 -O2 "$checker_source" -o "$checker_temp"
+# Strict C99 hides getc_unlocked on glibc unless POSIX declarations are enabled.
+"$compiler" -std=c99 -D_POSIX_C_SOURCE=200809L -O2 "$checker_source" -o "$checker_temp"
 mv -- "$checker_temp" "$checker_target"
 trap - EXIT
 export KSAT_DRAT_TRIM="$checker_target"

@@ -6,7 +6,7 @@ related proof, experiment, and source IDs.
 
 | ID | Approach / target | State | First unresolved step | Next action |
 | --- | --- | --- | --- | --- |
-| [A001](A001_discrete_geometry/README.md) | Discrete geometry and concentration for random k-SAT | `proposed` | A SAT-relevant invariant and a usable model-specific tilted-variance/correlation estimate. | Derive clause-deletion terms for one finite-tilt target; plan a longer certified CPU pilot. |
+| [A001](A001_discrete_geometry/README.md) | Discrete geometry and concentration for random k-SAT | `active`; original two-sided target refuted | P005 rules out the stated two-sided bound. P006's positive-tilt occupation estimate (H+) is unproved. | Investigate the explicitly one-sided criterion or a lower-tail bound retaining exceptional mass; preserve the model. |
 
 Suggested states: `proposed`, `active`, `blocked`, `refuted`, `superseded`,
 `promoted`. `Refuted` requires a verified counterexample to a precise statement;

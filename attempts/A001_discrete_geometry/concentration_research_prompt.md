@@ -1,5 +1,13 @@
 # Research task: concentration of the random k-SAT hitting time
 
+> **Outcome update, 2026-10-11:** the original brief below is preserved.
+> Its concrete two-sided finite-tilt target is refuted by the independently
+> reviewed [P005](../../proofs/P005_rare_core_obstruction.md). An exact tilted
+> process and a separately conditional one-sided criterion appear in
+> [P006](../../proofs/P006_tilted_continuation.md). See the
+> [follow-up report](../../reports/output/pdf/concentration-2026-10-11.pdf).
+> This refutes that target, not the general concentration programme.
+
 Investigate rigorous concentration inequalities for the first unsatisfiable time in random k-SAT. Work across relevant areas of mathematics; the supplied convex-geometry papers are sources of ideas, not a restriction on methods. Seek a proof, a sharper intermediate statement, or a precisely demonstrated obstruction. Do not assume the proposed bound is true. Distinguish recovering an existing theorem, improving its proof, strengthening its conclusion, and proposing a genuinely new statement.
 
 All paths below are relative to the repository root. First read `AGENTS.md`, `PROBLEM.md`, `STATUS.md`, the proof/attempt/experiment/source registries, and `attempts/A001_discrete_geometry/README.md`. Consult its analytic/discrete reading notes and `reports/geometry-feasibility-2026-10-11.tex`. Read the canonical arguments and independent review records for P003 and P004; their elementary conclusions are internally reviewed, not externally refereed or formally verified.

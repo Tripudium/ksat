@@ -7,8 +7,17 @@ the research-literature cutoff remains 2026-10-10.
 separate assessment, with additional scoped readings of S001-S003.
 **Blythe workflow:** 2026-10-11 adds S042-S043, site job/storage documentation
 and the pinned certificate-checker source.
+**Concentration follow-up:** the [11 October source audit](concentration_source_audit_2026-10-11.md)
+records additional scoped proof checks of S001/S032/S033, a checked
+sparse-prefix mean lower bound, and fresh primary-version/correction
+checks. All three current PDFs match the retained hashes. This separate
+dated follow-up preserves the original survey reading records and cutoff.
 
-The checks below concern the stated locations, not whole-paper verification. No source proof or formal artifact has been independently refereed by this project. Publication status and reading status are separate.
+The checks below concern the stated locations, not whole-paper verification.
+No complete source paper or formal artifact has been independently
+verified by this project; the dated audit identifies exactly which
+local arguments were checked and which dependencies remain unaudited.
+Publication status and reading status are separate.
 
 | ID | Source | Version / publication status | Note |
 | --- | --- | --- | --- |
